@@ -1,0 +1,291 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>10.2.&nbsp;Manage data elements</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="maintenance_app.html" title="Chapter&nbsp;10.&nbsp;Using the Maintenance app"><link rel="prev" href="maintenance_app.html" title="Chapter&nbsp;10.&nbsp;Using the Maintenance app"><link rel="next" href="manage_data_sets.html" title="10.3.&nbsp;Manage data sets and data entry forms"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10.2.&nbsp;Manage
+        data
+        elements</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="maintenance_app.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;10.&nbsp;Using the Maintenance app</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="manage_data_sets.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manage_data_element"></a>10.2.&nbsp;Manage
+        data
+        elements</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3439"></a>10.2.1.&nbsp;About data elements</h3></div></div></div><p>Data elements are the base of DHIS2. Data elements define what is actually recorded
+            in the system, for example number of immunisations or number of cases of malaria.</p><p>Data elements such as "Number of cases of confirmed malaria" are often
+            broken into smaller component parts to determine, for example, the number of confirmed
+            malaria cases of particular age groups.</p><p>In the <span class="bold"><strong>Maintenance</strong></span> app, you manage the following data
+            elements objects:</p><div class="table"><a name="d0e3451"></a><p class="title"><b>Table&nbsp;10.2.&nbsp;Data
+                element objects in the Maintenance app</b></p><div class="table-contents"><table class="table" summary="Data&#xA;                element objects in the Maintenance app" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                            <p>Object type</p>
+                        </th><th>
+                            <p>Available functions</p>
+                        </th></tr></thead><tbody><tr><td>
+                            <p>Data element</p>
+                        </td><td>
+                            <p>Create, edit, clone, share, delete, show details and
+                                translate</p>
+                        </td></tr><tr><td>
+                            <p>Data element group</p>
+                        </td><td>
+                            <p>Create, edit, clone, share, delete, show details and
+                                translate</p>
+                        </td></tr><tr><td>
+                            <p>Data element group set</p>
+                        </td><td>
+                            <p>Create, edit, clone, share, delete, show details and
+                                translate</p>
+                        </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3506"></a>10.2.2.&nbsp;Workflow</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create all category options.</p></li><li class="listitem"><p>Create categories composed by the multiple category options you've created.
+                </p></li><li class="listitem"><p>Create category combinations composed by either one or multiple
+                    categories.</p></li><li class="listitem"><p>Create data elements and assign them to a category combination.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3524"></a>10.2.3.&nbsp;Create a
+            data
+            element</h3></div></div></div><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/maintainence/create_data_element.png" align="middle" width="100%"></td></tr></table></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span> &gt; <span class="bold"><strong>Data
+                        element</strong></span>.</p></li><li class="listitem"><p>Click the add
+                    button.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Name</strong></span> field, define the precise name of
+                    the data element.</p><p>Each data element must have a unique name.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Short name</strong></span> field, define a short name
+                    for the data element.</p><p>Typically, the short name is an abbreviation of the full data element name.
+                    This attribute is often used in reports to display the name of the data element,
+                    where space is limited.</p></li><li class="listitem"><p>(Optional) In the <span class="bold"><strong>Code</strong></span> field, assign a
+                    code.</p><p>In many countries data elements are assigned a code.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Description</strong></span> field, type a description
+                    of the data element. Be as precise as possible and include complete information
+                    about how the data element is measured and what its purpose is.</p></li><li class="listitem"><p>In the
+                        <span class="bold"><strong>Form name</strong></span> field, type an
+                    alternative name of the data element. This name can be used in either section or
+                    automatic data entry forms. The form name is applied automatically.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Domain
+                        type</strong></span>
+                    field, select whether the data element is an aggregate or tracker
+                    type
+                    of data element.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Value
+                        type</strong></span>
+                    field, select the type of data that the data element will record.</p><div class="table"><a name="d0e3615"></a><p class="title"><b>Table&nbsp;10.3.&nbsp;Value
+                        types</b></p><div class="table-contents"><table class="table" summary="Value&#xA;                        types" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                                    <p>Value type</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Coordinate</p>
+                                </td><td>
+                                    <p>A point coordinate specified as longitude and latitude in
+                                        decimal degrees. All coordinate should be specified in the
+                                        format "-19.23 , 56.42" with a comma separating
+                                        the longitude and latitude.</p>
+                                </td></tr><tr><td>
+                                    <p>Date</p>
+                                </td><td>
+                                    <p>Dates rendered as calendar widget in data entry.</p>
+                                </td></tr><tr><td>
+                                    <p>Date &amp; time</p>
+                                </td><td>
+                                    <p></p>
+                                </td></tr><tr><td>
+                                    <p>E-mail</p>
+                                </td><td>
+                                    <p>Email.</p>
+                                </td></tr><tr><td>
+                                    <p>File</p>
+                                </td><td>
+                                    <p>A file resource where you can store external files, for
+                                        example documents and photos.</p>
+                                </td></tr><tr><td>
+                                    <p>Integer</p>
+                                </td><td>
+                                    <p>Any whole number (positive and negative), including
+                                        zero.</p>
+                                </td></tr><tr><td>
+                                    <p>Letter</p>
+                                </td><td>
+                                    <p>A single letter.</p>
+                                </td></tr><tr><td>
+                                    <p>Long text</p>
+                                </td><td>
+                                    <p>Textual value. Renders as text area with no length
+                                        constraint in forms.</p>
+                                </td></tr><tr><td>
+                                    <p>Negative integer</p>
+                                </td><td>
+                                    <p>Any whole number less than (but not including)
+                                        zero.</p>
+                                </td></tr><tr><td>
+                                    <p>Number</p>
+                                </td><td>
+                                    <p>Any real numeric value with a single decimal point.
+                                        Thousands separators and scientific notation is not
+                                        supported.</p>
+                                </td></tr><tr><td>
+                                    <p>Percentage</p>
+                                </td><td>
+                                    <p>Whole numbers inclusive between 0 and 100.</p>
+                                </td></tr><tr><td>
+                                    <p>Phone number</p>
+                                </td><td>
+                                    <p>Phone number.</p>
+                                </td></tr><tr><td>
+                                    <p>Positive integer</p>
+                                </td><td>
+                                    <p>Any whole number greater than (but not including)
+                                        zero.</p>
+                                </td></tr><tr><td>
+                                    <p>Positive of zero integer</p>
+                                </td><td>
+                                    <p>Any positive whole number, including zero.</p>
+                                </td></tr><tr><td>
+                                    <p>Organisation unit</p>
+                                </td><td>
+                                    <p>Organisation units rendered as a hierarchy tree
+                                        widget.</p>
+                                </td></tr><tr><td>
+                                    <p>Unit interval</p>
+                                </td><td>
+                                    <p>Any real number greater than or equal to 0 and less than
+                                        or equal to 1.</p>
+                                </td></tr><tr><td>
+                                    <p>Text</p>
+                                </td><td>
+                                    <p>Textual value. The maximum number of allowed characters
+                                        per value is 50,000.</p>
+                                </td></tr><tr><td>
+                                    <p>Time</p>
+                                </td><td>
+                                    <p>Time is stored in HH:mm format.</p>
+                                    <p>HH is a number between 0 and 23</p>
+                                    <p>mm is a number between 00 and 59</p>
+                                </td></tr><tr><td>
+                                    <p>Tracker associate</p>
+                                </td><td>
+                                    <p>Tracked entity instance. Rendered as dialog with a list of
+                                        tracked entity isntances and a search field.</p>
+                                </td></tr><tr><td>
+                                    <p>Username</p>
+                                </td><td>
+                                    <p>DHIS 2 user. Rendered as a dialog with a list of users and
+                                        a search field.</p>
+                                </td></tr><tr><td>
+                                    <p>Yes/No</p>
+                                </td><td>
+                                    <p>Boolean values, renders as drop-down lists in data
+                                        entry.</p>
+                                </td></tr><tr><td>
+                                    <p>Yes only</p>
+                                </td><td>
+                                    <p>True values, renders as check-boxes in data entry.</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>In the <span class="bold"><strong>Aggregation operator</strong></span> field, select the
+                    default aggregation operation that will be used on the data element.</p><p>Most data elements should have the <span class="bold"><strong>Sum</strong></span> option
+                    set. This includes all data elements which should be added together. Other data
+                    elements, such as staffing levels, should be set to use the <span class="bold"><strong>Average</strong></span> operator, when values along the time
+                    dimension should not be added together, but rather averaged.</p><div class="table"><a name="d0e3900"></a><p class="title"><b>Table&nbsp;10.4.&nbsp;Aggregation
+                        operators</b></p><div class="table-contents"><table class="table" summary="Aggregation&#xA;                        operators" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                                    <p>Aggregation
+                                        operator</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Average</p>
+                                </td><td>
+                                    <p>Average the values in both the period as and the
+                                        organisation unit dimensions.</p>
+                                </td></tr><tr><td>
+                                    <p>Average (sum in organisation unit hierarchy)</p>
+                                </td><td>
+                                    <p>Average of data values in the period dimension, sum in the
+                                        organisation unit
+                                        dimensions.</p>
+                                </td></tr><tr><td>
+                                    <p>Count</p>
+                                </td><td>
+                                    <p>Count of data values.</p>
+                                </td></tr><tr><td>
+                                    <p>Min</p>
+                                </td><td>
+                                    <p>Minimum of data values.</p>
+                                </td></tr><tr><td>
+                                    <p>Max</p>
+                                </td><td>
+                                    <p>Maximum of data values.</p>
+                                </td></tr><tr><td>
+                                    <p>None</p>
+                                </td><td>
+                                    <p>No aggregation is performed in any dimension.</p>
+                                </td></tr><tr><td>
+                                    <p>Sum</p>
+                                </td><td>
+                                    <p>Sum of data values in the period and organisation unit
+                                        dimension.</p>
+                                </td></tr><tr><td>
+                                    <p>Standard deviation</p>
+                                </td><td>
+                                    <p>Standard deviation (population-based) of data
+                                        values.</p>
+                                </td></tr><tr><td>
+                                    <p>Variance</p>
+                                </td><td>
+                                    <p>Variance (population-based) of data values.</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>If you want to save zeros for a particular reason, select <span class="bold"><strong>Store zero data values</strong></span>. By default, DHIS2 does not
+                    store zeros entered in the data entry module.</p></li><li class="listitem"><p>In the <span class="bold"><strong>URL</strong></span> field, enter a
+                    link
+                    to an in-depth description of the data element.</p><p>For example a link to a metadata repository or registry that contains detailed
+                    technical information about the definition and measurement of the data element.
+                </p></li><li class="listitem"><p>In the <span class="bold"><strong>Category combination</strong></span> field, define
+                    which category combination the data element should have. This is also known as
+                    the
+                    "disaggregation".
+                </p></li><li class="listitem"><p>Select an <span class="bold"><strong>Option
+                        set</strong></span>.</p><p>Option sets are predefined lists of options which can be
+                    used
+                    in data entry.</p></li><li class="listitem"><p>Select an <span class="bold"><strong>Option set for comments</strong></span>.</p><p>Option sets for comments are predefined lists of options which can be used to
+                    specify standardized comments for data values in data entry.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Legend set</strong></span>.</p><p>Legend
+                    sets are used in the <span class="bold"><strong>GIS</strong></span> app
+                    to display certain data elements with certain icons.</p></li><li class="listitem"><p>Set the <span class="bold"><strong>Aggregation
+                        levels</strong></span>
+                    to
+                    allow the data element to be aggregated at one or more
+                    levels:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>In the left pane, select the levels you want to assign to the data
+                            element.</p></li><li class="listitem"><p>Click the right arrow to assign the aggregation levels.</p></li></ol></div><p>The aggregation levels option allows the data element to be aggregated at one
+                    or more levels.</p><p>By default, the aggregation will start at the lowest assigned organisation
+                    unit. If you for example select "Chiefdom", it means that "Chiefdom",
+                    "District", and "National" aggregates use "Chiefdom" (the highest aggregation
+                    level available) as the data source, and PHU data will not be included. PHU data
+                    will still be available for the PHU level, but not included in aggregations to
+                    the levels above.</p><p>If you select both "District" and "Chiefdom", it means that the "District" and
+                    "National" level aggregates use District data as their source, "Chiefdom" will
+                    use Chiefdom, and "PHU" will use PHU.</p></li><li class="listitem"><p>If applicable, enter custom attributes values, for example <span class="bold"><strong>Classification</strong></span> or <span class="bold"><strong>Collection
+                        method</strong></span>.</p><p>You set custom attributes in <span class="bold"><strong>Data
+                        administration</strong></span> &gt; <span class="bold"><strong>Attribute</strong></span>.
+                    For
+                    more information about how to use attributes, refer to the
+                    "Attributes" section.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Main data element group</strong></span>.</p><p>Data element group sets are only applicable if they have been defined. If data
+                    element group sets have been defined, they will appear in the <span class="bold"><strong>Main data element group</strong></span> list. Select each data
+                    element group from the list of group sets provided. Groups can be selected based
+                    on if the data element is of aggregate or tracker type.</p></li><li class="listitem"><p>Select
+                    <span class="bold"><strong>Tracker-based data</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4168"></a>10.2.4.&nbsp;Create a data element group</h3></div></div></div><p>Data element groups lets you classify related data elements into a common theme. For
+            instance, two data elements "Measles immunisation" and "BCG
+            Immunisation" might be grouped together into a data element group "Childhood
+            immunisation".</p><p>To create a data element group:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span> &gt; <span class="bold"><strong>Data element
+                        group</strong></span>.</p></li><li class="listitem"><p>Click the add
+                    button.</p></li><li class="listitem"><p>Fill in the form:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p><span class="bold"><strong>Name</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Short name</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Code</strong></span></p></li></ol></div></li><li class="listitem"><p>Select data elements and assign them.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4220"></a>10.2.5.&nbsp;Create a data element group set</h3></div></div></div><p>Data element group sets allows you to categorise multiple data element groups into a
+            set. Data element group sets are used during analysis and reporting to combine similar
+            data element groups into a common theme.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span> &gt; <span class="bold"><strong>Data element
+                        group set</strong></span>.</p></li><li class="listitem"><p>Click the add
+                    button.</p></li><li class="listitem"><p>Fill in the form:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p><span class="bold"><strong>Name</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Code</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Description</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Compulsory</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Data dimension</strong></span></p></li></ol></div></li><li class="listitem"><p>Select data element groups and assign them.</p><p>Available data element groups are displayed in the left panel. Data element
+                    groups that are currently members of the data element group set are displayed in
+                    the right hand panel.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4284"></a>10.2.6.&nbsp;Edit data elements and other objects</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select the object type you want to edit, for example data element or
+                    category.</p></li><li class="listitem"><p>In the list, find the object you want to modify.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Edit</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+                    want.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4322"></a>10.2.7.&nbsp;Clone data elements and other objects</h3></div></div></div><p>Cloning a data element or other objects can save time when you create many similar
+            objects.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select the object type you want to clone, for example data element or
+                    category.</p></li><li class="listitem"><p>In the list, find the object you want to modify.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Clone</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+                    want.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4362"></a>10.2.8.&nbsp;Change sharing settings for data elements and other objects</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select an object type, for example data element or category.</p></li><li class="listitem"><p>In the list, find the object you want to modify.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Share</strong></span>.</p></li><li class="listitem"><p>(Optional) Search for a user group and select it. The user group is added to
+                    the list.</p></li><li class="listitem"><p>Change the settings for the user
+                    groups
+                    you want to modify.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="bold"><strong>Can view</strong></span>: Everyone in the user group
+                            can view the object</p></li><li class="listitem"><p><span class="bold"><strong>Can edit</strong></span>: Everyone in the user group
+                            can view and edit the object</p></li></ul></div><p>The default setting is that everyone (<span class="bold"><strong>Public
+                        access</strong></span>) can view and edit objects.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4421"></a>10.2.9.&nbsp;Delete data elements and other objects</h3></div></div></div><p>You can only delete a data element and other objects if no data is
+            attached
+            to the data element itself.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select the object type you want to delete, for example data element or
+                    category.</p></li><li class="listitem"><p>In the list, find the object you want to delete.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Delete</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>OK</strong></span> to confirm.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4458"></a>10.2.10.&nbsp;Display details of data elements and other objects</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select the object type you want to display, for example data element or
+                    category.</p></li><li class="listitem"><p>In the list, find the object you want to view.</p></li><li class="listitem"><p>To display all meta data about the selected object, click the options menu and
+                    select <span class="bold"><strong>Show details</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4483"></a>10.2.11.&nbsp;Translate data elements and other objects</h3></div></div></div><p>DHIS2 provides functionality for translations of database content like data elements,
+            data element groups, indicators, indicator groups, validation rules and more. You can
+            translate these elements to any number of locales. A locale represents a specific
+            geographical, political, or cultural region.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="resources/images/admon/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>To activate a
+                translation,
+                go to <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Settings</strong></span> &gt; <span class="bold"><strong>Appearance</strong></span> and select a
+                language.</p></td></tr></table></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Maintenance</strong></span> app and click <span class="bold"><strong>Data elements</strong></span>.</p></li><li class="listitem"><p>Select the object type you want to translate, for example data element or
+                    category.</p></li><li class="listitem"><p>In the list, find the object you want to translate.</p></li><li class="listitem"><p>Click the
+                    options
+                    menu and select <span class="bold"><strong>Translate</strong></span>.</p></li><li class="listitem"><p>Select a locale.</p></li><li class="listitem"><p>Enter the required information.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="maintenance_app.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="maintenance_app.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="manage_data_sets.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;10.&nbsp;Using the Maintenance app&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;10.3.&nbsp;Manage
+        data sets and
+        data
+        entry forms</td></tr></table></div></body></html>

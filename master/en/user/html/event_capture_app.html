@@ -1,0 +1,61 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;23.&nbsp;Using the Event Capture app</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="prev" href="mobile_sms_service.html" title="22.5.&nbsp;SMS Service"><link rel="next" href="ch23s02.html" title="23.2.&nbsp;Register an event"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;23.&nbsp;Using the Event Capture
+    app</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="mobile_sms_service.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch23s02.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="event_capture_app"></a>Chapter&nbsp;23.&nbsp;Using the Event Capture
+    app</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="event_capture_app.html#d0e19991">23.1. About the Event
+      Capture
+      app</a></span></dt><dt><span class="section"><a href="ch23s02.html">23.2. Register
+      an
+      event</a></span></dt><dt><span class="section"><a href="ch23s03.html">23.3. Edit an event</a></span></dt><dt><span class="section"><a href="ch23s04.html">23.4. Edit events in
+      grid</a></span></dt><dt><span class="section"><a href="ch23s05.html">23.5. Share events in edit
+      mode</a></span></dt><dt><span class="section"><a href="ch23s06.html">23.6. View an event
+      audit
+      history </a></span></dt><dt><span class="section"><a href="ch23s07.html">23.7. Delete an event</a></span></dt><dt><span class="section"><a href="ch23s08.html">23.8. Modify an event list's
+      layout
+    </a></span></dt><dt><span class="section"><a href="ch23s09.html">23.9. Print an
+      event
+      list</a></span></dt><dt><span class="section"><a href="ch23s10.html">23.10. Download an event list</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e19991"></a>23.1.&nbsp;About the Event
+      Capture
+      app</h2></div></div></div><div class="screenshot"><p class="title"><b>Example event list</b></p><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="70%"><tr><td align="center"><img src="resources/images/event_capture/event_list.png" align="middle" width="100%"></td></tr></table></div></div><p>In the <span class="bold"><strong>Event Capture</strong></span> app you register events that
+      occurred at a particular time and place. An event can happen at any given point in time.
+      This
+      stands in contrast to routine data, which can be captured for predefined,
+      regular intervals. Events are sometimes called cases or records. In DHIS2
+      events
+      are linked to a program. The Event Capture app lets you select the organisation unit and
+      program and specifiy a date when a event happened, before entering information for the
+      event.</p><p>The Event Capture app works online and offline. If the Internet connectivity drops, you
+      can continue to capture events. The events will be stored locally in your web browser
+      (client). When connectivity has returned, the system will ask you to upload the locally stored
+      data. The system then sends the data to the server where the data is stored.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>If you close the web browser while in offline mode, it is not possible to reopen a new
+        web browser window and continue the working session. However the data will still be saved
+        locally and can be uploaded to the server the next time the machine is online and the you
+        have logged into the server.</p></td></tr></table></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+          </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="bold"><strong>Sorting:</strong></span> this can be done by clicking the
+                sorting icon of each column header. A red sorting icon implies the current sorting
+                column. However, the sorting functionality works only within the page displayed.
+                Currently, it is not possible to do sorting from serverside.</p></li><li class="listitem"><p><span class="bold"><strong>Filtering:</strong></span> this is done by clicking the small
+                search icon shown to the right of each column header. Clicking them provides an
+                input field to type a filtering criteria. The system starts applying the filter the
+                moment a user starts to type. During filtering it is possible to define start and
+                end dates for date type data elements and lower and upper limits for number types.
+                Server side filtering is not-support at the moment.</p></li><li class="listitem"><p><span class="bold"><strong>Paging:</strong></span> The list of events can be paged by
+                using the paging section at the bootom of the list. Paging allows you to quickly
+                move between pages of events and to change the page size, i.e. the number of events
+                per page.</p></li></ol></div><p>
+        </p></li></ul></div><p>Another feature available in the <span class="bold"><strong>Event Capture</strong></span> app is
+      skip-logic and validation functionality. Using program rules engine it is possible to put some
+      rules for a program and take some actions when the rules are met. Currently supported actions
+      are skipping/hiding a dataelement or an entire section, display warning for some
+      soft-validations or display error for hard-validations. For example if a rule defined says
+      "DataElementA &gt; 100" and has action as "show warning" and message "Datalelement A can not have
+      value more than 100". What will happen during data entry is - the moment a value greater than
+      100 is entered for data element A, the warning message will be dsiplayed. Because, it is just
+      a warning it is still possible to keep the value more than 100. However, if the action is
+      "Show error", the error message will be displayed and the system will also ignore the value -
+      i.e. it is not possible to store a value that viloates the rule.</p><p>Together with the rules engine expression evaluation, on-the-fly indicator expression
+      evaluation is also supported. If a program has indicators defined for it and the moment all
+      values related to the indicator expression are filled, the system will calcualte indicator and
+      display the result. A figure below demonstrates this.</p><div class="screenshot"><p class="title"><b>Example event list</b></p><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="70%"><tr><td align="center"><img src="resources/images/event_capture/event_editing.png" align="middle" width="100%"></td></tr></table></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="mobile_sms_service.html">Prev</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch23s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">22.5.&nbsp;SMS Service&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;23.2.&nbsp;Register
+      an
+      event</td></tr></table></div></body></html>

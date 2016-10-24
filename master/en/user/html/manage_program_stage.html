@@ -1,0 +1,173 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>27.3.&nbsp;Manage program stages</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="configure_program.html" title="Chapter&nbsp;27.&nbsp;Configuring programs"><link rel="prev" href="manage_tracker_programs.html" title="27.2.&nbsp;Manage programs"><link rel="next" href="ch27s04.html" title="27.4.&nbsp;Manage program indicators"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">27.3.&nbsp;Manage program stages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="manage_tracker_programs.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;27.&nbsp;Configuring
+        programs</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch27s04.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manage_program_stage"></a>27.3.&nbsp;Manage program stages</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e24509"></a>27.3.1.&nbsp;About program
+            stages</h3></div></div></div><p>A program consist of program stages. A program stage defines which actions should be
+            taken at each stage.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e24517"></a>27.3.2.&nbsp;Create a program stage</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the program you want to add a program stage to and select <span class="bold"><strong>View program stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add new</strong></span>.</p></li><li class="listitem"><p>Enter program stage details:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>Enter a <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>Enter a <span class="bold"><strong>Description</strong></span>.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Scheduled days from start</strong></span>
+                            field, enter the minimum number of days to wait for starting the program
+                            stage.</p></li></ol></div></li><li class="listitem"><p>Enter repeatable program stage details.</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>Specify if the program stage is <span class="bold"><strong>Repeatable</strong></span> or not.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Period type</strong></span>.</p></li><li class="listitem"><p>Enter <span class="bold"><strong>Standard interval days</strong></span>.</p><p>The number of days
+                            to
+                            repeat the repeatable program stage.</p></li><li class="listitem"><p>Clear <span class="bold"><strong>Display generate event box after
+                                completed</strong></span> if you don't want to display <span class="italic">Create new event box</span> to create new event
+                            for a repeatable stage after you click <span class="italic">Complete</span> for an event of the stage in data entry form.
+                            This field is select by default.</p></li></ol></div></li><li class="listitem"><p>Enter form
+                    details.</p><div class="table"><a name="d0e24615"></a><p class="title"><b>Table&nbsp;27.3.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                                    <p>Option</p>
+                                </th><th>
+                                    <p>Action</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p><span class="bold"><strong>Auto-generate
+                                        event</strong></span></p>
+                                </td><td>
+                                    <p>Clear check box to prevent creating an event of this
+                                        program stage automatically when a entity enroll in the
+                                        program.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Open data entry form after
+                                            enrollment</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to automatically open the event of this
+                                        stage as soon as the entity has enrolled into the
+                                        program.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Report date to use</strong></span></p>
+                                </td><td>If you have selected the <span class="bold"><strong>Open data
+                                        entry form after enrollment</strong></span> check box, also
+                                    select a <span class="bold"><strong>Report date to use</strong></span>:
+                                        <span class="bold"><strong>Date of incident</strong></span> or
+                                        <span class="bold"><strong>Date of enrollment</strong></span>.
+                                        <p>This
+                                        is the date used as report date for an event that has been
+                                        opened automatically.</p><p>If the <span class="bold"><strong>Report date to use</strong></span> is selected as
+                                        one of those two ('incident date'/'enrollment
+                                        date'), in Dashboard, the 'Report date' of
+                                        the event will be set as one of those two. </p></td></tr><tr><td>
+                                    <p><span class="bold"><strong>Block entry form after
+                                            completed</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to block the entry form after completion
+                                        of the event of this stage.</p>
+                                    <p>This means that the data in the entry form can't be
+                                        changed until you reset the status to incomplete.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Ask user to complete program when
+                                            stage is completed</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to trigger a pop-up which asks the user
+                                        if he/she wants to create the event of next stage.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Ask user to create new event when
+                                            stage is complete</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to trigger a pop-up which asks the users
+                                        if he/she wants to create a new event of this stage when an
+                                        event of this stage is completed.</p>
+                                    <p>This property is active only if you have selected
+                                            <span class="bold"><strong>Repeatable</strong></span>.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Generate events by enrollment
+                                            date</strong></span></p>
+                                </td><td>
+                                    <p>Check on it for auto-generating due dates of events from
+                                        program-stages of this program based on the enrollment date.
+                                        If it is not checked, the due dates are generated based on
+                                        incident date.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Capture
+                                        coordinates</strong></span></p>
+                                </td><td>Select check box to capture an event's
+                                        coordinates.<p>Many types of events may be recorded at a
+                                        facility or be <span class="italic">owned-by</span> a
+                                        health worker at a facility, but actually take place
+                                        somewhere in the community.</p></td></tr><tr><td>
+                                    <p><span class="bold"><strong>Complete allowed only if validation
+                                            passes</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to enforce that an event created by this
+                                        program stage is only completed when all validation rules
+                                        have passed.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Pre-generate event
+                                        UID</strong></span></p>
+                                </td><td>
+                                    <p>Select check box to pre-generate unique event id
+                                        numbers.</p>
+                                </td></tr><tr><td>
+                                    <p><span class="bold"><strong>Description of report
+                                            date</strong></span></p>
+                                </td><td>
+                                    <p>Type a description of the report date. </p>
+                                    <p>This description is displayed in the
+                                        case
+                                        entry form.</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>Assign data
+                    elements:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>In the list of <span class="bold"><strong>Available data
+                                elements</strong></span>, double-click the data elements you want to
+                            assign to the program stage.</p></li><li class="listitem"><p>For each assigned data element, review the properties. You can
+                            select:</p><div class="table"><a name="d0e24819"></a><p class="title"><b>Table&nbsp;27.4.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                                            <p>Option</p>
+                                        </th><th>
+                                            <p>Description</p>
+                                        </th></tr></thead><tbody><tr><td>
+                                            <p><span class="bold"><strong>Compulsory</strong></span></p>
+                                        </td><td>
+                                            <p>The value of this data element must be filled into
+                                                data entry form before completing the event.</p>
+                                        </td></tr><tr><td>
+                                            
+                                            <p><span class="bold"><strong>Allow provided
+                                                  elsewhere</strong></span></p>
+                                            
+                                        </td><td>
+                                            <p>Specify if the value of this data element comes
+                                                from other facility, not in the facility where this
+                                                data is entered.</p>
+                                        </td></tr><tr><td>
+                                            <p><span class="bold"><strong>Display in
+                                                  reports</strong></span></p>
+                                        </td><td>
+                                            <p>Display the value of this data element into the
+                                                single
+                                                event without registration data
+                                                entry function.</p>
+                                        </td></tr><tr><td>
+                                            
+                                            <p><span class="bold"><strong>Date in
+                                                future</strong></span></p>
+                                            
+                                        </td><td>
+                                            <p>Allow to select a date in future for date data
+                                                elements.</p>
+                                        </td></tr></tbody></table></div></div><br class="table-break"></li></ol></div></li><li class="listitem"><p>Click <span class="bold"><strong>Add</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e24903"></a>27.3.3.&nbsp;Create a program stage
+            section</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the program you want to add a program stage section to and select
+                        <span class="bold"><strong>View program stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click a program stage and select <span class="bold"><strong>Section
+                        management</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add new</strong></span>.</p></li><li class="listitem"><p>Enter a program stage section <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>In the list of <span class="bold"><strong>Available data elements</strong></span>,
+                    double-click the data elements you want to assign to the program stage
+                    section.</p></li><li class="listitem"><p>In the list of <span class="bold"><strong>Available indicators</strong></span>,
+                    double-click the indicators you want to assign to the program stage
+                    section.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e24963"></a>27.3.4.&nbsp;Change program stage sort
+            order</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Sort order</strong></span>.</p></li><li class="listitem"><p>Modify the order of the program stages with the up and down arrows.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e25002"></a>27.3.5.&nbsp;Change program stage section sort
+            order</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click a program stage and select <span class="bold"><strong>Section
+                        management</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Sort order</strong></span>.</p></li><li class="listitem"><p>Modify the order of the program stage sections with the up and down
+                    arrows.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e25047"></a>27.3.6.&nbsp;Edit program stages</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click the program stage you want to modify and select <span class="bold"><strong>Edit</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+                    want.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Update</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e25087"></a>27.3.7.&nbsp;Display program stages</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click the program stage you want to display and select <span class="bold"><strong>Show details</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e25114"></a>27.3.8.&nbsp;Translate program stages</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p><p>A list of existing stages for the selected program opens. If the program
+                    doesn't have any program stages, the list is empty.</p></li><li class="listitem"><p>Click the program stage you want to modify and select <span class="bold"><strong>Translate</strong></span>.</p></li><li class="listitem"><p>Select a locale.</p></li><li class="listitem"><p>Type a <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="manage_tracker_programs.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="configure_program.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch27s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">27.2.&nbsp;Manage programs&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;27.4.&nbsp;Manage program
+    indicators</td></tr></table></div></body></html>

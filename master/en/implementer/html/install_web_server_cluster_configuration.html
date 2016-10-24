@@ -1,0 +1,84 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>8.9.&nbsp;Web server cluster configuration</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_implementation_guide.html" title="DHIS2 Implementer guide"><link rel="up" href="installation.html" title="Chapter&nbsp;8.&nbsp;Installation"><link rel="prev" href="install_read_replica_configuration.html" title="8.8.&nbsp;Read replica database configuration"><link rel="next" href="install_starting_tomcat_boot_time.html" title="8.10.&nbsp;Starting Tomcat at boot time"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8.9.&nbsp;Web server cluster configuration</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="install_read_replica_configuration.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;8.&nbsp;Installation</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="install_starting_tomcat_boot_time.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="install_web_server_cluster_configuration"></a>8.9.&nbsp;Web server cluster configuration</h2></div></div></div><p>Clustering is a common technique for improving system scalability and availability.
+      Clustering refers to setting up multiple web servers such as Tomcat instances and have them
+      serve a single application. Clustering allows for <span class="emphasis"><em>scaling out</em></span> an
+      application in the sense that new servers can be added to improve performance. It also allows
+      for <span class="emphasis"><em>high availability</em></span> as the system can tolerate instances going down
+      without making the system inaccessible to users.</p><p>When setting up multiple Tomcat instances there is a need for making the instances aware
+      of each other. Each DHIS 2 instance will keep a local data cache. When an update is done on
+      one instance, the caches on the other instances must be notified so that they can be
+      invalidated and avoid becoming stale.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="install_cluster_configuration"></a>8.9.1.&nbsp;Cluster configuration</h3></div></div></div><p>A DHIS 2 cluster setup is based on manual configuration of each instance. For each DHIS
+        2 instance one must specify the public <span class="emphasis"><em>hostname</em></span> as well as the
+        hostnames of the other instances participating in the cluster. You can optionally specify
+        the <span class="emphasis"><em>port</em></span> number for which each instance should listen for cache
+        updates. The default port number is 4001.</p><p>The hostname of the server is specified using the
+          <span class="emphasis"><em>cluster.instance0.hostname</em></span> configuration property. Additional servers
+        which participate in the cluster are specified using properties on the format
+          <span class="emphasis"><em>cluster.instanceN.hostname</em></span>, where N refers to the cluster instance
+        number. You can specify up to 4 cluster instances in a configuration file, giving a maximum
+        cluster size of 5 instances. N is a number between 1 and 4.</p><p>The hostname must be visible to the participating servers on the network for the
+        clustering to work. You might have to allow incoming and outgoing connections on port 4001
+        (or whichever port number is configured) in the firewall.</p><p>The port number of the server is specified using the<span class="emphasis"><em>
+          cluster.instance0.cache.port</em></span> configuration property. Specifying the port number
+        is typically only useful when you have multiple cluster instances on the same server /
+        virtual machine. When running cluster instances on separate servers / virtual machines it is
+        often appropriate to use the default port number and omit this configuration
+        property.</p><p>An example setup for a cluster of two web servers is described below. For
+          <span class="emphasis"><em>server A</em></span> availabe at hostname <span class="emphasis"><em>193.157.199.131</em></span>
+        the following can be specified in
+        <span class="emphasis"><em>dhis.conf</em></span>:</p><pre class="screen"># Cluster configuration for server A
+
+# Hostname for this web server
+cluster.instance0.hostname = 193.157.199.131
+
+# Port for cache listener, can be omitted
+cluster.instance0.cache.port = 4001
+
+# Hostname for web server B participating in cluster
+cluster.instance1.hostname = 193.157.199.132
+
+# Port for cache listener on web server B, can be omitted
+cluster.instance1.cache.port = 4001</pre><p>For <span class="emphasis"><em>server B</em></span> available at hostname
+          <span class="emphasis"><em>193.157.199.132</em></span> the following can be specified in
+          <span class="emphasis"><em>dhis.conf</em></span> (notice how port configuration is
+        omitted):</p><pre class="screen"># Cluster configuration for server B
+
+# Hostname for this web server
+cluster.instance0.hostname = 193.157.199.132
+
+# Hostname for web server A participating in cluster
+cluster.instance1.hostname = 193.157.199.131</pre><p>You must restart each Tomcat instance to make the changes take effect. The two instances
+        have now been made aware of each other and DHIS 2 will ensure that their caches are kept in
+        sync.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1373"></a>8.9.2.&nbsp;Load balancing</h3></div></div></div><p>With a cluster of Tomcat instances set up, a common approach for routing incoming web
+        requests to the backend instances participating in the cluster is using a <span class="emphasis"><em>load
+          balancer</em></span>. A load balancer will make sure that load is distributed evenly across
+        the cluster instances. It will also detect whether an instance becomes unavailable, and if
+        so, stop routine requests to that instance and instead use other available instances.</p><p>Load balancing can be achieved in multiple ways. A simple approach is using
+          <span class="emphasis"><em>nginx</em></span>, in which case you will define an <span class="emphasis"><em>upstream</em></span>
+        element which enumerates the location of the backend instances and later use that element in
+        the <span class="emphasis"><em>proxy</em></span> location
+        block.</p><pre class="screen">http {
+
+  # Upstream element with sticky sessions
+
+  upstream dhis_cluster {
+    ip_hash;
+    server 193.157.199.131:8080;
+    server 193.157.199.132:8080;
+  }
+
+  # Proxy pass to backend servers in cluster
+
+  server {
+    listen 80;
+
+    location / {
+      proxy_pass   http://dhis_cluster/;
+    }
+  }
+}  </pre><p>DHIS 2 keeps server-side state for user sessions to a limited degree. Using "sticky
+        sessions" is a simple approach to avoid replicating the server session state by routing
+        requests from the same client to the same server. The <span class="emphasis"><em>ip_hash</em></span> directive
+        in the upstream element ensures this.</p><p>Note that several instructions have been omitted for brevity in the above example.
+        Consult the reverse proxy section for a detailed configuration guide.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="install_read_replica_configuration.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="installation.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="install_starting_tomcat_boot_time.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">8.8.&nbsp;Read replica database configuration&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_implementation_guide.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;8.10.&nbsp;Starting Tomcat at boot time</td></tr></table></div></body></html>

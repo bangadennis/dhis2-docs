@@ -1,0 +1,62 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.44.&nbsp;Short Message Service (SMS)</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s43.html" title="1.43.&nbsp;Translations"><link rel="next" href="ch01s45.html" title="1.45.&nbsp;SMSCommand"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.44.&nbsp;Short Message Service (SMS)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s43.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s45.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e10335"></a>1.44.&nbsp;Short Message Service (SMS)</h2></div></div></div><p>This section covers the SMS Web API for sending and receiving short text messages.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10340"></a>1.44.1.&nbsp;Outbound SMS service</h3></div></div></div><p>The Web API supports sending outgoing SMS using the POST method. SMS can be sent to a
+        single or multiple destinations. One or more gateways need to be configured before using the
+        service. An SMS will not be sent if there is no gateway configured.&#8232; It needs a set of
+        recipients and message text in JSON format as shown below. </p><pre class="screen">/api/24/sms/outbound</pre><pre class="screen">{&#8232;
+  "message":"Sms Text",&#8232; 
+  "recipients": [
+    "47XXXXXX1",
+    "47XXXXXX2"
+  ]&#8232;
+}</pre><p>The Web API also supports a query parameter version, but the parameterized API can only
+        be used for sending SMS to a single destination. </p><pre class="screen">/api/24/sms/outbound?message=text&amp;recipient=47XXXXXX</pre><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e10353"></a>1.44.1.1.&nbsp;Gateway response codes</h4></div></div></div><p>Gateway may response with following response codes.</p><div class="table"><a name="d0e10358"></a><p class="title"><b>Table&nbsp;1.81.&nbsp;Gateway response codes</b></p><div class="table-contents"><table class="table" summary="Gateway response codes" border="1"><colgroup><col class="c1"><col class="newCol2"><col class="c2"></colgroup><thead><tr><th>Response code</th><th>Response Message</th><th>Detail Description</th></tr></thead><tbody><tr><td>RESULT_CODE_0</td><td>success</td><td>Message has been sent successfully</td></tr><tr><td>RESULT_CODE_1</td><td>scheduled</td><td>Message has been scheduled successfully</td></tr><tr><td>RESULT_CODE_22</td><td>internal fatal error</td><td>Internal fatal error</td></tr><tr><td>RESULT_CODE_23</td><td>authentication failure</td><td>Authentication credentials are incorrect</td></tr><tr><td>RESULT_CODE_24</td><td>data validation failed</td><td>Parameters provided in request are incorrect</td></tr><tr><td>RESULT_CODE_25</td><td>insufficient credits</td><td>Credit is not enough to send message</td></tr><tr><td>RESULT_CODE_26</td><td>upstream credits not available</td><td>Upstream credits not available</td></tr><tr><td>RESULT_CODE_27</td><td>exceeded your daily quota</td><td>You have exceeded your daily quota</td></tr><tr><td>RESULT_CODE_40</td><td>temporarily unavailable</td><td>Service is temporarily down</td></tr><tr><td>RESULT_CODE_201</td><td>maximum batch size exceeded</td><td>Maximum batch size exceeded</td></tr><tr><td>RESULT_CODE_200</td><td>success</td><td>The request was successfully completed</td></tr><tr><td>RESULT_CODE_202</td><td>accepted</td><td>The message(s) will be processed</td></tr><tr><td>RESULT_CODE_207</td><td>multi-status</td><td>More than one message was submitted to the API; however, not all messages
+                  have the same status</td></tr><tr><td>RESULT_CODE_400</td><td>bad request</td><td>Validation failure (such as missing/invalid parameters or headers)</td></tr><tr><td>RESULT_CODE_401</td><td>unauthorized</td><td>Authentication failure. This can also be caused by IP lockdown
+                  settings</td></tr><tr><td>RESULT_CODE_402</td><td>payment required</td><td>Not enough credit to send message</td></tr><tr><td>RESULT_CODE_404</td><td>not found</td><td>Resource does not exist</td></tr><tr><td>RESULT_CODE_405</td><td>method not allowed</td><td>Http method is not support on the resource</td></tr><tr><td>RESULT_CODE_410</td><td>gone</td><td>Mobile number is blocked</td></tr><tr><td>RESULT_CODE_429</td><td>too many requests</td><td>Generic rate limiting error</td></tr><tr><td>RESULT_CODE_503</td><td>service unavailable</td><td>A temporary error has occurred on our platform - please retry</td></tr></tbody></table></div></div><br class="table-break"></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10521"></a>1.44.2.&nbsp;Inbound SMS service</h3></div></div></div><p><a name="para_ob1_y4h_5v"></a>The Web API supports collecting incoming SMS messages using the
+        POST method. Incoming messages routed towards the DHIS2 Web API can be received using this
+        API. The API collects inbound SMS messages and provides it to&#8232; listeners for parsing, based
+        on the SMS content (SMS Command). An example payload in JSON format is given below. Text,
+        originator, received date and sent date are mandatory parameters. The rest are optional but
+        the system will use the default value for these parameters.</p><pre class="screen">/api/24/sms/inbound</pre><pre class="screen">{
+  "text": "sample text",
+  "originator": "47XXXXXXXX",
+  "gatewayid": "unknown",
+  "receiveddate": "2016-05-01",
+  "sentdate":"2016-05-01",
+  "smsencoding": "1",
+  "smsstatus":"1"          
+}</pre><p>The Web API also supports a query parameter-based version.</p><pre class="screen">/api/24/sms/inbound?message=text&amp;originator=47XXXXXX&amp;gateway=clickatel</pre><div class="table"><a name="d0e10534"></a><p class="title"><b>Table&nbsp;1.82.&nbsp;User query parameters</b></p><div class="table-contents"><table class="table" summary="User query parameters" border="1"><colgroup><col class="c1"><col class="newCol2"><col class="c2"></colgroup><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>message</td><td>String</td><td>This is mandatory parameter which carries the actual text message.</td></tr><tr><td>originator</td><td>String</td><td>This is mandatory parameter which shows by whom this message was actually sent
+                from.</td></tr><tr><td>gateway</td><td>String</td><td>This is an optional parameter which gives gateway id. If not present default
+                text "UNKNOWN" will be stored</td></tr><tr><td>receiveTime</td><td>Date</td><td>This is an optional parameter. It is timestamp at which message was received at
+                the gateway.</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10578"></a>1.44.3.&nbsp;Gateway service administration</h3></div></div></div><p>The Web API exposes resources which provide a way to configure and update SMS gateway
+        configurations.</p><p>The list of different gateways configured can be retrieved using a GET method.</p><pre class="screen">GET /api/24/sms/gateways</pre><p>Configurations can also be retrieved for a specific gateway type using GET
+        method.</p><pre class="screen">GET /api/24/sms/gateways/{uid}</pre><p>Configurations can be removed for specific gateway type using DELETE method.</p><pre class="screen">DELETE /api/24/sms/gateways/{uid}</pre><p>Default gateway can be retrieved with the GET method.</p><pre class="screen">GET /api/24/sms/gateways/default</pre><p>Default gateway can be set using the PUT method.</p><pre class="screen">PUT /api/24/sms/gateways/default/{uid}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10603"></a>1.44.4.&nbsp;Gateway configuration</h3></div></div></div><p>The Web API lets you create and update gateway configurations. For each type of gateway
+        there are different parameters in the JSON payload. Sample JSON payloads for each gateway
+        are given below. POST is used to create and PUT to update configurations. </p><p><span class="italic">Clickatell</span></p><pre class="screen">{
+  "name" : "clickatell",
+  "username": "clickatelluser",
+  "password": "abc123",
+  "Auth-token": "XXXXXXXXXXXXXXXXXXXX",
+}</pre><p><span class="italic">Bulksms</span></p><pre class="screen">{ 
+  "name": "bulkSMS",
+  "username": "bulkuser",
+  "password": "abc123",
+}</pre><p><span class="italic">GenericHttp</span></p><pre class="screen">{
+  "name" : "generic",
+  "messageParameter": "message",
+  "recipientParameter": "msisdn",
+  "urlTemplate": "http://localhost:template",
+  "parameters": [
+    {
+      "key": "username",
+      "value": "user12"
+      "classified": "false"
+    },
+    {
+      "key": "password",
+      "value": "XXX"
+      "classified": "true"
+    }
+  ]
+}</pre><p>HTTP.OK will be returned if configurations are saved successfully. In all other cases HTTP.ERROR will be retured.</p><p>The various gateway configurations can be instantiated using the endpoints listed
+        below.</p><div class="table"><a name="d0e10627"></a><p class="title"><b>Table&nbsp;1.83.&nbsp;Gateway api end points</b></p><div class="table-contents"><table class="table" summary="Gateway api end points" border="1"><colgroup><col class="c1"><col class="newCol2"><col class="c2"></colgroup><thead><tr><th>Gatway Type</th><th>Method</th><th>API End Points</th></tr></thead><tbody><tr><td>Clickatell</td><td>POST/PUT</td><td>/api/sms/gateways/clickatell</td></tr><tr><td>Bulksms</td><td>POST/PUT</td><td>/api/sms/gateways/bulksms</td></tr><tr><td>Generichttp</td><td>POST/PUT</td><td>/api/sms/gateways/generichttp</td></tr></tbody></table></div></div><br class="table-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s43.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s45.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.43.&nbsp;Translations&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.45.&nbsp;SMSCommand</td></tr></table></div></body></html>

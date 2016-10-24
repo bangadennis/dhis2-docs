@@ -1,0 +1,74 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2.2.&nbsp;Creating Apps</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch02.html" title="Chapter&nbsp;2.&nbsp;Apps"><link rel="prev" href="ch02.html" title="Chapter&nbsp;2.&nbsp;Apps"><link rel="next" href="ch02s03.html" title="2.3.&nbsp;Installing Apps into DHIS2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.2.&nbsp;Creating Apps</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;2.&nbsp;Apps</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e14015"></a>2.2.&nbsp;Creating Apps</h2></div></div></div><p>DHIS2 apps are constructed with HTML, JavaScript and CSS files, similar to any other web
+      application. Apps also need a special file called <span class="italic">manifest.webapp</span> which describes the contents of the app. This file should be in
+      the format specified by the <a class="link" href="http://www.w3.org/2008/webapps/manifest/" target="_top">W3C
+        Manifest for Web Applications</a>. A basic example of the <span class="italic">manifest.webapp</span> is shown below:</p><p>
+      </p><pre class="screen">{
+    "version": "0.1",
+    "name": "My App",
+    "description": "My App is a Packaged App",
+    "launch_path": "/index.html",
+    "appType": "APP",
+    "icons": {
+        "16": "/img/icons/mortar-16.png",
+        "48": "/img/icons/mortar-48.png",
+        "128": "/img/icons/mortar-128.png"
+    },
+    "developer": {
+        "name": "Me",
+        "url": "http://me.com"
+    },
+    "default_locale": "en",
+    "activities": {
+        "dhis": {
+            "href": "*",
+            "namespace": "my-namespace"
+        }
+    }
+}</pre><p>
+    </p><p>The <span class="italic">manifest.webapp</span> file must be located at the root of
+      the project. Among the properties are:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The <span class="italic">icons&#8594;48</span> property is used for the icon that is
+          displayed on the list of apps that are installed on a DHIS2 instance.</p></li><li class="listitem"><p>The <span class="italic">activities</span> property is an dhis-specific
+          extension meant to differentiate between a standard Open Web App and an app that can be
+          installed in DHIS2. </p></li><li class="listitem"><p>The <span class="italic">*</span> value for <span class="italic">href</span> is converted to the appropriate URL when the app is uploaded and
+          installed in DHIS2. This value can then be used by the application's JavaScript and
+          HTML files to make calls to the DHIS2 Web API and identify the correct location of DHIS2
+          server on which the app has been installed. To clarify, the <span class="italic">activities</span> part will look similar to this after the app has been
+          installed:</p></li></ul></div><pre class="screen">"activities": {
+    "dhis": {
+        "href": "http://apps.dhis2.org/demo",
+        "namespace": "my-namespace"
+    }
+ }</pre><p>The namespace property can be added if your app is utilizing the dataStore or
+      userDataStore api. When adding the namespace property, only users with access to your app are
+      allowed to make changes to the namespace. A namespace can only be reserved in this way once.
+      If another app tries to reserve a namespace already in use, the installation of the other app
+      will fail.</p><p>If you have a collection of apps that want to share the same namespace, but also wish to
+      reserve it, the users of the apps needs to have the authority to use the app that initially
+      reserved the namespace.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Namespaces will not be created until atleast one key-value pair is present in the
+        namespace. Specifying a namespace in the manifest only restricts the access and does not
+        create any data in the namespace.</p></td></tr></table></div><p>The <span class="emphasis"><em>appType</em></span> property specifies how the app will be displayed by the
+      DHIS2 instance. The possible values for appType and their effects are explained in the
+      following table.</p><p>
+      </p><div class="table"><a name="d0e14084"></a><p class="title"><b>Table&nbsp;2.1.&nbsp;App types</b></p><div class="table-contents"><table class="table" summary="App types" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>App type</th><th>Description</th></tr></thead><tbody><tr><td>APP</td><td>Will be listed in the "apps" menu</td></tr><tr><td>DASHBOARD_WIDGET</td><td>Available from the search box on the dashboard, can be added as an item on any
+                dashboard</td></tr><tr><td>TRACKER_DASHBOARD_WIDGET</td><td>Can be embedded in the tracker dashboard <span class="emphasis"><em>(this type is not yet
+                  supported)</em></span></td></tr><tr><td>RESOURCE</td><td>Resource apps are packages that can be shared by multiple other apps. These
+                apps are not shown anywhere in the UI, except from in the app management
+                app.</td></tr></tbody></table></div></div><p><br class="table-break">
+    </p><p>If no <span class="emphasis"><em>appType</em></span> is specified in the manifest, the system will use "APP"
+      by default.</p><p>To read the JSON structure into JavaScript, you can use a regular AJAX request and parse
+      the JSON into an object. Most Javascript libraries provide some support, for instance with
+      jQuery it can be done like this:</p><pre class="screen">$.getJSON( "manifest.webapp", function( json ) {
+    var apiBaseUrl = json.activities.dhis.href + "/api";
+} );</pre><p>The app can contain HTML, JavaScript, CSS, images and other files which may be required to
+      support it . The file structure could look something like this:</p><pre class="screen">/
+/manifest.webapp    #manifest file (mandatory)
+/css/               #css stylesheets (optional)
+/img/               #images (optional)
+/js/&nbsp;               #javascripts (optional)</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>It is only the <code class="filename">manifest.webapp</code> file which must be placed in the
+        root. It is up the developer to organize CSS, images and JavaScript files inside the app as
+        needed.</p></td></tr></table></div><p>All the files in the project should be compressed into a standard zip archive. Note that
+      the manifest.webapp file must be located on the root of the zip archive (do not include a
+      parent directory in the archive). The zip archive can then be installed into DHIS2 as you
+      will see in the next section.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch02.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;2.&nbsp;Apps&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;2.3.&nbsp;Installing Apps into DHIS2</td></tr></table></div></body></html>

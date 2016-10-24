@@ -1,0 +1,31 @@
+body {
+    margin: 10px;
+}
+
+#gsc-iw-id1{
+	height: 30px;
+	border-color: #898989;
+}
+
+input.gsc-search-button-v2{
+	width: 71px;
+	height: 29px;
+}
+
+
+.gsc-search-button
+{
+    background-color: #1a4195;
+    border-radius: 5px;
+
+}
+
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+    background-color: #1a4195 !important;
+    background-image: url("https://www.google.com/uds/css/v2/search_box_icon.png") !important;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 16px !important;
+    border-color: #1a4195 !important;
+    filter: none;
+}

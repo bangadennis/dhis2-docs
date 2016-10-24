@@ -1,0 +1,34 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>20.13.&nbsp;Metadata Synchronization Scheduling</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="data_admin.html" title="Chapter&nbsp;20.&nbsp;Data Administration"><link rel="prev" href="dataAdmin_dataSync.html" title="20.12.&nbsp;Data synchronization"><link rel="next" href="ch21.html" title="Chapter&nbsp;21.&nbsp;Settings"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">20.13.&nbsp;Metadata Synchronization
+      Scheduling</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="dataAdmin_dataSync.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;20.&nbsp;Data
+    Administration</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch21.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="dataAdmin_metaDataSync"></a>20.13.&nbsp;Metadata Synchronization
+      Scheduling</h2></div></div></div><p>DHIS2 provides a feature for synchronizing meta data from a remote instance to a local
+      instance of DHIS2. This can be useful when you have deployed multiple stand-alone instances of
+      DHIS2 and you need to create meta data in all the local instances similar to the central DHIS2
+      instance.</p><p>These are the steps to enable meta data synchronization:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Go to Settings &gt; Synchronization, enter the remote server URL, username and
+          password and click Save.</p></li><li class="listitem"><p>Go to Metadata administration &gt; Scheduling. Under Metadata synchronization set
+          strategy to Enabled, select the time-period and click Start.</p></li></ul></div><p>Some aspects of the meta data synchronization feature to be aware of:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The local DHIS2 instance will store the password of the user account of the remote
+          instance in its database. The remote user account is used for authentication when
+          transferring/downloading data. For security purposes make sure you set the
+          "encryption.password" configuration parameter in hibernate.properties to a
+          strong password.</p></li><li class="listitem"><p>Deploying the remote server on SSL/HTTPS is strongly recommended as the username and
+          password are sent in clear text using basic authentication and could be intercepted by an
+          attacker.</p></li><li class="listitem"><p>Also ensure that the remote user is not having ALL authority, instead simply create a
+          user with F_METADATA_MANAGE authority so that even if these details are intercepted by a
+          hacker, one cannot have full control of the remote system.</p></li><li class="listitem"><p>The meta data synchronization relies on the underlying import layer. Each meta data
+          version is an export of meta data between two given timestamps. Each sync of meta data
+          version is an attempt to import that meta data snapshot into the local instance. The sync
+          of versions is incremental. The local instance will try to download the meta data versions
+          from the central instance one after the other. Failure to sync a specific meta data
+          version will not let the sync proceed to further versions. In case of failures,
+          appropriate changes must be made to meta data at central to ensure that the error gets
+          resolved. Metadata configuration is critical and the configurator should be careful while
+          rolling out the updates to the production. It's always recommended to have staging
+          environments in place to ensure the sanity of the meta data versions and their impact
+          thereafter. The local instance will sync the meta data from first version so that harmony
+          is maintained and local and central instance will work appropriately.</p></li><li class="listitem"><p>The system will attempt a synchronization at the scheduled time. If the local or
+          remote server does not have a working Internet connection at the time, the synchronization
+          will be aborted and re-attempted after as per the retry count as mentioned in the
+          dhis.conf file.</p></li><li class="listitem"><p>You can see the time of last successful synchronization with remote server in the
+          scheduling screen next to the "Last success" label.</p></li></ul></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="dataAdmin_dataSync.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="data_admin.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch21.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">20.12.&nbsp;Data synchronization&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;21.&nbsp;Settings</td></tr></table></div></body></html>

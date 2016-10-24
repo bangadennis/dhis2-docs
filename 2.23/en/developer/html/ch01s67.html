@@ -1,0 +1,55 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.67.&nbsp;User data store</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s66.html" title="1.66.&nbsp;Data store"><link rel="next" href="ch01s68.html" title="1.68.&nbsp;Metadata repository"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.67.&nbsp;User data store</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s66.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s68.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e12740"></a>1.67.&nbsp;User data store</h2></div></div></div><p>In addition to the <span class="emphasis"><em>dataStore</em></span> which is shared between all users of the
+      system, a user-based data store is also available. Data stored to the
+        <span class="emphasis"><em>userDataStore</em></span> is associated with individual users, so that each user
+      can have different data on the same namespace and key combination. All calls against the
+        <span class="emphasis"><em>userDataStore</em></span> will be associated with the logged in user. This means
+      one can only see, change, remove and add values associated with the currently logged in
+      user.</p><pre class="screen">/api/userDataStore</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12756"></a>1.67.1.&nbsp;User data store structure</h3></div></div></div><p><span class="emphasis"><em>userDataStore</em></span> consists of a user, a namespace, keys and associated
+        values. The combination of user, namespace and key is unique.</p><div class="table"><a name="d0e12763"></a><p class="title"><b>Table&nbsp;1.94.&nbsp;User data store structure</b></p><div class="table-contents"><table class="table" summary="User data store structure" border="1"><colgroup><col class="newCol1"><col class="c1"><col class="c2"></colgroup><thead><tr><th>Item</th><th>Description</th><th>Data Type</th></tr></thead><tbody><tr><td>User</td><td>The user this data is associated with</td><td>String</td></tr><tr><td>Namespace</td><td>The namespace the key belongs to</td><td>String</td></tr><tr><td>Key</td><td>The key a value is stored on</td><td>String</td></tr><tr><td>Value</td><td>The value stored</td><td>JSON</td></tr><tr><td>Encrypted</td><td>Indicates whether the value should be encrypted</td><td>Boolean</td></tr></tbody></table></div></div><p><br class="table-break"></p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12814"></a>1.67.2.&nbsp;Get namespaces</h3></div></div></div><p>Returns an array of all existing
+        namespaces</p><pre class="screen">GET /api/userDataStore</pre><p>Example
+        request:</p><pre class="screen">curl -X GET -H "Content-Type: application/json" -u admin:district "play.dhis2.org/api/userDataStore" -v</pre><p>
+        </p><pre class="screen">[
+  "foo",
+  "bar"
+]</pre><p>
+      </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12830"></a>1.67.3.&nbsp;Get keys</h3></div></div></div><p>Returns an array of all existing keys in a given
+        namespace</p><pre class="screen">GET /api/userDataStore/&lt;namespace&gt;</pre><p>Example request:</p><p>
+        </p><pre class="screen">curl -X GET -H "Content-Type: application/json" -u admin:district "play.dhis2.org/api/userDataStore/foo" -v</pre><p>
+        </p><pre class="screen">[
+  "key_1",
+  "key_2"
+]</pre><p>
+      </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12847"></a>1.67.4.&nbsp;Get value</h3></div></div></div><p>Returns the value for a given namespace and
+        key</p><pre class="screen">GET /api/userDataStore/&lt;namespace&gt;/&lt;key&gt;</pre><p>Example
+        request:</p><pre class="screen">curl -X GET -H "Content-Type: application/json" -u admin:district "play.dhis2.org/api/userDataStore/foo/bar"</pre><pre class="screen">{
+  "some": "value"
+}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12860"></a>1.67.5.&nbsp;Add new value</h3></div></div></div><p>Adds a new value to a given key in a given
+        namespace.</p><pre class="screen">POST /api/userDataStore/&lt;namespace&gt;/&lt;key&gt;</pre><p>Example
+        request:</p><pre class="screen">curl -X POST -H "Content-Type: application/json" -u admin:district -d "['some value']" "play.dhis2.org/api/userDataStore/foo/bar"</pre><pre class="screen">{
+  "httpStatus": "Created",
+  "httpStatusCode": 201,
+  "status": "OK",
+  "message": "Key 'bar' in namespace 'foo' created."
+}</pre><p>If you require the value to be encrypted (For example user credetials and such) you can
+        append a query to the url like
+        this:</p><pre class="screen">GET /api/userDataStore/&lt;namespace&gt;/&lt;key&gt;?encrypt=true</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12877"></a>1.67.6.&nbsp;Update existing value</h3></div></div></div><p>Updates an existing
+        value</p><pre class="screen">PUT /api/userDataStore/&lt;namespace&gt;/&lt;key&gt;</pre><p>Example
+        request:</p><pre class="screen">curl -X PUT -H "Content-Type: application/json" -u admin:district -d "['new value']" "play.dhis2.org/api/userDataStore/foo/bar"</pre><pre class="screen">{
+  "httpStatus":"Created",
+  "httpStatusCode":201,
+  "status":"OK",
+  "message":"Key 'bar' in namespace 'foo' updated."
+}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12890"></a>1.67.7.&nbsp;Delete key</h3></div></div></div><p>Delete a key</p><pre class="screen">DELETE /api/userDataStore/&lt;namespace&gt;/&lt;key&gt;</pre><p>Example
+        request:</p><pre class="screen">curl -X DELETE -u admin:district "play.dhis2.org/api/userDataStore/foo/bar"</pre><pre class="screen">{
+  "httpStatus":"OK",
+  "httpStatusCode":200,
+  "status":"OK",
+  "message":"Key 'bar' deleted from the namespace 'foo."}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e12903"></a>1.67.8.&nbsp;Delete namespace</h3></div></div></div><p>Delete all keys in the given
+        namespace</p><pre class="screen">DELETE /api/userDataStore/&lt;namespace&gt;</pre><p>Example
+        request:</p><pre class="screen">curl -X DELETE -u admin:district "play.dhis2.org/api/userDataStore/foo"</pre><pre class="screen">{
+  "httpStatus":"OK",
+  "httpStatusCode":200,
+  "status":"OK",
+  "message":"All keys from namespace 'foo' deleted."}</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s66.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s68.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.66.&nbsp;Data store&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.68.&nbsp;Metadata repository</td></tr></table></div></body></html>

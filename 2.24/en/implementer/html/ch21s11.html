@@ -1,0 +1,18 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>21.11.&nbsp;Committing your changes back to GitHub</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_implementation_guide.html" title="DHIS2 Implementation Guide"><link rel="up" href="ch21.html" title="Chapter&nbsp;21.&nbsp;DHIS2 Documentation Guide"><link rel="prev" href="ch21s10.html" title="21.10.&nbsp;Building the documentation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">21.11.&nbsp;Committing your changes back to GitHub</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch21s10.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;21.&nbsp;DHIS2 Documentation Guide</th><td width="20%" align="right">&nbsp;</td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="docs_10"></a>21.11.&nbsp;Committing your changes back to GitHub</h2></div></div></div><p>Once you have finished editing your document, you will need to commit your changes back to
+      GitHub. Open up a command prompt on Windows or a shell on Linux, and navigate to the folder
+      where you have placed your documentation. If you have added any new files or folders to your
+      local repository, you will need to add them to the source tree with the <span class="command"><strong>git add
+      </strong></span> command, followed by the folder or file name(s) that you have added. Be sure to
+      include a descriptive comment with your commit. </p><div class="cmdsynopsis"><p><code class="command">git commit </code>  [-m] ["Improved documentation on organisation unit imports with CSV."]</p></div><p>Finally, you should push the changes back to the repository with <span class="command"><strong>git
+        push origin mybranch</strong></span>, where "mybranch" is the name of the branch which you created
+      when you checked out the document source or which you happent o be working on.  In order to do
+      this, you will need the necessary permissions to commit to the repository.When you have
+      committed your changes, <a class="link" href="https://github.com/dhis2/dhis2-docs/pulls" target="_top">you can issue a pull request</a>
+      to have them merged with the master branch. You changes will be reviewed by the core
+      documentation team and tested to ensure they do not break the build, as well as reviwed for
+      quality.  As mentioned previously, you can also push your changes to your own GitHub repo, if
+      you do not have access to the main repo, and submit a pull request for your changes to be
+      merged.</p><p>If you have any questions, or cannot find that you can get started, just send an email
+with your problem to <code class="email">&lt;<a class="email" href="mailto:dhis2-documenters@lists.launchpad.net">dhis2-documenters@lists.launchpad.net</a>&gt;</code>.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch21s10.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch21.html">Up</a></td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top">21.10.&nbsp;Building the documentation&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_implementation_guide.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></table></div></body></html>

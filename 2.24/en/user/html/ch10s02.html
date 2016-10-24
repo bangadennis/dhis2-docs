@@ -1,0 +1,390 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>10.2.&nbsp;Manage data sets and data entry forms</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User Manual"><link rel="up" href="ch10.html" title="Chapter&nbsp;10.&nbsp;Using the Maintenance app"><link rel="prev" href="ch10.html" title="Chapter&nbsp;10.&nbsp;Using the Maintenance app"><link rel="next" href="ch10s03.html" title="10.3.&nbsp;Manage indicators"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10.2.&nbsp;Manage
+        data sets and
+        data
+        entry forms</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;10.&nbsp;Using the Maintenance app</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch10s03.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4340"></a>10.2.&nbsp;Manage
+        data sets and
+        data
+        entry forms</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4349"></a>10.2.1.&nbsp;About data sets and data entry forms</h3></div></div></div><p>All data entry in DHIS2 is organised in data sets. A data set is a collection of data
+            elements grouped together for data entry and data export between instances of DHIS2. To
+            use a data set to collect data for a specific organisation unit, you must assign the
+            organisation unit to the data set. Once you have assigned the data set to an
+            organisation unit,
+            that
+            data set is available in the <span class="bold"><strong>Data
+                entry</strong></span> app. Only the organisation units that you have assigned the data
+            set to can use the data set for data entry.</p><p>A category combination can link to both data elements and data sets. If you use a
+            category combination for a data set, the category combinations is applicable for the
+            whole form. This means that you can use categories to capture information which is
+            common to an entire form, for example the name of the a project or grant. When a data
+            set is linked to a category combination, those categories will be displayed as drop-down
+            boxes in the <span class="bold"><strong>Data entry</strong></span> app. Data captured in the form
+            will then be linked to the selected category options from those drop-down boxes. For
+            information about how to create categories and category combinations,
+            see
+            section "Manage data elements and categories". Make sure that you set
+            the type of categories and category combinations to "Attribute". </p><div class="example"><a name="d0e4370"></a><p class="title"><b>Example&nbsp;10.5.&nbsp;Categories for data sets</b></p><div class="example-contents"><p>An scenario for when categories are useful is when you need to capture a data
+                entry form for a implementing partner organisation and a project. In that
+                case:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create category options and categories for all partner organisations and
+                        projects and link them in a new category combination.</p></li><li class="listitem"><p>Assign the category combination to the data set (form) for which you need
+                        to capture this information.</p><p>When opening this data set in data entry module, the partner organisation
+                        and project categories will automatically be rendered as drop-down boxes,
+                        allowing you to select a specific implementing partner organisation and
+                        project before continuing to do data entry.</p></li></ol></div></div></div><br class="example-break"><p>You create and edit data sets in the <span class="bold"><strong>Maintenance</strong></span> app.
+            Here you define, for example, which data elements you want to include in the data set
+            and the data collection frequency.</p><p>You enter data in the <span class="bold"><strong>Data entry</strong></span> app. The <span class="bold"><strong>Data entry</strong></span> app uses data entry forms to display the data
+            sets. There are three types of data entry forms:</p><div class="table"><a name="d0e4399"></a><p class="title"><b>Table&nbsp;10.4.&nbsp;Data entry form types</b></p><div class="table-contents"><table class="table" summary="Data entry form types" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>Data
+                            entry form
+                            type</th><th>Description</th></tr></thead><tbody><tr><td>
+                            <p>Default form</p>
+                        </td><td>
+                            <p>Once you have assigned a data set to an organisation unit, a
+                                default form is created automatically. The default form is then
+                                available in the <span class="bold"><strong>Data entry</strong></span> app for
+                                the organisation units you have assigned it to.</p>
+                            <p>A default form consist of a list of the data elements belonging to
+                                the data set together with a column
+                                for
+                                inputting the values. If your data set contains
+                                data elements with a non-default category combination, for example
+                                age groups or gender, additional columns are automatically created
+                                in the default form based on the different
+                                categories.</p>
+                            <p>If you use more than one category combination you get multiple
+                                columns in the default form with different column headings for the
+                                options.</p>
+                        </td></tr><tr><td>
+                            <p>Section
+                                form</p>
+                        </td><td>
+                            <p>If the default form doesn't meet your needs, you can modify it to
+                                create a section form. Section forms give you more flexibility when
+                                it comes to using tabular forms.</p>
+                            <p>In a section form you can, for example, create multiple tables
+                                with subheadings and disable (grey out) cells in a table.</p>
+                            <p>When you have added a section form to a data set, the section form
+                                is available in the <span class="bold"><strong>Data entry</strong></span>
+                                app.</p>
+                        </td></tr><tr><td>
+                            <p>Custom form</p>
+                        </td><td>
+                            <p>If the form you want to design is too complicated for default or
+                                section forms, you can create a custom form. A custom form takes
+                                more time to create than a section form, but you have full control
+                                over the design.</p>
+                            <p>You can, for example, mimic an existing paper aggregation form
+                                with a custom form. This makes data entry easier, and should reduce
+                                the number incorrectly entered data elements.</p>
+                            <p>When you have added a custom form to a data set, the custom form
+                                is available in the <span class="bold"><strong>Data entry</strong></span>
+                                app.</p>
+                        </td></tr></tbody></table></div></div><br class="table-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note: A data set can have both section and custom forms"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">A data set can have both section and custom forms</th></tr><tr><td align="left" valign="top"><p>If a data set has both a section form and a custom form, the system displays the
+                custom form during data entry. Users who enter data can't select which form they
+                want to use. In web-based data entry the order of display preference is:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Custom form (if it exists)</p></li><li class="listitem"><p>Section form (if it exists)</p></li><li class="listitem"><p>Default form</p></li></ol></div><p>Mobile devices do not support custom forms. In mobile-based data entry the order
+                of display preference is:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Section form (if it exists)</p></li><li class="listitem"><p>Default form</p></li></ol></div></td></tr></table></div><p>In the <span class="bold"><strong>Maintenance</strong></span> app, you manage the following data
+            set
+            objects:</p><div class="table"><a name="d0e4530"></a><p class="title"><b>Table&nbsp;10.5.&nbsp;Data set objects in the Maintenance app</b></p><div class="table-contents"><table class="table" summary="Data set objects in the Maintenance app" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                            <p>Object type</p>
+                        </th><th>
+                            <p>Available functions</p>
+                        </th></tr></thead><tbody><tr><td>
+                            <p>Data set</p>
+                        </td><td>
+                            <p>Create, assign to organisation units, edit, clone, share, delete,
+                                show details and translate</p>
+                            <p>Edit compulsory data elements</p>
+                            <p>Add and remove multiple data sets to organisation units at
+                                once</p>
+                        </td></tr><tr><td>
+                            <p>Section form</p>
+                        </td><td>
+                            <p>Create, edit and manage grey fields</p>
+                        </td></tr><tr><td>
+                            <p>Section</p>
+                        </td><td>
+                            <p>Change display order, delete and translate</p>
+                        </td></tr><tr><td>
+                            <p>Custom form</p>
+                        </td><td>
+                            <p>Create, edit and script</p>
+                        </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4599"></a>10.2.2.&nbsp;Workflow</h3></div></div></div><p>You need to have data elements and categories to create data sets and data entry
+            forms.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create a data set.</p></li><li class="listitem"><p>Assign the data set to organisation units.</p><p>A default form is created automatically.</p></li><li class="listitem"><p>Create a section form or a custom form.</p><p>Now you can register data in the <span class="bold"><strong>Data entry</strong></span>
+                    app.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4623"></a>10.2.3.&nbsp;Create a data
+            set</h3></div></div></div><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/datasets/data_set_create.png" align="middle" width="100%"></td></tr></table></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>Click the add button.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Name</strong></span>
+                    field,
+                    type the precise
+                    name
+                    of the data set.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Short name</strong></span> field, define a short name
+                    for the data set.</p><p>Typically, the short name is an abbreviation of the full data set name. This
+                    attribute is often used to display the name of the data set where space is
+                    limited.</p></li><li class="listitem"><p>(Optional) In the <span class="bold"><strong>Code</strong></span> field, assign a
+                    code.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Description</strong></span> field, type a description
+                    of the data set.</p></li><li class="listitem"><p>Enter the number of <span class="bold"><strong>Expiry days</strong></span>.</p><p>The number of expiry days controls for how long it should be possible to enter
+                    data
+                    in
+                    the <span class="bold"><strong>Data entry</strong></span> app for this
+                    data set. Expiry days refer to the number of days after the end date of the
+                    selected data entry period where the data entry form should be open for entry.
+                    After the number of days has expired, the data set will be locked for further
+                    entry.</p><p>You can set manual exceptions to this using the lock exception functionality
+                    in
+                    the <span class="bold"><strong>Data Administration</strong></span>
+                    app.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>To allow data entry into all possible historical time periods, set the
+                        number of expiry days to zero.</p></td></tr></table></div></li><li class="listitem"><p>If you want it to be possible to enter data for future periods, type the
+                    number of periods in the <span class="bold"><strong>Open future periods for data
+                        entry</strong></span> field.</p><p>The value is the number of future periods which are available for data
+                    entry.</p><div class="example"><a name="d0e4720"></a><p class="title"><b>Example&nbsp;10.6.&nbsp;Open future periods for data entry</b></p><div class="example-contents"><p>For a monthly data set a value of 2 allows you to enter data for 2 months
+                        in advance. This is useful for, by example, population, target and planning
+                        data.</p></div></div><br class="example-break"></li><li class="listitem"><p>In the <span class="bold"><strong>Days after period to qualify for timely
+                        submission</strong></span> field, type the number of days in which data can be
+                    entered to be considered reported on time.</p><p>To verify the number of timely reports submitted, go to <span class="bold"><strong>Reports</strong></span> &gt; <span class="bold"><strong>Reporting rate
+                        summary</strong></span>.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Period type</strong></span>.</p><p>The period type defines the frequency of reporting for the particular data
+                    set. The frequency can for example be daily, quarterly or yearly.</p></li><li class="listitem"><p>Select a
+                        <span class="bold"><strong>Category combination</strong></span> to assign it
+                    to the data set.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Complete notification recipients</strong></span> list,
+                    select a user group that should receive a message when the data set is marked as
+                    complete in the <span class="bold"><strong>Data entry</strong></span> app.</p><p>The message is delivered through the DHIS2 messaging system.</p></li><li class="listitem"><p>If you want the user who entered the data to receive a message when the data
+                    set is marked as complete in the <span class="bold"><strong>Data entry</strong></span>
+                    app, select <span class="bold"><strong>Send notification to completing
+                        user</strong></span>.</p><p>The message is delivered through the DHIS2 messaging system.</p></li><li class="listitem"><p>If applicable,
+                    select,
+                    a <span class="bold"><strong>Data approval workflow</strong></span>.</p></li><li class="listitem"><p>If you want it to be possible to use the data set within the Java mobile DHIS
+                    2 application, select <span class="bold"><strong>Enable for Java mobile
+                        client</strong></span>.</p></li><li class="listitem"><p>If you want it to be mandatory to fill all values for a data element
+                    in
+                    data entry if one or more values have been filled, select
+                        <span class="bold"><strong>All fields for data elements
+                    required</strong></span>.</p><p>This means that if you enter one data value for a data element in an entry
+                    field (that is for a category option combination), then you must enter data for
+                    all fields belonging to that data element (that is all category option
+                    combinations).</p></li><li class="listitem"><p>If you want it to be possible to mark a data entry form as complete only if
+                    the validation of that form is successful, select <span class="bold"><strong>Complete
+                        allowed only if validation passes</strong></span>.</p><p>If you select this option, you can't mark the form as complete if validation
+                    fails.</p></li><li class="listitem"><p>If you want it to be mandatory that any missing values require a comment to
+                    justify their absence, select <span class="bold"><strong>Missing values requires
+                        comment on complete</strong></span>.</p></li><li class="listitem"><p>(Optional) Select a <span class="bold"><strong>Legend set</strong></span>.</p></li><li class="listitem"><p>If applicable, select <span class="bold"><strong>Skip offline</strong></span>. </p><p>This option controls whether this data entry form should be downloaded and
+                    saved in the user's web browser. Normally you shouldn't select <span class="bold"><strong>Skip offline</strong></span>. This is the default setting. If you
+                    have forms which are rarely used and are very big you can consider selecting
+                    this option to speed up initial loading of the data entry module.</p></li><li class="listitem"><p>If applicable, select
+                        <span class="bold"><strong>Data element decoration</strong></span></p><p>If you select this option, descriptions of data elements render in call-outs
+                    in downloaded data sets in offline mode in the <span class="bold"><strong>Data
+                        entry</strong></span> app.</p></li><li class="listitem"><p>If applicable, select <span class="bold"><strong>Render sections as
+                    tabs</strong></span>.</p><p>This option is only applicable for section forms. The option allows you to
+                    render each section as a tab horizontally above the data set. This is useful for
+                    long data sets as it allows appropriate sections to be selected quickly without
+                    going through the entire form.</p></li><li class="listitem"><p>If applicable, select <span class="bold"><strong>Render
+                    vertically</strong></span>.</p><p>This option is only applicable for section forms.</p></li><li class="listitem"><p>Select data elements and assign them.</p></li><li class="listitem"><p>Select indicators and assign them.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li><li class="listitem"><p>Assign
+                    the data set to organisation units:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>In the list, find the data set you want to assign to organisation
+                            units.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Assign to
+                                organisation units</strong></span>.</p></li><li class="listitem"><p>In the organisation unit tree, select the organisation units you want
+                            to assign the data set to. The selected organisation units are marked in
+                            orange.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></li></ol></div><p>You can now use the data set in the <span class="bold"><strong>Data entry</strong></span> app
+            for the organisation units that you have assigned to and for periods according to the
+            selected frequency (period type).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4926"></a>10.2.4.&nbsp;Edit data
+            sets</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to modify.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Edit</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+                    want,
+                    for example add or remove data elements and indicators.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4970"></a>10.2.5.&nbsp;Clone data sets</h3></div></div></div><p>Cloning a data set can save time when you create many similar data sets.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to clone.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Clone</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+                    want.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5013"></a>10.2.6.&nbsp;Change sharing settings for data sets</h3></div></div></div><p>You can assign different rights to the data set based on user groups and user
+            roles.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the object you want to modify.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Share</strong></span>.</p></li><li class="listitem"><p>(Optional) Search for a user group and select it. The user group is added to
+                    the list.</p></li><li class="listitem"><p>Change the settings for the user groups you want to modify.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="bold"><strong>Can view</strong></span>: Everyone in the user group
+                            can view the object</p></li><li class="listitem"><p><span class="bold"><strong>Can edit</strong></span>: Everyone in the user group
+                            can view and edit the object</p></li></ul></div><p>The default setting is that everyone (<span class="bold"><strong>Public
+                        access</strong></span>) can view and edit objects.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5073"></a>10.2.7.&nbsp;Delete data sets and forms</h3></div></div></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="resources/images/admon/warning.png"></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>Any data set which is deleted from the system is irrevocably lost. All data entry
+                forms, and section forms which may have been developed will also be removed. Make
+                sure that you have made a backup of your database before deleting any data set in
+                case you need to restore it at some point in time.</p></td></tr></table></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the object you want to delete.</p></li><li class="listitem"><p>Click the options menu and select
+                        <span class="bold"><strong>Delete</strong></span>.</p><p>This deletes the data set and all associated data forms.</p></li><li class="listitem"><p>Click <span class="bold"><strong>OK</strong></span> to confirm.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5116"></a>10.2.8.&nbsp;Display details of data sets</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the object you want to view.</p></li><li class="listitem"><p>To display all metadata about the selected object, click the options menu and
+                    select <span class="bold"><strong>Show details</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5144"></a>10.2.9.&nbsp;Translate
+            data
+            sets</h3></div></div></div><p>DHIS2 provides functionality for translations of database content like data elements,
+            data element groups, indicators, indicator groups, validation rules and more. You can
+            translate these elements to any number of locales. A locale represents a specific
+            geographical, political, or cultural region.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="resources/images/admon/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>To activate a
+                translation,
+                go to <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Settings</strong></span> &gt; <span class="bold"><strong>Appearance</strong></span> and select a
+                language.</p></td></tr></table></div><p>To translate the name of a data set:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to translate.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Translate</strong></span>.</p></li><li class="listitem"><p>Select a locale.</p></li><li class="listitem"><p>Enter the required information.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5208"></a>10.2.10.&nbsp;Edit compulsory data elements in a data set</h3></div></div></div><p>You can add or remove data elements which will be marked as compulsory during data
+            entry.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Edit compulsory data
+                        elements</strong></span>.</p></li><li class="listitem"><p>Assign the compulsory data elements.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5247"></a>10.2.11.&nbsp;Download default data
+            forms
+            in PDF format</h3></div></div></div><p>You can download a default data from in PDF format for offline data entry.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                        <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the
+                    object
+                    you want to download.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Get
+                        PDF for data entry</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5287"></a>10.2.12.&nbsp;Manage section forms</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5290"></a>10.2.12.1.&nbsp;Create a section form</h4></div></div></div><p>Section forms are separated automatically by data element category combinations,
+                which produce a spreadsheet like data entry form for each section.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to create a section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage
+                            sections</strong></span>.</p></li><li class="listitem"><p>Click the add button.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Name</strong></span> field, type the name of the
+                        section.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Description</strong></span> field, type a
+                        description of the section.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Category
+                            combination</strong></span>.</p><p>
+                        </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can only use one category combination per section.</p></td></tr></table></div><p>
+                    </p></li><li class="listitem"><p>Select data elements and assign them.</p></li><li class="listitem"><p>(Optional) Sort the data elements within the section by using the up and
+                        down arrows to the left of the assigned data elements field.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li><li class="listitem"><p>Repeat
+                        add
+                        section steps for each section you want to have in your section form.</p><p>In the <span class="bold"><strong>Data entry</strong></span> app you can now use the
+                        section form. The section form appears automatically when sections are
+                        available for the selected data set. Data sets which have section forms will
+                        automatically display the section form.</p></li></ol></div><div class="example"><a name="d0e5378"></a><p class="title"><b>Example&nbsp;10.7.&nbsp;Section form example</b></p><div class="example-contents"><p>Note
+                    how
+                    each data element category has been separated into a separate section, and a
+                    data entry table has been automatically generated by the
+                    system. Use of section forms in combination with data element
+                    categories can drastically reduce the amount of time which is required to create
+                    data entry forms for data sets.</p><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/dhis2UserManual/section_form.png" align="middle" width="100%"></td></tr></table></div></div></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5393"></a>10.2.12.2.&nbsp;Edit a section form</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit the section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage
+                            sections</strong></span>.</p></li><li class="listitem"><p>In the list, find the section you want to edit.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Edit</strong></span>.</p></li><li class="listitem"><p>Edit the section and click <span class="bold"><strong>Save</strong></span>.</p></li><li class="listitem"><p>Repeat
+                        edit
+                        section steps for each section you want to edit.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5443"></a>10.2.12.3.&nbsp;Manage
+                grey fields in a section form</h4></div></div></div><p>You can disable data elements and category options for data entry. That means it
+                won&#8217;t be possible to enter data into these fields during data entry.</p><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/datasets/section_form_grey_fields.png" align="middle" width="100%"></td></tr></table></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit the section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage
+                            sections</strong></span>.</p></li><li class="listitem"><p>In the list, find the section you want to edit.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage grey
+                            fields</strong></span>.</p></li><li class="listitem"><p>Select which fields you want to disable.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5500"></a>10.2.12.4.&nbsp;Change section display order in a section form</h4></div></div></div><p>You can control in which order sections are displayed in a section form.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit the section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage
+                            sections</strong></span>.</p></li><li class="listitem"><p>In the list, find the section you want to move.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Move up</strong></span>
+                        or <span class="bold"><strong>Move down</strong></span>.</p><p>If the section you want to move is the first or last section in the list,
+                        you'll only see one of the move options.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5544"></a>10.2.12.5.&nbsp;Delete a section in a section form</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit the section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Manage
+                            sections</strong></span>.</p></li><li class="listitem"><p>In the list, find the section you want to delete.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Delete</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5581"></a>10.2.12.6.&nbsp;Translate a section in a section form</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data set</strong></span> &gt;
+                            <span class="bold"><strong>Data set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to edit the section form
+                        for.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Translate</strong></span>.</p></li><li class="listitem"><p>Select a locale.</p></li><li class="listitem"><p>Enter the required information.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Close</strong></span>.</p></li></ol></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5621"></a>10.2.13.&nbsp;Manage custom forms</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5624"></a>10.2.13.1.&nbsp;Create a custom
+                form</h4></div></div></div><p>You design custom forms in a built-in WYSIWYG HTML editor. If you select <span class="bold"><strong>Source</strong></span>, you can paste HTML code directly in the editing
+                area. For a complete guide on how to use the
+                editor,
+                refer to
+                    <a class="link" href="http://docs.ckeditor.com/" target="_top">http://docs.ckeditor.com/</a>.</p><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/datasets/data_set_custom_form_create.png" align="middle" width="100%"></td></tr></table></div></div><p>To create a custom form:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data
+                        set</strong></span>.</p></li><li class="listitem"><p>In the list, find the data set you want to add a custom form to.</p></li><li class="listitem"><p>Click the options menu and select <span class="bold"><strong>Design data entry
+                            form</strong></span>.</p></li><li class="listitem"><p>In the editing area, create the custom form.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Double-clik on a object in the left-hand list to insert it in the
+                                form.</p></li><li class="listitem"><p>If you already have the HTML code for your form, click <span class="bold"><strong>Source</strong></span> and paste the code.</p></li></ul></div></li><li class="listitem"><p>Select a <span class="bold"><strong>Form display style</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e5696"></a>10.2.13.2.&nbsp;Scripting
+                in custom forms</h4></div></div></div><p>In custom data entry form you can use
+                JavaScript
+                to create dynamic behavior and customizations. As an example, you can hide form
+                sections based on specific user input for data elements, or show specific
+                information when a form loads.</p><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e5708"></a>10.2.13.2.1.&nbsp;Events</h5></div></div></div><p>The DHIS2 data entry module provides a range of events which you can register
+                    for and use to perform actions at certain times. The events are registered on
+                    the
+                    document
+                    element. The jQuery event object and the data set identifier
+                    are always the first two arguments provided to the callback functions. The table
+                    below provides an overview of the events and when they are triggered.</p><div class="table"><a name="d0e5717"></a><p class="title"><b>Table&nbsp;10.6.&nbsp;Data entry events</b></p><div class="table-contents"><table class="table" summary="Data entry events" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>Key</th><th>Description</th><th>Arguments</th></tr></thead><tbody><tr><td>
+                                    <p>dhis2.de.event.formLoaded</p>
+                                </td><td>
+                                    <p>Triggered after the data entry form is rendered, but
+                                        before data values are set in entry fields.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.dataValuesLoaded</p>
+                                </td><td>
+                                    <p>Triggered after data values are set in entry
+                                        fields.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.formReady</p>
+                                </td><td>
+                                    <p>Triggered when the data entry form is completely rendered
+                                        and loaded with all elements.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.dataValueSaved</p>
+                                </td><td>
+                                    <p>Triggered when a data value is saved successfully.</p>
+                                </td><td>
+                                    <p>Event | Data set ID | Data value object</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.completed</p>
+                                </td><td>
+                                    <p>Triggered when a data set is successfully marked as
+                                        complete.</p>
+                                </td><td>
+                                    <p>Event | Data set ID | Complete registration object</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.uncompleted</p>
+                                </td><td>
+                                    <p>Triggered when a data set is successfully marked as
+                                        incomplete.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.validationSuccess</p>
+                                </td><td>
+                                    <p>Triggered when validation is done and there were no
+                                        violations.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.de.event.validationError</p>
+                                </td><td>
+                                    <p>Triggered when validation is done and there were one or
+                                        more violations.</p>
+                                </td><td>
+                                    <p>Event | Data set ID</p>
+                                </td></tr><tr><td>
+                                    <p>dhis2.ou.event.orgUnitSelected</p>
+                                </td><td>
+                                    <p>Triggered when one or more organisation units are selected
+                                        in the org unit web tree.</p>
+                                </td><td>
+                                    <p>Event | Org unit IDs | Org unit names | Sub org unit
+                                        IDs</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"><p>To register for an event:</p><pre class="screen">&lt;script type="text/javascript"&gt;
+
+dhis2.util.on( 'dhis2.de.event.formReady', function( event, ds ) {
+  console.log( 'The form with id: ' + ds + ' is loaded!' );
+} );
+
+dhis2.util.on( 'dhis2.de.event.dataValueSaved', function( event, ds, dv ) {
+  console.log( 'Data value: ' + dv.value + ' was saved with data element: ' + dv.de );
+} );
+
+dhis2.util.on( 'dhis2.de.event.completed', function( event, ds, cr ) {
+  console.log( 'Form was completed for org unit: ' + cr.ou );
+} );
+
+&lt;/script&gt;</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Be careful to only use "namespaced" events like the ones in the
+                        example above and not general ones like "click" as the
+                        dhis2.util.on method will unregister the event first.</p></td></tr></table></div><p>If your function only applies to certain data sets you can use the supplied
+                    data set identifier and shortcut your function for unwanted data sets like
+                    this:</p><pre class="screen">dhis2.de.on( 'dhis2.de.event.validationSuccess', function( event, ds ) {
+  if ( $.inArray( ds, ['utXOiGbEj14', 'Re7qzHEThSC'] ) == -1 ) {
+    return false;
+  }
+  console.log( 'Form with id: ' + ds + ' validated successfully!' );
+} );</pre><p>The identifiers of the input fields in the data entry form is on the format
+                    described below. This format can be used to select the input fields in your
+                    script and perform actions on
+                    them:</p><pre class="screen">&lt;dataelementid&gt;-&lt;optioncomboid&gt;-val</pre><p>Since the data set identifier is provided for all events a feasible
+                    alternative is to utilize the "files" Web API resource and keep your
+                    callback functions in a single file, where you let the JavaScript code take
+                    action based on which data set is currently loaded.</p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e5896"></a>10.2.13.2.2.&nbsp;Functions</h5></div></div></div><p>The DHIS2 data entry module contains JavaScript API functions which can be
+                    accessed from custom data entry forms.</p><p><span class="bold"><strong>dhis2.de.api.getSelections</strong></span>: This function
+                    returns a JavaScript object which contains properties for all dimensions with
+                    corresponding values for the identifiers of the selected options. It contains
+                    properties for "ds" (data set), "pe" (period), "ou" (organisation unit) and
+                    identifiers for all data set categories.</p><p>An example response looks like
+                    this:</p><pre class="screen">{
+ +  ds: "lyLU2wR22tC",
+ +  pe: "201605",
+ +  ou: "g8upMTyEZGZ",
+ +  LFsZ8v5v7rq: "CW81uF03hvV",
+ +  yY2bQYqNt0o: "yMj2MnmNI8L"
+ +}</pre><p>Example JavaScript usage of this
+                    function:</p><pre class="screen">var sel = dhis2.de.api.getSelections();
+ +var orgUnit = sel["ou"];
+ +var partner = sel["LFsZ8v5v7rq"];</pre></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch10s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;10.&nbsp;Using the Maintenance app&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;10.3.&nbsp;Manage indicators</td></tr></table></div></body></html>

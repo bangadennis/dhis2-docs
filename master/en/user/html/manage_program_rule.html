@@ -1,0 +1,334 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>27.5.&nbsp;Manage program rules</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="configure_program.html" title="Chapter&nbsp;27.&nbsp;Configuring programs"><link rel="prev" href="ch27s04.html" title="27.4.&nbsp;Manage program indicators"><link rel="next" href="validation_rules_manage.html" title="27.6.&nbsp;Manage program validation rules"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">27.5.&nbsp;Manage program
+    rules</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch27s04.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;27.&nbsp;Configuring
+        programs</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="validation_rules_manage.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="manage_program_rule"></a>27.5.&nbsp;Manage program
+    rules</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e26053"></a>27.5.1.&nbsp;About program rules</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Program rules allows you to create and control dynamic behavior of the user interface
+          in the <span class="bold"><strong>Tracker Capture</strong></span> and <span class="bold"><strong>Event
+            Capture</strong></span> apps.</p></li><li class="listitem"><p>Program rules consist of:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>an expression</p></li><li class="listitem"><p>one or several actions that are triggered in the user interface when the
+              expression is true</p></li></ul></div></li><li class="listitem"><p>An expression is built from operators, user-defined static values and source fields.
+          The source fields represent attribute and data element values which will be evaluated as
+          part of the expression.</p></li><li class="listitem"><p>During data entry, program rules expressions are evaluated each time the user
+          interface is displayed, and each time a data element is changed. Most types of actions
+          will take effect immediately when the user enters values in <span class="bold"><strong>Tracker
+            Capture</strong></span> and <span class="bold"><strong>Event Capture</strong></span> apps.</p></li><li class="listitem"><p>The
+          behaviors you can configure are skip logic and validation rules.</p></li></ul></div><p>In the <span class="bold"><strong>Programs / Attributes</strong></span> app, you manage the
+      following program rule objects:</p><div class="table"><a name="d0e26100"></a><p class="title"><b>Table&nbsp;27.9.&nbsp;Program rule objects in the Programs / Attributes app</b></p><div class="table-contents"><table class="table" summary="Program rule objects in the Programs / Attributes app" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+              <p>Object type</p>
+            </th><th>
+              <p>Available functions</p>
+            </th></tr></thead><tbody><tr><td>
+              <p>Program rule</p>
+            </td><td>
+              <p>Create, edit, delete, show details and translate</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e26130"></a>27.5.2.&nbsp;Create a program rule</h3></div></div></div><div class="screenshot"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-edit.png" width="100%"></td></tr></table></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>A program rule belongs to exactly one program.</p></td></tr></table></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the program you want to add a program rule to and select <span class="bold"><strong>View program rules</strong></span>.</p><p>A list of existing program rules for the selected program opens. If the program
+          doesn't have any program rules, the list is empty.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add new</strong></span>.</p></li><li class="listitem"><p>Enter program rule details:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p><span class="bold"><strong>Name</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Description</strong></span></p></li></ol></div><p>These fields are not shown to the end user, and are only meant for the program
+          administrator.</p></li><li class="listitem"><p>(Optional) Add the source fields you need in your expression.</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>Click <span class="bold"><strong>Add source field</strong></span>.</p></li><li class="listitem"><p>Select <span class="bold"><strong>Source type</strong></span> and fill in the
+              options.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add</strong></span>.</p></li></ol></div></li><li class="listitem"><p>Create an <span class="bold"><strong>Expression</strong></span>.</p></li><li class="listitem"><p>Create the actions executed when the expression is true.</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>Click <span class="bold"><strong>Add more action</strong></span>.</p></li><li class="listitem"><p>Select an action, for example "Hide field".</p></li><li class="listitem"><p>(Optional) Enter text that is displayed.</p></li><li class="listitem"><p>Select a data element or program attribute.</p></li></ol></div></li><li class="listitem"><p>Click <span class="bold"><strong>Add</strong></span>.</p></li></ol></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e26239"></a>27.5.2.1.&nbsp; [Review ongoing] Add source
+        fields</h4></div></div></div><p> Source fields represent a uniform way to include data values and attribute values in
+        expressions. The source fields is defined as needed when creating expressions. When creating
+        your first expression, you will typically have to define one or more source fields first, as
+        expressions usually contain at least one data element or attribute value to be meaningful.
+        The source fields is shared between all rules in your program, and by creating several
+        rules, these will share the same library of source fields. </p><p> To add a source field, click the "+ Add source field" button under the source
+        fields list. This will open the following dialog: </p><div class="screenshot"><p class="title"><b>Add source field dialog</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="50%"><tr><td><img src="resources/images/program_rules/program-rule-source-field.png" width="100%"></td></tr></table></div></div><p>
+        </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+              <span class="bold"><strong> Source type:</strong></span> The source types is determining how the
+              source field is populated with a value: </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>
+                    <span class="bold"><strong> Data element in current event: </strong></span>Source fields
+                    with this source type will contain the data value from the same event that the
+                    user currently has open. This is the most commonly used source type, especially
+                    for skip logic(hide actions) and warning/error rules.</p></li><li class="listitem"><p>
+                    <span class="bold"><strong> Data element in the newest event in program: </strong></span>
+                    This source type is used when a source field needs to reflect the newest known
+                    value of a data element, regardless of what event the user currently has
+                    open.</p><p> The source type is slightly differently populated in tracker capture and
+                    event capture. </p><p>Tracker capture: This source field will be populated with the newest data
+                    value collected for the given data element within the enrollment. </p><p>Event capture: This source field will be populated with the newest data
+                    value found within the 10 newest events in the same organisation unit.</p><p>The newest data value is determined with event date. </p></li><li class="listitem"><p>
+                    <span class="bold"><strong> Data element newest event program stage:</strong></span> This
+                    source type works the same way as <span class="bold"><strong>Data element in the
+                      newest event in program</strong></span>, except that it only evaluates values from
+                    one program stage. Can be useful in rules where the same data element is used in
+                    several program stages, and a rule needs to evaluate the newest data value from
+                    within one specific stage.</p></li><li class="listitem"><p>
+                    <span class="bold"><strong> Data element from previous event:</strong></span> This source
+                    field will contain the value from a specified data element from a previous
+                    event. Only older events is evaluated, not including the event that the user
+                    currently has open. This source type is commonly used when a data element only
+                    should be collected once during an enrollment, and should be hidden in
+                    subsequent events. Another use case is making rules for validating input where
+                    there is an expected progression from one event to the next - a rule can
+                    evaluate whether the previous value is higher/lower and give a warning if an
+                    unexpected value is entered.</p><p> The source type is slightly differently populated in tracker capture and
+                    event capture. </p><p>Tracker capture: This source field will be populated with the newest data
+                    value collected for the given data element within the enrollment - but only
+                    evaluating the events that comes before the current event date.</p><p>Event capture: This source field will be populated with the newest data
+                    value collected within the 10 events preceding the current event date - not
+                    including the current event.</p><p>The newest data value is determined with event date.</p></li><li class="listitem"><p>
+                    <span class="bold"><strong> Tracked entity attribute:</strong></span> Populates the source
+                    field with a specified tracked entity attribute for the current enrollment. This
+                    is the source type used when creating rules that should evaluate the data values
+                    entered during registration. It is also useful when creating rules that compares
+                    data in events to data entered during registration.</p><p> When selecting this option, fields for selecting program stage and data
+                    element is hidden, and a field for selecting tracked entity attribute is
+                    displayed instead. </p><p>This source type is only used for tracker capture(programs with
+                    registration)</p></li></ul></div><p>
+            </p></li><li class="listitem"><p>
+              <span class="bold"><strong> Source program stage</strong></span>: In case of retrieving data
+              value from a specific program stage, this field is used to define what program stage
+              to retrieve data from. </p></li><li class="listitem"><p>
+              <span class="bold"><strong> Source data element:</strong></span> Used to select which data
+              element to retrieve data value for. </p></li><li class="listitem"><p>
+              <span class="bold"><strong> Variable name</strong></span>: Specifying the name that is used for
+              the source field when writing expressions. It is encouraged to use a name that makes
+              the expressions readable. </p></li><li class="listitem"><p>
+              <span class="bold"><strong> Use code for option sets</strong></span>: Only effective when the
+              data element or tracked entity attribute is connected to an option set. If left
+              unchecked, the source field will be populated with the options name. If checked, the
+              source field will be populated with the code instead.</p></li></ul></div><p>
+      </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="program_rules_expressions"></a>27.5.2.2.&nbsp; [Review ongoing] Define
+        expressions</h4></div></div></div><p>Each program rule has a single expression that determines whether rules action should be
+        triggered, if the expression evaluates to true. If the expression is true the program rule
+        is in effect and the actions will be executed. If the expression is false, the program rule
+        is no longer in effect and the actions will no longer be applied. </p><p>As a simple example, an expression is defined below using a single user-define static
+        value, source fields(see previous chapter) and/or operators. Expressions can be typed into
+        the edit expression text box, but buttons are available for inserting operators and source
+        fields at the cursors position. To insert source fields, click the source field name within
+        the list at the left.</p><div class="screenshot"><p class="title"><b>Expression text box</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="50%"><tr><td><img src="resources/images/program_rules/program-rule-expression.png" width="100%"></td></tr></table></div></div><p>The following list provides a comprehensive list of operators which can be used to
+        define an expression. </p><div class="table"><a name="d0e26362"></a><p class="title"><b>Table&nbsp;27.10.&nbsp;Operators</b></p><div class="table-contents"><table class="table" summary="Operators" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>Operator</th><th>Description</th></tr></thead><tbody><tr><td>
+                <p>+</p>
+              </td><td>
+                <p>Add numbers together</p>
+              </td></tr><tr><td>
+                <p>-</p>
+              </td><td>
+                <p>Subtract numbers from each other</p>
+              </td></tr><tr><td>
+                <p>*</p>
+              </td><td>
+                <p>Multiply two numbers</p>
+              </td></tr><tr><td>
+                <p>/</p>
+              </td><td>
+                <p>Divide two numbers </p>
+              </td></tr><tr><td>
+                <p>%</p>
+              </td><td>
+                <p>The modulus of two numbers </p>
+              </td></tr><tr><td>
+                <p>&amp;&amp;</p>
+              </td><td>
+                <p>Logical AND. True only when the expression on the left and right side is true.
+                  The left and right side can be yes/no, yes only or a subexpression in parenthesis.
+                </p>
+              </td></tr><tr><td>
+                <p>||</p>
+              </td><td>
+                <p>Logical OR. True when either the expression on the left or the expression on
+                  the right side is true. The left and right side can be yes/no, yes only or a
+                  subexpression in parenthesis. </p>
+              </td></tr><tr><td>
+                <p>&gt;</p>
+              </td><td>
+                <p>Left number greater than right number </p>
+              </td></tr><tr><td>
+                <p>&gt;=</p>
+              </td><td>
+                <p>Left number greater than or equal to right number</p>
+              </td></tr><tr><td>
+                <p>&lt;</p>
+              </td><td>
+                <p>Left number less than right number </p>
+              </td></tr><tr><td>
+                <p>&lt;=</p>
+              </td><td>
+                <p>Left number less than or equal to right number.</p>
+              </td></tr><tr><td>
+                <p>==</p>
+              </td><td>
+                <p>Left side equal to right side. Supports numbers, text, yes/no and yes
+                  only.</p>
+              </td></tr><tr><td>
+                <p>!=</p>
+              </td><td>
+                <p>Left side not equal to right side. Supports numbers, text, yes/no and yes
+                  only. </p>
+              </td></tr><tr><td>
+                <p>!</p>
+              </td><td>
+                <p>Negates the following value. Can be used for yes/no, yes only or a
+                  sub-expression in parenthesis.</p>
+              </td></tr><tr><td>
+                <p>()</p>
+              </td><td>
+                <p>Parenthesis is used to group sub-expressions.</p>
+              </td></tr></tbody></table></div></div><br class="table-break"><p>In addition to the standard mathematical operators, a number of custom functions are
+        also available.</p><div class="table"><a name="d0e26544"></a><p class="title"><b>Table&nbsp;27.11.&nbsp;Functions</b></p><div class="table-contents"><table class="table" summary="Functions" border="1"><colgroup><col class="c1"><col class="newCol2"><col class="c2"></colgroup><thead><tr><th>Function</th><th>Arguments</th><th>Description</th></tr></thead><tbody><tr><td>d2:ceil</td><td>(number)</td><td>Rounds the input argument <span class="bold"><strong>up</strong></span> to the nearest
+                whole number. <p> Example: </p><pre class="screen">d2:ceil(#{hemoglobinValue})</pre><p>
+                </p></td></tr><tr><td>d2:floor</td><td>(number)</td><td>Rounds the input argument <span class="bold"><strong>down</strong></span> to the nearest
+                whole number. <p> An example producing the number of weeks the woman is pregnant.
+                  Notice that the subexpression #{gestationalAgeDays}/7 is evaluated before the
+                  floor function is executed: </p><pre class="screen">d2:floor(#{gestationalAgeDays}/7)</pre><p>
+                </p></td></tr><tr><td>d2:round</td><td>(number)</td><td>Rounds the input argument to the nearest whole number.</td></tr><tr><td>d2:modulus</td><td>(number,number)</td><td>Produces the modulus when dividing the first with the second argument. <p>
+                  An example producing the number of days the woman is into her current pregnancy
+                  week: </p><pre class="screen">d2:modulus(#{gestationalAgeDays},7)</pre><p>
+                </p></td></tr><tr><td>d2:zing</td><td>(number)</td><td>Evaluates the argument of type number to zero if the value is negative,
+                otherwise to the value itself.</td></tr><tr><td>d2:oizp</td><td>(number)</td><td>Evaluates the argument of type number to one if the value is zero or positive,
+                otherwise to zero. </td></tr><tr><td>d2:concatenate</td><td>(object, [,object, object,...])</td><td>Produces a string concatenated string from the input parameters. Supports any
+                number of parameters. Will mainly be in use in future action types, for example to
+                display gestational age with
+                d2:concatenate('weeks','+','gestationalageDays').
+              </td></tr><tr><td>d2:daysBetween</td><td>(date, date)</td><td>Produces the number of days between the first and second argument. If the
+                second argument date is before the first argument the return value will be the
+                negative number of days between the two dates. The static date format is
+                'yyyy-MM-dd'. <p> Example, calculating the gestational age(in days) of
+                  a woman, based on the last menstrual period and the current event date:
+                  </p><pre class="screen">d2:daysBetween(#{lastMenstrualDate},V{event_date})</pre><p>
+                </p></td></tr><tr><td>d2:weeksBetween</td><td>(date, date)</td><td>Produces the number of full weeks between the first and second argument. If the
+                second argument date is before the first argument the return value will be the
+                negative number of weeks between the two dates. The static date format is
+                'yyyy-MM-dd'.</td></tr><tr><td>d2:monthsBetween</td><td>(date, date)</td><td>Produces the number of full months between the first and second argument. If
+                the second argument date is before the first argument the return value will be the
+                negative number of months between the two dates. The static date format is
+                'yyyy-MM-dd'.</td></tr><tr><td>d2:yearsBetween</td><td>(date, date)</td><td>Produces the number of years between the first and second argument. If the
+                second argument date is before the first argument the return value will be the
+                negative number of years between the two dates. The static date format is
+                'yyyy-MM-dd'.</td></tr><tr><td>d2:addDays</td><td>(date, number)</td><td>Produces a date based on the first argument date, adding the second argument
+                number of days. <p> An example calculating the pregnancy due date based on the
+                  last menstrual period: </p><pre class="screen">d2:addDays(#{lastMenstrualDate},283)</pre><p>
+                </p></td></tr><tr><td>d2:count</td><td>(sourcefield)</td><td>Counts the number of values that is entered for the source field in the
+                argument. The source field parameter is the name of one of the defined source fields
+                in the program - see example <p> Example usage where #{previousPregnancyOutcome}
+                  is one of the source fields in a repeatable program stage "previous
+                  pregnancy": </p><pre class="screen">d2:count('previousPregnancyOutcome')</pre><p>
+                </p></td></tr><tr><td>d2:countIfValue</td><td>(sourcefield,text)</td><td>Counts the number of matching values that is entered for the source field in
+                the first argument. Only occurrences that matches the second argument is counted.
+                The source field parameter is the name of one of the defined source fields in the
+                program - see example. <p> Example usage where #{previousPregnancyOutcome} is one
+                  of the source fields in a repeatable program stage "previous pregnancy".
+                  The following function will produce the number of previous pregnancies that ended
+                  with abortion:
+                  </p><pre class="screen">d2:countIfValue('previousPregnancyOutcome','Abortion')
+                                    </pre><p>
+                </p></td></tr><tr><td>d2:countIfZeroPos</td><td>(sourcefield)</td><td>Counts the number of values that is zero or positive entered for the source
+                field in the argument. The source field parameter is the name of one of the defined
+                source fields in the program - see example. <p> Example usage where
+                  #{fundalHeightDiscrepancy} is one of the source fields in program, and it can be
+                  either positive or negative. The following function will produce the number of
+                  positive occurrences:
+                  </p><pre class="screen">d2:countIfZeroPos('fundalHeightDiscrepancy')
+                                    </pre><p>
+                </p></td></tr><tr><td>d2:hasValue</td><td>(sourcefield)</td><td>Evaluates to true of the argument source field contains a value, false if no
+                value is entered. <p> Example usage, to find if the source field
+                  #{currentPregnancyOutcome} is yet filled in:
+                  </p><pre class="screen">d2:hasValue('currentPregnancyOutcome')
+                                    </pre><p>
+                </p></td></tr><tr><td>d2:zpvc</td><td>(object, [,object, object,...])</td><td>Returns the number of numeric zero and positive values among the given object
+                arguments. Can be provided with any number of arguments.</td></tr><tr><td>d2:validatePattern</td><td>(text, regex-pattern)</td><td>Evaluates to true if the input text is an exact match with the supplied regular
+                expression pattern. The regular expression needs to be escaped.<p> Example
+                  expression, triggering actions if a number is not on the pattern 9999/99/9:
+                  </p><pre class="screen">!d2:validatePattern(A{nrc},'\\d{6}\/\\d{2}\/\\d')</pre>
+                <p>Example expression, triggering actions that if the address is not consisting
+                  of letters or white spaces, then a white space, then a number:
+                  </p><pre class="screen">!d2:validatePattern(A{registrationAddress},'[\\w ]+ \\d+')</pre>
+                <p>Example, triggering actions if a name contains any numbers:
+                  </p><pre class="screen">!d2:validatePattern(A{name},'[^\\d]*')</pre>
+                <p>Example expression, triggering actions if a mobile number contains the illegal
+                  number sequence 555:
+                  </p><pre class="screen">d2:validatePattern(A{mobile} ,'.*555.*')</pre>
+              </td></tr><tr><td>d2:left</td><td>(text, num-chars)</td><td>Evaluates to the left part of a text, num-chars from the first character.
+                  <p> The text can be quoted or evaluated from a variable:
+                  </p><pre class="screen">d2:left(#{variableWithText}, 3)</pre>
+              </td></tr><tr><td>d2:right</td><td>(text, num-chars)</td><td>Evaluates to the right part of a text, num-chars from the last character.
+                  <p> The text can be quoted or evaluated from a variable:
+                  </p><pre class="screen">d2:right(#{variableWithText}, 2)</pre>
+              </td></tr><tr><td>d2:substring</td><td>(text, start-char-num, end-char-num)</td><td>Evaluates to the part of a string specified by the start and end character
+                number. <p> The text can be quoted or evaluated from a variable:
+                  </p><pre class="screen">d2:right(#{variableWithText}, 2, 4)</pre>
+              </td></tr><tr><td>d2:split</td><td>(text, delimiter, element-num)</td><td>Split the text by delimiter, and keep the nth element(0 is the first).<p>
+                  The text can be quoted or evaluated from a variable, the delimiter must be quoted:
+                  </p><pre class="screen">d2:split(#{variableWithText}, '-', 1)</pre><p> Note: comma delimiter(,) is
+                  not supported.</p>
+              </td></tr><tr><td>d2:length</td><td>(text)</td><td>Find the length of a string. <p> Example:
+                  </p><pre class="screen">d2:length(#{variableWithText})</pre></td></tr></tbody></table></div></div><br class="table-break"><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="resources/images/admon/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>Functions can be nested within each other and with subexpressions to form more complex
+          conditions. An example that produces the gestational age in weeks, based on last menstrual
+          date: </p><pre class="screen">d2:floor( d2:daysBetween(#{lastMenstrualDate},V{event_date}) / 7 )</pre></td></tr></table></div><p></p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="resources/images/admon/tip.png"></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>The source type will determine how the d2: function calls will evaluate a
+          (sourcefield) parameter.</p><p>Example: where #{hemoglobinCurrent} is set to source type <span class="bold"><strong>Data
+            element current event</strong></span>. The following function call with evaluate whether
+          hemoglobin is entered in the current event.
+          </p><pre class="screen">d2:hasValue( 'hemoglobinCurrent' )</pre><p>Example: where #{hemoglobin} is set to source type <span class="bold"><strong>Data element
+            in the newest event in program</strong></span>. The following function call with evaluate
+          whether there exists a value for the hemoglobin in any event in the enrollment.
+          </p><pre class="screen">d2:hasValue( 'hemoglobin' )</pre><p>Example: where #{hemoglobinPrevious} is set to source type <span class="bold"><strong>Data
+            element from previous event</strong></span>. The following function call with evaluate
+          whether there exists a value for the hemoglobin among the events preceding the current
+          event. </p><pre class="screen">d2:hasValue( 'hemoglobinPrevious' )</pre></td></tr></table></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="d0e26847"></a>27.5.2.3.&nbsp;[Review ongoing] Define
+        actions</h4></div></div></div><p>Each program rule has one or more actions attached. These are the behaviors that is
+        triggered in the user interface when the expression(see previous chapter) is true. Actions
+        will be applied at once if the expression is true, and will be reverted if the expression is
+        no longer true.</p><p> To add a new action, click the "+ add action" button at the bottom of the
+        program rule page. Once actions has been added, they can be removed again by clicking the -
+        button at the right side of the actions row.</p><div class="screenshot"><p class="title"><b>Expression text box</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-add-action.png" width="100%"></td></tr></table></div></div><p> There are several types of <span class="bold"><strong>actions</strong></span>, and the type is
+        selected individually for each action row.</p><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26868"></a>27.5.2.3.1.&nbsp; Hide field action</h5></div></div></div><p> A <span class="bold"><strong>hide field action</strong></span> is defined by selecting
+          "Hide field" in the first column of the action row. </p><div class="screenshot"><p class="title"><b>Hide field action</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-hide-field-action.png" width="100%"></td></tr></table></div></div><p> The second column is optional, and it allows defining a custom message to the end
+          user in case the rule hides and blanks out the field after the end user typed in or
+          selected a value. </p><p>If a hide field action hides a field that contains a value, the field will always
+          removed. If no message is defined, a standard message will be displayed to alert the
+          user</p><p> The third column specifies which data element that the <span class="bold"><strong>hide
+            field action</strong></span> should hide. </p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26891"></a>27.5.2.3.2.&nbsp; Hide section action</h5></div></div></div><p> A hide field action is defined by selecting "Hide section" in the first
+          column of the action row. </p><div class="screenshot"><p class="title"><b>Expression text box</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-hide-section-action.png" width="100%"></td></tr></table></div></div><p> The second column is optional, and it allows defining a custom message to the end
+          user in case the rule hides a section that contains a field that again has a value. </p><p> If a hide section action hides a section with one or more fields that contains a
+          value, these fields will always be removed. If no message is defined, a standard message
+          will be displayed to alert the user. </p><p> The third column specifies which section that the hide section action should hide.
+        </p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26908"></a>27.5.2.3.3.&nbsp; Show warning action</h5></div></div></div><p> A <span class="bold"><strong>show warning action</strong></span> is defined by selecting
+          "show warning" in the first column of the action row. A show warning action is
+          used to give the user a warning about the data being entered, but at the same time
+          allowing the user to save and continue. Warnings can be used to help the user avoid errors
+          in the data entered, while at the same time allowing the user to consciously disregard it
+          and save a value that is outside preset expectations. </p><div class="screenshot"><p class="title"><b>Show warning action</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-show-warning-action.png" width="100%"></td></tr></table></div></div><p> The second column is mandatory, and is used to define the message shown to the user
+          when the expression is true and the action is triggered. </p><p> The third column specifies which data element or attribute to link the warning to,
+          and is meant to be a recommendation to the user regarding where the cause of the warning
+          can be rectified. In case several data elements or attributes are involved, when defining
+          the rule, you should choose the one that is most likely that the user would need to
+          consider. </p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26926"></a>27.5.2.3.4.&nbsp; Show warning on completion action</h5></div></div></div><p> A <span class="bold"><strong>show warning on completing action</strong></span> is defined by
+          selecting the corresponding option in the first column of the action row. A show warning
+          on completion action is used to give the user a warning if trying to complete inconsistent
+          data, but at the same time allowing the user to continue. The warning is shown in a dialog
+          when completing the form.</p><div class="screenshot"><p class="title"><b>Show warning on completion action</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-show-warning-on-completion-action.png" width="100%"></td></tr></table></div></div><p> The second column is mandatory, and is used to define the message shown to the user
+          when the expression is true and the action is triggered. </p><p> The third column specifies which data element to link the warning to, and can be used
+          to tie the error to a specific data element. The default selection in the list is 'None',
+          and this simply means that no single field is specifically linked to the error. When
+          'None' is selected, make sure to write a comprehensive error message that directs the user
+          to where the error can be fixed. </p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26944"></a>27.5.2.3.5.&nbsp; Show error action</h5></div></div></div><p> A <span class="bold"><strong>show error action</strong></span> is defined by selecting
+          "show error" in the first column of the action row. A show error action is used
+          whenever there are rules which must strictly be adhered to. The show error action prevents
+          the user from continuing until the error is resolved. Such a strict validation should only
+          be used whenever it is certain that the evaluated expression is never true unless the user
+          has made a mistake in data entry. </p><div class="screenshot"><p class="title"><b>Show error action</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-show-error-action.png" width="100%"></td></tr></table></div></div><p> The second column is mandatory, and is used to define the message shown to the user
+          when the expression is true and the action is triggered. </p><p> The third column specifies which data element or attribute to link the error to, and
+          is meant to be a cue for the user regarding where the cause of the error can be rectified.
+          In case several data elements or attributes is involved, choose the one that is most
+          likely that the user would need to change. </p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="d0e26962"></a>27.5.2.3.6.&nbsp; Show error preventing completion action</h5></div></div></div><p> A <span class="bold"><strong>show error preventing completion</strong></span> is defined by
+          selecting the corresponding action in the first column of the action row. A show error
+          action is used whenever there are cross-consistencies in the form that must be strictly
+          adhered to. This action prevents the user from continuing until the error is resolved. Id
+          differs from the regular <span class="bold"><strong> show error action</strong></span> in that the
+          error is not shown until the user tries to actually complete the form.</p><div class="screenshot"><p class="title"><b>Show error preventing completion action</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td><img src="resources/images/program_rules/program-rule-show-error-on-completion-action.png" width="100%"></td></tr></table></div></div><p> The second column is mandatory, and is used to define the message shown to the user
+          when the expression is true and the action is triggered. </p><p> The third column specifies which data element to link the error to, and can be used
+          to tie the error to a specific data element. The default selection in the list is 'None',
+          and this simply means that no single field is specifically linked to the error. When
+          'None' is selected, make sure to write a comprehensive error message that directs the user
+          to where the error can be fixed.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e26983"></a>27.5.3.&nbsp;Edit program rules</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+            rules</strong></span>.</p><p>A list of existing program rules for the selected program opens. If the program
+          doesn't have any program rules, the list is empty.</p></li><li class="listitem"><p>Click the program rule you want to modify and select <span class="bold"><strong>Edit</strong></span>.</p></li><li class="listitem"><p>Modify the options you
+          want.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Update</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27023"></a>27.5.4.&nbsp;Delete program rules</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+            rules</strong></span>.</p><p>A list of existing program rules for the selected program opens. If the program
+          doesn't have any program rules, the list is empty.</p></li><li class="listitem"><p>Click the program rule you want to delete and select <span class="bold"><strong>Remove</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>OK</strong></span> to confirm.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27056"></a>27.5.5.&nbsp;Display program rules</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+            rules</strong></span>.</p><p>A list of existing program rules for the selected program opens. If the program
+          doesn't have any program rules, the list is empty.</p></li><li class="listitem"><p>Click the program rule you want to display and select <span class="bold"><strong>Show
+            details</strong></span>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27083"></a>27.5.6.&nbsp;Translate program rules</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+            rules</strong></span>.</p><p>A list of existing program rules for the selected program opens. If the program
+          doesn't have any program rules, the list is empty.</p></li><li class="listitem"><p>Click the program rule you want to modify and select <span class="bold"><strong>Translate</strong></span>.</p></li><li class="listitem"><p>Select a locale.</p></li><li class="listitem"><p>Type a <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch27s04.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="configure_program.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="validation_rules_manage.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">27.4.&nbsp;Manage program
+    indicators&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;27.6.&nbsp;Manage program validation
+        rules</td></tr></table></div></body></html>

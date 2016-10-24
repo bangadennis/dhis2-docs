@@ -1,0 +1,253 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>27.7.&nbsp;Manage program notifications</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS2 User guide"><link rel="up" href="configure_program.html" title="Chapter&nbsp;27.&nbsp;Configuring programs"><link rel="prev" href="validation_rules_manage.html" title="27.6.&nbsp;Manage program validation rules"><link rel="next" href="ch27s08.html" title="27.8.&nbsp;[Review ongoing] Manage custom registration forms"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">27.7.&nbsp;Manage
+        program
+        notifications</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="validation_rules_manage.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;27.&nbsp;Configuring
+        programs</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch27s08.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="program_notifications"></a>27.7.&nbsp;Manage
+        program
+        notifications</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27305"></a>27.7.1.&nbsp;About program notifications</h3></div></div></div><p>You can create program notifications for programs with registration and their program
+            stages. The notifications are sent either via the internal DHIS2 messaging system, via
+            e-mail or via text messages (SMS). You can use program notifications to, for example,
+            send an automatic reminder to a tracked entity 10 days before a scheduled
+            appointment.</p><p>You use the program&#8217;s tracked entity attributes and the variables to create a
+            notification. The following attributes are available in the <span class="bold"><strong>Parameters</strong></span> field:</p><div class="table"><a name="d0e27315"></a><p class="title"><b>Table&nbsp;27.12.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="newCol3"><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                            <p>Notification type</p>
+                        </th><th>
+                            <p>Variable name</p>
+                        </th><th>
+                            <p>Variable code</p>
+                        </th></tr></thead><tbody><tr><td>
+                            <p>Program</p>
+                        </td><td>
+                            <p>Program name</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{program_name}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Organisation unit name</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{org_unit_name}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Current date</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{current_date}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p>Program stage</p>
+                        </td><td>
+                            <p>Program name</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{program_name}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Program stage name</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{program_stage_name}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Organisation unit name</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{org_unit_name}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Due date (of the event)</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{due_date}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p> (Elapsed) days since due date</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{days_since_due_date}</pre><p>
+                            </p>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Days until due date</p>
+                        </td><td>
+                            <pre class="screen">V{days_until_due_date}</pre>
+                        </td></tr><tr><td>
+                            <p></p>
+                        </td><td>
+                            <p>Current date</p>
+                        </td><td>
+                            <p>
+                                </p><pre class="screen">V{current_date}</pre><p>
+                            </p>
+                        </td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27518"></a>27.7.2.&nbsp;Create a program notification</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        notifications</strong></span>.</p><p>A list of existing program notifications for the selected program opens. If
+                    the program doesn't have any program notifications, the list is empty.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add new</strong></span>.</p></li><li class="listitem"><p>Enter a <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Trigger by</strong></span> field, select what should
+                    trigger the notification.</p><div class="table"><a name="d0e27559"></a><p class="title"><b>Table&nbsp;27.13.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>
+                                    <p>Trigger</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th><th>
+                                    <p>Note</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Program enrollment</p>
+                                </td><td>
+                                    <p>The program notification is sent when the TEI enrols in
+                                        the program.</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr><tr><td>
+                                    <p>Program completion</p>
+                                </td><td>
+                                    <p>The program notification is sent when the program of TEI
+                                        is completed</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr><tr><td>
+                                    <p>Days scheduled (incident date)</p>
+                                </td><td>
+                                    <p>The program notification is sent XX number of days before
+                                        or after the incident date</p>
+                                </td><td>
+                                    <p>You need to enter the number of days before or after the
+                                        scheduled date that the notification will be send.</p>
+                                </td></tr><tr><td>
+                                    <p>Days scheduled (enrollment date)</p>
+                                </td><td>
+                                    <p>The program notification is sent XX number of days before
+                                        or after the enrollment date</p>
+                                </td><td>
+                                    <p>You need to enter the number of days before or after the
+                                        scheduled date that the notification will be send.</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>In the <span class="bold"><strong>Recipients</strong></span> field, select who should
+                    receive the program notification.</p><div class="table"><a name="d0e27653"></a><p class="title"><b>Table&nbsp;27.14.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>
+                                    <p>Recipient type</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th><th>
+                                    <p>Note</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Tracked entity instance</p>
+                                </td><td>
+                                    <p>Receives program notifications via e-mail or text
+                                        message.</p>
+                                </td><td>
+                                    <p>To receive a program notification, the recipient must have
+                                        an e-mail address or a phone number attribute.</p>
+                                </td></tr><tr><td>
+                                    <p>Organisation unit contact</p>
+                                </td><td>
+                                    <p>Receives program notifications via e-mail or text message.
+                                    </p>
+                                </td><td>
+                                    <p>To receive a program notification, the receiving
+                                        organisation unit must have a registered contact person with
+                                        e-mail address and phone number. </p>
+                                </td></tr><tr><td>Users at organisation unit:</td><td>
+                                    <p>All users registered to the selected organisation unit
+                                        receive program notifications via the internal DHIS2
+                                        messaging system.</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr><tr><td>
+                                    <p>User group</p>
+                                </td><td>
+                                    <p>All members of the selected user group receive the program
+                                        notifications via the internal DHIS2 messaging system</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>Create the <span class="bold"><strong>Subject template</strong></span>.</p><p>Double-click the
+                    parameters
+                    in the <span class="bold"><strong>Parameters</strong></span> field to add them to your
+                    subject.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The subject is not included in text messages.</p></td></tr></table></div></li><li class="listitem"><p>Create the <span class="bold"><strong>Message template</strong></span>.</p><p>Double-click the parameter names in the <span class="bold"><strong>Parameters</strong></span> field to add them to your message. </p><div class="example"><a name="d0e27767"></a><p class="title"><b>Example&nbsp;27.16.&nbsp;</b></p><div class="example-contents"><p>Dear A{w75KJ2mc4zz}, You're now enrolled in V{program_name}.</p></div></div><br class="example-break"></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You configure when the program notifications are sent in the <span class="bold"><strong>Data Administration</strong></span> app &gt; <span class="bold"><strong>Scheduling</strong></span> &gt; <span class="bold"><strong>Program notifications
+                    scheduler</strong></span>. </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Click <span class="bold"><strong>Run now</strong></span> to send the program
+                        notifications immediately.</p></li><li class="listitem"><p>Select a time and click <span class="bold"><strong>Start</strong></span> to schedule
+                        the program notifications to be send at a specific time.</p></li></ul></div></td></tr></table></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e27801"></a>27.7.3.&nbsp;Create a program stage notification</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the <span class="bold"><strong>Program / Attributes</strong></span> app and click
+                        <span class="bold"><strong>Program</strong></span>.</p></li><li class="listitem"><p>Click the relevant program and select <span class="bold"><strong>View program
+                        stages</strong></span>.</p></li><li class="listitem"><p>Click the relevant program stage and select <span class="bold"><strong>View program
+                        stage notifications</strong></span>.</p><p>A list of existing program stage notifications for the selected program stage
+                    opens. If the program stage doesn't have any program stage notifications, the
+                    list is empty.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Add new</strong></span>.</p></li><li class="listitem"><p>Enter a <span class="bold"><strong>Name</strong></span>.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Trigger by</strong></span> field, select what should
+                    trigger the notification.</p><div class="table"><a name="d0e27848"></a><p class="title"><b>Table&nbsp;27.15.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>
+                                    <p>Trigger</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th><th>
+                                    <p>Note</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Program stage completion</p>
+                                </td><td>
+                                    <p>The program stage notification is sent when the program
+                                        stage is completed</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr><tr><td>
+                                    <p>Days scheduled (due date)</p>
+                                </td><td>
+                                    <p>The program stage notification is sent XX number of days
+                                        before or after the due date</p>
+                                </td><td>
+                                    <p>You need to enter the number of days before or after the
+                                        scheduled date that the notification will be send.</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>In the <span class="bold"><strong>Recipients</strong></span> field, select who should
+                    receive the program stage notification. You can select:</p><div class="table"><a name="d0e27910"></a><p class="title"><b>Table&nbsp;27.16.&nbsp;</b></p><div class="table-contents"><table class="table" summary="" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>
+                                    <p>Recipient type</p>
+                                </th><th>
+                                    <p>Description</p>
+                                </th><th>
+                                    <p>Note</p>
+                                </th></tr></thead><tbody><tr><td>
+                                    <p>Tracked entity instance</p>
+                                </td><td>
+                                    <p>Receives program notifications via e-mail or text
+                                        message.</p>
+                                </td><td>
+                                    <p>To receive a program stage notification, the recipient
+                                        must have an e-mail address or a phone number
+                                        attribute.</p>
+                                </td></tr><tr><td>
+                                    <p>Organisation unit contact</p>
+                                </td><td>
+                                    <p>Receives program notifications via e-mail or text message.
+                                    </p>
+                                </td><td>
+                                    <p>To receive a program stage notification, the receiving
+                                        organisation unit must have a registered contact person with
+                                        e-mail address and phone number. </p>
+                                    <p>The system selects the same organisation unit as where the
+                                        event took place.</p>
+                                </td></tr><tr><td>Users at organisation unit:</td><td>
+                                    <p>All users registered to the selected organisation unit
+                                        receive program notifications via the internal DHIS2
+                                        messaging system.</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr><tr><td>
+                                    <p>User group</p>
+                                </td><td>
+                                    <p>All members of the selected user group receive the program
+                                        notifications via the internal DHIS2 messaging system</p>
+                                </td><td>
+                                    <p>-</p>
+                                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>Create the <span class="bold"><strong>Subject template</strong></span>.</p><p>Double-click the parameter names in the <span class="bold"><strong>Parameters</strong></span> field to add them to your subject.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The subject is not included in text messages.</p></td></tr></table></div></li><li class="listitem"><p>Create the <span class="bold"><strong>Message template</strong></span>.</p><p>Double-click the parameter names in the <span class="bold"><strong>Parameters</strong></span> field to add them to your message.</p><div class="example"><a name="d0e28023"></a><p class="title"><b>Example&nbsp;27.17.&nbsp;</b></p><div class="example-contents"><p>Dear A{w75KJ2mc4zz}, please come to your appointment the
+                        V{due_date}.</p></div></div><br class="example-break"></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You configure when the program stage notifications are sent in the <span class="bold"><strong>Data Administration</strong></span> app &gt; <span class="bold"><strong>Scheduling</strong></span> &gt; <span class="bold"><strong>Program notifications
+                    scheduler</strong></span>. </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Click <span class="bold"><strong>Run now</strong></span> to send the program
+                        notifications immediately.</p></li><li class="listitem"><p>Select a time and click <span class="bold"><strong>Start</strong></span> to schedule
+                        the program notifications to be send at a specific time.</p></li></ul></div></td></tr></table></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="validation_rules_manage.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="configure_program.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch27s08.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">27.6.&nbsp;Manage program validation
+        rules&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;27.8.&nbsp;[Review ongoing] Manage custom registration
+        forms</td></tr></table></div></body></html>

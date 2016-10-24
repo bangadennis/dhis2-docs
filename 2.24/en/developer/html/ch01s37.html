@@ -1,0 +1,89 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.37.&nbsp;Data usage analytics</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s36.html" title="1.36.&nbsp;Data set report"><link rel="next" href="ch01s38.html" title="1.38.&nbsp;Geospatial features"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.37.&nbsp;Data usage analytics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s36.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s38.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e9441"></a>1.37.&nbsp;Data usage analytics</h2></div></div></div><p>The usage analytics API lets you access information about how people are using DHIS2
+      based on data analysis. When users access favorites, an event is recorded. The event consists
+      of the user name, the UID of the favorite, when the event took place, and the type of event.
+      The different types of events are listed in the <a class="xref" href="ch01s37.html#dataUsage_eventTypes_table" title="Table&nbsp;1.72.&nbsp;Supported event types">Table&nbsp;1.72, &#8220;Supported event types&#8221;</a>
+      table.</p><p>The usage analytics API lets you retrieve aggregated snapshots of usage analytics based on
+      time intervals. The API captures user views (for example the number of times a chart or pivot
+      table has been viewed by a user) and saved analysis favorites (for example favorite charts and
+      pivot tables). DHIS2 will capture nightly snapshots which are then aggregated at
+      request.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e9450"></a>1.37.1.&nbsp;Request query parameter</h3></div></div></div><p>The usage analytics (data statistics) API supports two operations:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>POST: creates a view event</p></li><li class="listitem"><p>GET: retrieves aggregated statistics</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e9462"></a>1.37.2.&nbsp;Create view events (POST)</h3></div></div></div><p>The usage analytics API lets you create event views. The dataStatisticsEventType
+        parameter describes what type of item was viewed. The favorite parameter indicates the
+        identifier of the relevant favorite.</p><p>URL that creates a new event view of
+        charts:</p><pre class="screen">POST /api/dataStatistics?eventType=CHART_VIEW&amp;favorite=LW0O27b7TdD</pre><p>A successful save operation returns HTTP status code 201. The table below shows the
+        supported types of events.</p><div class="table"><a name="dataUsage_eventTypes_table"></a><p class="title"><b>Table&nbsp;1.72.&nbsp;Supported event types</b></p><div class="table-contents"><table class="table" summary="Supported event types" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td>REPORT_TABLE_VIEW</td><td>Report table (pivot table) view</td></tr><tr><td>CHART_VIEW</td><td>Chart view</td></tr><tr><td>MAP_VIEW</td><td>Map view (GIS)</td></tr><tr><td>EVENT_REPORT_VIEW</td><td>Event report view</td></tr><tr><td>EVENT_CHART_VIEW</td><td>Event chart view</td></tr><tr><td>DASHBOARD_VIEW</td><td>Dashboard view</td></tr><tr><td>DATA_SET_REPORT_VIEW</td><td>Data set report view</td></tr></tbody></table></div></div><br class="table-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e9521"></a>1.37.3.&nbsp;Retrieve aggregated usage analytics report (GET)</h3></div></div></div><p>The usage analytics (data statistics) API lets you specify certain query parameters when
+        asking for an aggregated report.</p><div class="table"><a name="d0e9526"></a><p class="title"><b>Table&nbsp;1.73.&nbsp;Query parameters for aggregated usage analytics (data statistics)</b></p><div class="table-contents"><table class="table" summary="Query parameters for aggregated usage analytics (data statistics)" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th>Query parameter</th><th>Required</th><th>Description</th><th>Options</th></tr></thead><tbody><tr><td>startDate</td><td>Yes</td><td>Start date for period</td><td><a name="entry_ayf_gyy_jw"></a>Date in yyyy-MM-dd format</td></tr><tr><td>endDate</td><td>Yes</td><td>End date for period</td><td>Date in yyyy-MM-dd format</td></tr><tr><td>interval</td><td>Yes</td><td>Type of interval to be aggregated</td><td>DAY, WEEK, MONTH, YEAR</td></tr></tbody></table></div></div><p><br class="table-break"></p><p>The startDate and endDate parameters specify the period for which snapshots are to be
+        used in the aggregation. You must format the dates as shown <a class="link" href="ch01s37.html#entry_ayf_gyy_jw">above</a>. If no
+        snapshots are saved in the specified period, an empty list is sent back. The parameter
+        called interval specifies what type of aggregation will be done.</p><p>API query that creates a query for a yearly
+        aggregation:</p><pre class="screen">GET /api/dataStatistics?startDate=2014-01-02&amp;endDate=2016-01-01&amp;interval=MONTH</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e9581"></a>1.37.4.&nbsp;Retrieve top favourites</h3></div></div></div><p>The usage analytics API lets you retrieve the top favorites used in DHIS2, and by
+          user.</p><div class="table"><a name="d0e9586"></a><p class="title"><b>Table&nbsp;1.74.&nbsp;Query parameters for top favorites</b></p><div class="table-contents"><table class="table" summary="Query parameters for top favorites" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th>Query parameter</th><th>Required</th><th>Description</th><th>Options</th></tr></thead><tbody><tr><td>eventType</td><td>Yes</td><td>The data statistics event type</td><td>See <a class="link" href="ch01s37.html#dataUsage_eventTypes_table" title="Table&nbsp;1.72.&nbsp;Supported event types">above table</a></td></tr><tr><td>pageSize</td><td>No</td><td>Size of the list returned</td><td>For example 5, 10, 25. Default is 25</td></tr><tr><td>sortOrder</td><td>No</td><td>Descending or ascending</td><td>ASC or DESC. Default is DESC.</td></tr><tr><td>username</td><td>No</td><td>If specified, the response will only contain favorites by this user.</td><td>For example 'admin'</td></tr></tbody></table></div></div><p><br class="table-break"></p><p>The API query can be used without username, and will then find the top favorites of the
+        system. If username is specified, the response will only contain the top favorites of that
+        user.</p><pre class="screen">/api/dataStatistics/favorites?eventType=CHART_VIEW&amp;pageSize=25&amp;sortOrder=ASC</pre><pre class="screen">/api/dataStatistics/favorites?eventType=CHART_VIEW&amp;pageSize=25&amp;sortOrder=ASC&amp;username=admin</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e9649"></a>1.37.5.&nbsp;Response format</h3></div></div></div><p>You can return the aggregated data in a usage analytics response in several
+        representation formats. The default format is JSON. The available formats and content types are:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>json (application/json)</p></li><li class="listitem"><p>xml (application/xml)</p></li><li class="listitem"><p>html (text/html)</p></li></ul></div><p>API query that requests an usage analytics response in XML
+        format:</p><pre class="screen">/api/dataStatistics.xml?startDate=2014-01-01&amp;endDate=2016-01-01&amp;interval=WEEK</pre><p>You must retrieve the aggregated usage analytics response with the HTTP GET method. This
+        allows you to link directly from Web pages and other HTTP-enabled clients to usage analytics
+        responses. To do functional testing use the
+        cURL
+        library.</p><p>Execute this command against the demo database to get an usage analytics response in
+        JSON format: </p><p>
+        </p><pre class="screen">curl "play.dhis2.org/demo/api/dataStatistics?startDate=2016-02-01&amp;endDate=2016-02-14&amp;
+interval=WEEK" -u admin:district</pre><p>
+      </p><p>The JSON response looks like this:
+        </p><pre class="screen">[
+  {
+    "year": 2016,
+    "week": 5,
+    "mapViews": 2181,
+    "chartViews": 2227,
+    "reportTableViews": 5633,
+    "eventReportViews": 6757,
+    "eventChartViews": 9860,
+    "dashboardViews": 10082,
+    "totalViews": 46346,
+    "averageViews": 468,
+    "averageMapViews": 22,
+    "averageChartViews": 22,
+    "averageReportTableViews": 56,
+    "averageEventReportViews": 68,
+    "averageEventChartViews": 99,
+    "averageDashboardViews": 101,
+    "savedMaps": 1805,
+    "savedCharts": 2205,
+    "savedReportTables": 1995,
+    "savedEventReports": 1679,
+    "savedEventCharts": 1613,
+    "savedDashboards": 0,
+    "savedIndicators": 1831,
+    "activeUsers": 99,
+    "users": 969
+  },
+  {
+    "year": 2016,
+    "week": 6,
+    "mapViews": 2018,
+    "chartViews": 2267,
+    "reportTableViews": 4714,
+    "eventReportViews": 6697,
+    "eventChartViews": 9511,
+    "dashboardViews": 12181,
+    "totalViews": 47746,
+    "averageViews": 497,
+    "averageMapViews": 21,
+    "averageChartViews": 23,
+    "averageReportTableViews": 49,
+    "averageEventReportViews": 69,
+    "averageEventChartViews": 99,
+    "averageDashboardViews": 126,
+    "savedMaps": 1643,
+    "savedCharts": 1935,
+    "savedReportTables": 1867,
+    "savedEventReports": 1977,
+    "savedEventCharts": 1714,
+    "savedDashboards": 0,
+    "savedIndicators": 1646,
+    "activeUsers": 96,
+    "users": 953
+  }
+]</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s36.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s38.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.36.&nbsp;Data set report&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.38.&nbsp;Geospatial features</td></tr></table></div></body></html>

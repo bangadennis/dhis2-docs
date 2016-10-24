@@ -1,0 +1,28 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.16.&nbsp;Metadata Synchronization</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer guide"><link rel="up" href="webapi.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="webapi_metadata_versioning.html" title="1.15.&nbsp;Metadata versioning"><link rel="next" href="webapi_data_values.html" title="1.17.&nbsp;Data values"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.16.&nbsp;Metadata Synchronization</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="webapi_metadata_versioning.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="webapi_data_values.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="webapi_metadata_synchronization"></a>1.16.&nbsp;Metadata Synchronization</h2></div></div></div><p>This section explains the Metadata Synchronization API available starting 2.24</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>/api/metadata/sync - This api performs a metadata sync of the version name passed in the query
+          parameter by downloading and importing the specified version from the remote server as defined in the
+          settings app.</p></li></ul></div><div class="table"><a name="d0e3184"></a><p class="title"><b>Table&nbsp;1.25.&nbsp;Query parameters</b></p><div class="table-contents"><table class="table" summary="Query parameters" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr><th>
+              <p>Name</p>
+            </th><th>
+              <p>Required</p>
+            </th><th>
+              <p>Description</p>
+            </th></tr></thead><tbody><tr><td>
+              <p>versionName</p>
+            </td><td>
+              <p>true</p>
+            </td><td>
+              <p>versionName query parameter of the form "Version_&lt;id&gt;" . The api
+                downloads this version from the remote server and imports it in the local
+                system.</p>
+            </td></tr></tbody></table></div></div><br class="table-break"><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>This API should be used with utmost care. Please note that there is an alternate way to achieve sync in
+          a completely automated manner by leveraging the Metadata Sync Task from the "Data Administration"
+          app. See Chapter 22, Section 22.17 of User Manual for more details regarding Metadata Sync Task.</p></li><li class="listitem"><p>This sync API can alternatively be used to sync metadata for the versions which have failed from the
+          metadata sync scheduler.  Due to its dependence on the given metadata version number, care should be taken
+          for the order in which this gets invoked. E.g. If this api is used to sync some higher version from central
+          instance, then the sync might fail as the metadata dependencies are not present in the local instance.</p></li><li class="listitem"><p>Assume the local instance is at Version_12 and if this api is used to sync Version_15 (of type
+          BEST_EFFORT) from the central instance, the scheduler will start syncing metadata from Version_16. So the
+          local instance will not have the metadata versions between Version_12 and Version_15. You need to manually
+          sync the missing versions using this API only.</p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="webapi_metadata_synchronization_version"></a>1.16.1.&nbsp;Sync metadata version</h3></div></div></div><p><span class="bold"><strong>Example: Sync Version_6 from central system to this system</strong></span></p><p><span class="bold"><strong>Sample request:</strong></span>
+          </p><pre class="screen">curl -u admin:district "https://play.dhis2.org/dev/api/metadata/sync?versionName=Version_6"</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="webapi_metadata_versioning.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="webapi.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="webapi_data_values.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.15.&nbsp;Metadata versioning&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.17.&nbsp;Data values</td></tr></table></div></body></html>

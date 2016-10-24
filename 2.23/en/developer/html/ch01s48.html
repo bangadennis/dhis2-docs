@@ -1,0 +1,26 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.48.&nbsp;Filled organisation unit levels</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s47.html" title="1.47.&nbsp;Organisation units"><link rel="next" href="ch01s49.html" title="1.49.&nbsp;Static content"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.48.&nbsp;Filled organisation unit levels</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s47.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s49.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e10833"></a>1.48.&nbsp;Filled organisation unit levels</h2></div></div></div><p>The <span class="emphasis"><em>filledOrganisationUnitLevels</em></span> resource provides an ordered list of
+      organisation unit levels, where generated levels are injected into the list to fill positions
+      for which it does not exist a persisted level.</p><p>
+      </p><pre class="screen">GET /api/filledOrganisationUnitLevels</pre><p>
+    </p><p>To set the organisation unit levels you can issue a POST request with a JSON payload
+      looking like
+      this.</p><pre class="screen">{
+  "organisationUnitLevels": [{
+    "name": "National",
+    "level": 1,
+    "offlineLevels": 3
+  }, {
+    "name": "District",
+    "level": 2
+  }, {
+    "name": "Chiefdom",
+    "level": 3
+  }, {
+    "name": "Facility",
+    "level": 4
+  }]
+}</pre><p>To do functional testing with curl you can issue the following command.
+      </p><pre class="screen">curl "http://localhost/api/filledOrganisationUnitLevels" -H "Content-Type:application/json"
+-d @levels.json -u admin:district -v</pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s47.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s49.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.47.&nbsp;Organisation units&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.49.&nbsp;Static content</td></tr></table></div></body></html>

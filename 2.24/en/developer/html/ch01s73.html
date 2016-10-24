@@ -1,0 +1,33 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.73.&nbsp;Predictors</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s72.html" title="1.72.&nbsp;User data store"><link rel="next" href="ch01s74.html" title="1.74.&nbsp;Tokens"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.73.&nbsp;Predictors</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s72.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s74.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e13849"></a>1.73.&nbsp;Predictors</h2></div></div></div><p>A predictor allows you to generate data values based on an expression. This can be used to generate targets, thresholds and estimated values.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e13854"></a>1.73.1.&nbsp;Creating a predictor</h3></div></div></div><p>You can create a
+        predictor with a POST request to the predictors
+        resource:</p><pre class="screen">POST /api/24/predictors</pre><p>A sample payload looks like
+        this:</p><pre class="screen">{
+    "id": "AG10KUJCrRk",
+    "name": "Malaria Outbreak Threshold Predictor",
+    "shortName": "Malaria Outbreak Predictor",
+    "description": "Computes the threshold for potential malaria outbreaks based on the mean plus 1.5x the std dev",
+    "output": {
+        "id": "nXJJZNVAy0Y"
+    },
+    "generator": {
+        "expression": "AVG(#{r6nrJANOqMw})+1.5*STDDEV(#{r6nrJANOqMw})",
+        "dataElements": [],
+        "sampleElements": [{
+            "id": "r6nrJANOqMw"
+        }]
+    },
+    "periodType": "Monthly",
+    "sequentialSampleCount": 4,
+    "sequentialSkipCount": 1,
+    "annualSampleCount": 3,
+    "organisationUnitLevels": [4]
+}
+</pre><p>The output element refers to the identifier of the data element for which to saved
+        predited data values. The generator element refers to the expression to use when calculating
+        the predicted values.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e13867"></a>1.73.2.&nbsp;Generating predicted values</h3></div></div></div><p>To run all predictors (generating predicted values) you can make a POST request to the run
+        resource:</p><pre class="screen">POST /api/24/predictors/run</pre><p>To run a single predictor you can make a POST request to the run resource for a
+        predictor:</p><pre class="screen">POST /api/24/predictors/AG10KUJCrRk/run</pre><p>To do a dry run for a single predictor you can use the dryRun resource. This resource will
+        return all predicted values in the response, as opposed to actually writing those values to
+        the database:</p><pre class="screen">POST /api/24/predictors/AG10KUJCrRk/dryRun</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s72.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s74.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.72.&nbsp;User data store&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.74.&nbsp;Tokens</td></tr></table></div></body></html>

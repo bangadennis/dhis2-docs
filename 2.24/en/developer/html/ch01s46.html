@@ -1,0 +1,29 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>1.46.&nbsp;Program Messages</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_developer_manual.html" title="DHIS2 Developer Manual"><link rel="up" href="ch01.html" title="Chapter&nbsp;1.&nbsp;Web API"><link rel="prev" href="ch01s45.html" title="1.45.&nbsp;SMSCommand"><link rel="next" href="ch01s47.html" title="1.47.&nbsp;Users"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1.46.&nbsp;Program Messages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s45.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;1.&nbsp;Web API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s47.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e10705"></a>1.46.&nbsp;Program Messages</h2></div></div></div><p>Program Message holds reminders and alerts data related to specific Program or Program
+      Stage. Web APIs are exposed to handle CRUD operations on Program Messages and we will go
+      through them in the below section.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10710"></a>1.46.1.&nbsp;Sending program messages</h3></div></div></div><p>Program Message holds alert or reminder data that needs to be sent to concerned person
+        via Delivery channels. Currently we are supporting only two Delivery Channels SMS and EMAIL
+        but more can be added if needed. In order to use these channels, SMS and EMAIL setting
+        should be in place prior to sending messages using these channels. There are four different
+        type of recipients which are listed below. In case of TrackedEntityInstance and
+        OrganisationUnit, system will fetch their respective phone Number and email address based on
+        Delivery Channel specified in payload. Raw phone Numbers and email Addresses can also be
+        used as recipients. </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Tracked entity instance</p></li><li class="listitem"><p>Organisation unit</p></li><li class="listitem"><p>List of phone numbers</p></li><li class="listitem"><p>List of email addresses</p></li></ul></div><p> Below is the sample json payload for sending messages using the POST method. </p><pre class="screen">/api/24/messages/</pre><pre class="screen">{
+    "recipients": {
+        "trackedEntityInstanceId"{
+        "id": "UN810PwyVYO"
+        }
+    },    
+    "programStageInstance": {
+        "id": "pSllsjpfLH2"
+    },
+    "deliveryChannels": [
+        "SMS"
+    ],
+    "text": "An outbreak has been detected",
+    "subject": "Outbreak alert",
+    "storeCopy": false
+}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10733"></a>1.46.2.&nbsp;Retrieving and deleting program messages</h3></div></div></div><p>The list of messages can be retrieved using GET.</p><pre class="screen">GET /api/24/messages</pre><p>One particular message can also be retreived using GET.</p><pre class="screen">GET /api/24/messages/{uid}</pre><p>Message can be deleted using DELETE.</p><pre class="screen">DELETE /api/24/messages/{uid}</pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e10748"></a>1.46.3.&nbsp;Querying program messages</h3></div></div></div><p>The program message API supports program message queries based on request
+        parameters. Messages can be filtered based on below mentioned query parameters. All requests should
+        use the GET HTTP verb for retreiving information. </p><div class="table"><a name="d0e10753"></a><p class="title"><b>Table&nbsp;1.84.&nbsp;Query program messages API</b></p><div class="table-contents"><table class="table" summary="Query program messages API" border="1"><colgroup><col class="paramater"><col class="Example"></colgroup><thead><tr><th>Parameter</th><th>Example</th></tr></thead><tbody><tr><td>programInstance</td><td>GET /api/24/messages?programInstance=6yWDMa0LP7</td></tr><tr><td>programStageInstance</td><td>GET /api/24/messages?programStageInstance=SllsjpfLH2</td></tr><tr><td>trackedEntityInstance</td><td>GET /api/24/messages?trackedEntityInstance=xdfejpfLH2</td></tr><tr><td>organisationUnit</td><td>GET /api/24/messages?ou=Sllsjdhoe3</td></tr><tr><td>processedDate</td><td>GET /api/24/messages?processedDate=2016-02-01</td></tr></tbody></table></div></div><p><br class="table-break"></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s45.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s47.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">1.45.&nbsp;SMSCommand&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_developer_manual.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;1.47.&nbsp;Users</td></tr></table></div></body></html>
