@@ -24,7 +24,7 @@ The actual creation and definition of the data elements themselves are beyond th
         <para>In the <emphasis role="bold">Maintenance</emphasis> app, you manage the following data
             elements objects:</para>
         <table frame="all">
-            <title><?oxy_comment_start author="cecilia" timestamp="20160510T092315+0200" comment="Review with SME: 
+            <title><?oxy_comment_start author="cecilia" timestamp="20160510T092315+0200" comment="Review with SME:
 What is the generic term for what elements you can edit in this section? Types? Objects?
 In which order would a user edit them?
 What is the hierarcy between the elements?
@@ -561,7 +561,7 @@ Couldn&apos;t find this section." flag="done"?>Aggregation<?oxy_comment_end?>
                 </orderedlist>
                 <para>The aggregation levels option allows the data element to be aggregated at one
                     or more levels.</para>
-                <?oxy_comment_start author="cecilia" timestamp="20160510T142955+0200" comment="At next revision: 
+                <?oxy_comment_start author="cecilia" timestamp="20160510T142955+0200" comment="At next revision:
 For SME: Is this information still relevant?
 Ask Lars" flag="done"?>
                 <para>By default, the aggregation will start at the lowest assigned organisation
@@ -579,8 +579,8 @@ Ask Lars" flag="done"?>
                 <para>If applicable, enter custom attributes values, for example <emphasis
                         role="bold">Classification</emphasis> or <emphasis role="bold">Collection
                         method</emphasis>.</para>
-                <para>You set custom attributes in <emphasis role="bold">Data
-                        administration</emphasis> > <emphasis role="bold">Attribute</emphasis>.
+                <para>You set custom attributes in <emphasis role="bold">Maintenance
+                    </emphasis> > <emphasis role="bold">Attribute</emphasis>.
                     <?oxy_comment_start author="cecilia" timestamp="20160518T114951+0200" comment="At next revsision, add x-ref here." flag="done"?>For
                     more information about how to use attributes, refer to the
                     &quot;Attributes&quot; section.<?oxy_comment_end?></para>
