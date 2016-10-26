@@ -338,7 +338,7 @@
           <para>Six-monthly April: Six-month periods beginning on April 1st with a duration of six calendar months.</para>
         </listitem>
       </orderedlist>
-      <para> 
+      <para>
 </para>
       <para>As a general rule, all organisation units should collect the same data using the same frequency or periodicity. A data entry form therefore is associated with a single period type to make sure data is always collected according to the correct and same periodicity across the country. </para>
       <para>It is possible however to collect the same data elements using different period types by
@@ -404,10 +404,10 @@
         <para>When aggregating data on the period dimension there are two options for how the calculation is done, namely sum or averge. This otion is specified on a per data element in DHIS2 through the use of the &apos;aggregation operator&apos; attribute in the Add/Edit Data Elements dialog.
 
 </para>
-        <para>Most of the data collected on a routinely basis should be aggregated by summing up the months or weeks, for instance to create  a quarterly report on Measles immunisation one would sum  up the three monthly values for &quot;Measles doses given&quot;. 
+        <para>Most of the data collected on a routinely basis should be aggregated by summing up the months or weeks, for instance to create  a quarterly report on Measles immunisation one would sum  up the three monthly values for &quot;Measles doses given&quot;.
 
 </para>
-        <para>Other types of data that are more permanently valid over time like &quot;Number of staff in the PHU&quot; or an annual population estimate of &quot;Population under 1 year&quot; need to be aggregated differently. These values are static for all months as long as there are valid data. For example,  the &quot;Estimated population under 1&quot;, calculated from the census data ,is the same for all months of a given year, or the number of nurses working in a given facility is the same for every month in the 6 months period the number is reported for. 
+        <para>Other types of data that are more permanently valid over time like &quot;Number of staff in the PHU&quot; or an annual population estimate of &quot;Population under 1 year&quot; need to be aggregated differently. These values are static for all months as long as there are valid data. For example,  the &quot;Estimated population under 1&quot;, calculated from the census data ,is the same for all months of a given year, or the number of nurses working in a given facility is the same for every month in the 6 months period the number is reported for.
 
 </para>
         <para>This difference becomes important when calculating an annual value for the
@@ -472,7 +472,6 @@
     <para>This output table combines the two data element categories HIV_Age and Gender with the data element group set ART Group. The group enables subtotals for staging and entry points summing up the data elements in that group. Subtotals for either age groups and gender would be other possible columns to easily include  here.</para>
     <para>
 <screenshot>
-        <title>DHIS2 Login screen</title>
         <mediaobject>
           <imageobject>
             <imagedata width="60%" fileref="resources/images/data_dimensions/Ex_table2.jpg" format="JPG"/>
@@ -502,10 +501,9 @@
     <para>As we have seen, this is not a very useful representation, as Morbidity is organized into new cases, follow-ups, referrals, and then again in age groups. Also, we do not see the various diagnoses. The first step is to include the diagnoses field (which is a group set), which is done by dragging the &quot;diagnosis&quot; field down to be a row field, as shown in the figure below, and to add the group set called &quot;morbiditymortality&quot; in the column field to display new cases, follow-up, and referrals.</para>
     <para>
 <screenshot>
-        <title>DHIS2 Login screen</title>
         <mediaobject>
           <imageobject>
-            <imagedata width="60" align="center" fileref="resources/images/data_dimensions/pivot_diagnoses.jpg" format="JPG"/>
+            <imagedata width="60%" align="center" fileref="resources/images/data_dimensions/pivot_diagnoses.jpg" format="JPG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
