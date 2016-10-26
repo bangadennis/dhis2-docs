@@ -531,7 +531,6 @@
     <para>The idea of using group sets is that you can combine, in any set, different data elements. Thus, if we add the mortality data (by checking it from the drop-down menu of the main_de_groups field, and moving this field out of the table) we can see also the deaths, since the mortality data elements have been included as a &quot;death&quot; group in the &quot;morbiditymortality&quot; group set. The result is shown below.</para>
     <para>
 <screenshot>
-        <title>DHIS2 Login screen</title>
         <mediaobject>
           <imageobject>
             <imagedata width="60%" align="center" fileref="resources/images/data_dimensions/pivot_diagnoses_all.jpg" format="JPG"/>
