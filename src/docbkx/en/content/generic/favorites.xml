@@ -6,13 +6,15 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xmlns:svg="http://www.w3.org/2000/svg" xmlns:mth="http://www.w3.org/1998/Math/MathML"
     xmlns:db="http://docbook.org/ns/docbook">
-    <!--xml:id="favorites"-->
     <title>Manage favorites</title>
     <para>Saving your charts as favorites makes it easy to find them later. You can also choose to
         share them with other users as an interpretation or display them on the dashboard.</para>
-    <para>You can view the details and interpretations of your favorites when you open the <emphasis
+    <para>You can view the details and interpretations of your favorites when you open the
+            <?oxy_comment_start author="rachaelb" timestamp="20161010T224006+0200" comment="For 2.26 favorites will be also applied to: event reports, event visualizer, GIS"?><emphasis
             role="bold">Pivot table</emphasis> or <emphasis role="bold">Data
-            Visualization</emphasis> app.</para>
+            Visualization</emphasis> app<?oxy_comment_end?>. You can edit descriptions, share your
+        favorites, or write interpretations directly in this pane, or you can use the <emphasis
+            role="bold">Favorites</emphasis> menu.</para>
     <section>
         <title>Open a favorite</title>
         <orderedlist>
@@ -35,7 +37,7 @@
                         as</emphasis>.</para>
             </listitem>
             <listitem>
-                <para>Enter a name and if you wish to, a title and a description for your
+<para>Enter a name, title and a description for your
                     favorite.</para>
             </listitem>
             <listitem>
@@ -70,7 +72,7 @@
                         interpretation</emphasis>.</para>
             </listitem>
             <listitem>
-                <para>In the text field, type a comment, question or interpretation. You can see
+<para>In the text field, type a comment, question or interpretation. You can see
                     this information on the <emphasis role="bold">dashboard</emphasis>.</para>
             </listitem>
             <listitem>
@@ -78,7 +80,7 @@
                         <emphasis role="bold">+</emphasis> icon.</para>
             </listitem>
             <listitem>
-                <para>Select:<orderedlist>
+<para>Select:<orderedlist>
                         <listitem>
                             <para><emphasis role="bold">Allow external access</emphasis> if you want
                                 everyone to view this interpretation.</para>
@@ -140,38 +142,23 @@
             </orderedlist>
         </para>
     </section>
-    <!--xml:id="favorite_interpret_rel_period"-->
     <section>
-        <title>View and comment interpretations</title>
+        <title>View interpretations based on relative periods</title>
+        <para>To view interpretations for relative periods, such as a year ago:</para>
         <orderedlist>
             <listitem>
-                <para>Open a favorite with one or more interpretations.</para>
+                <para>Open a favorite with interpretations.</para>
             </listitem>
             <listitem>
-                <para>Click <emphasis role="bold">&lt;&lt;&lt;</emphasis> in the top right of the
-                    workspace to view, like and comment on interpretations.</para>
+                <para>Click <emphasis role="bold">>>></emphasis> in the top right of the
+                    workspace.</para>
             </listitem>
             <listitem>
-                <para>Click an interpretation. The chart or pivot table displays information based
-                    on when the interpretation was created. The date of the chart or table is
-                    visible next to the chart or table name, at the top of the workspace.</para>
-            </listitem>
-            <listitem>
-                <para>Click <emphasis role="bold">Comment</emphasis> to write an interpretation, and
-                        <emphasis role="bold">Post comment</emphasis> to publish your comment on the
-                    dashboard. This information is shared with people who have saved this
-                    interpretation as a favorite.</para>
+                <para>Click an interpretation.
+                    Y<?oxy_comment_start author="rachaelb" timestamp="20161011T155331+0200" comment="create screengrab"?>our
+                    chart displays the data and the date based on when the interpretation was
+                    created.<?oxy_comment_end?>To view other interpretations, click them.</para>
             </listitem>
         </orderedlist>
-        <para>To display a chart or table with the most recent information, click <emphasis
-                role="bold">Clear interpretation</emphasis>.</para>
-        <screenshot>
-            <mediaobject>
-                <imageobject>
-                    <imagedata align="center" fileref="resources/images/generic/favorites_panel.png"
-                        format="PNG" width="70%"/>
-                </imageobject>
-            </mediaobject>
-        </screenshot>
     </section>
 </section>

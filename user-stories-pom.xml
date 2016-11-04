@@ -72,6 +72,7 @@
 							<htmlStylesheet>resources/css/user_stories.css</htmlStylesheet>
 							<chapterAutolabel>false</chapterAutolabel>
 							<sectionAutolabel>false</sectionAutolabel>
+							<tableAutolabel>false</tableAutolabel>
 							<sectionLabelIncludesComponentLabel>false</sectionLabelIncludesComponentLabel>
 							<chunkedOutput>true</chunkedOutput>
 							<chunkSectionDepth>0</chunkSectionDepth>																		

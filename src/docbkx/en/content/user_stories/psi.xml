@@ -7,53 +7,42 @@
     xmlns:svg="http://www.w3.org/2000/svg" xmlns:mth="http://www.w3.org/1998/Math/MathML"
     xmlns:db="http://docbook.org/ns/docbook"
     xml:id="user_story_psi">
-    <title>PSI: DHIS2 as a Management Information System</title>
+    <title>DHIS2: a Management Information System at PSI</title>
     <para><emphasis role="bold">This interview was conducted in May 2016, with Sarah Romorini,
-            senior program manager at PSI. The aim of this interview was to find out more about how
-            DHIS2 has been rolled out and how it is being used by PSI today. Sarah Romorini has
-            worked with PSI for the past ten years, most recently with the implementation of DHIS
-            2.</emphasis></para>
+            senior program manager at PSI. The aim was to learn how DHIS2 was rolled out and how
+            it's being used by PSI today. Sarah Romorini has worked with PSI for the past ten years,
+            most recently with the implementation of DHIS2.</emphasis></para>
     <section>
-        <para><emphasis role="bold">About PSI:</emphasis> PSI is a global health organization
-            dedicated to improving the health of people in the developing world by focusing on
-            serious challenges like a lack of family planning, HIV and AIDS, barriers to maternal
-            health, and the greatest threats to children under five, including malaria, diarrhea,
-            pneumonia and malnutrition.</para>
-        <para>Founded in 1970, PSI provides lifesaving products, clinical services and behavior
-            change communication that empower the world’s most vulnerable people to lead healthier
-            lives. PSI works in partnership with local governments, ministries of health and local
-            organizations to create health solutions that are built to last.</para>
-        <para>More than 8,900 staff work for PSI and its affiliates. Its world headquarters are in
-            Washington, D.C. and its European offices are in Amsterdam. PSI works in more than 60
+        <title>About PSI</title>
+        <para>Founded in 1970, <link xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="http://www.psi.org/">PSI</link> provides lifesaving products, clinical
+            services and behavior change communication that empower the world’s most vulnerable
+            people to lead healthier lives. PSI works in partnership with local governments,
+            ministries of health and local organizations to create health solutions that are built
+            to last.</para>
+        <para>PSI has over 8,900 staff working on-site and with its affiliates in more than 60
             countries. In 2014, PSI’s revenue was calculated at $631,229,922 USD.</para>
     </section>
     <section>
-        <para><emphasis role="bold">Why did you choose DHIS2 at PSI, what drove the decision?</emphasis> In
-            2011, PSI began its search for a better Management Information System (MIS). Until then,
-            we’d been using a different MIS in every country and even within countries, different
-            MISs would be used for different projects. We were stuck with highly customized
-            “boutique” systems – that is, unique data collection systems for every project. This was
-            a mix of a Microsoft Excel, Access, and other tools. Programs were cobbling together
-            pieces of information to see trends and analyze their programs. Accessing data like this
-            wasn’t very efficient.</para>
-        <para>All of these unique, siloed systems led PSI to reflect upon two larger questions: how
-            does PSI want to engage with its information, both locally and globally? And how do we
-            want data to influence both the strategic and everyday program questions that PSI
-            tackles?</para>
-        <para>During its search for a new, global MIS, several different systems were considered but
-            finally, DHIS2 was chosen for its ability to collect, manage, and visualize
-            information…in essence, it was the system that made it easier for our programs to
-            collect information and make decisions based off of data. It’s an incredibly powerful
-            and flexible resource!</para>
-        <para>We were attracted to DHIS2’s ability to collect info on-the-go and the system’s
-            ability to meet different needs. For example, users can set up their own entry forms,
-            indicators and reports. DHIS2 is easily integrated with other interfaces; we especially
-            liked that data collection and monitoring can be adapted for all program areas,
-            including referrals, health services, sales and distribution.</para>
-        <para>Globally, PSI is making a huge push to make evidence-based decision-making easier for
-            the field, and DHIS2 is a very tangible tool in that sense. Capturing and analyzing
-            real-time data for decision making is appealing and relevant for our field programs and
-            organizationally, it reinforces how PSI’s programs are truly data-driven.</para>
+        <title>Why did you choose DHIS2 at PSI?</title>
+        <para>In 2011, PSI began its search for a better Management Information System (MIS). Until
+            then, we’d been using a different MIS in every country. Even within countries we'd have
+            different systems for different projects. We were stuck with highly customized systems
+            for every project; a mix of a Microsoft Excel, Access, and other tools. Programs were
+            cobbling together pieces of information to see trends and analyze their programs.
+            Accessing data like this wasn’t very efficient.</para>
+        <para><emphasis><emphasis role="bold">All of these unique, siloed systems led PSI to reflect
+                    upon two larger questions: how does PSI want to engage with its information,
+                    both locally and globally? And how do we want data to influence both the
+                    strategic and everyday program questions that PSI
+            tackles?</emphasis></emphasis></para>
+        <para>We chose DHIS2 for its ability to collect, manage, and visualize information.This
+            system makes it easier for our programs to collect information and make data-driven
+            decisions. It’s an incredibly powerful and flexible resource!</para>
+        <para>For example, users can set up their own entry forms, indicators and reports. DHIS2 is
+            easily integrated with other interfaces. We especially liked that data collection and
+            monitoring can be adapted for all program areas, including referrals, health services,
+            sales and distribution.</para>
         <para>
             <screenshot>
                 <mediaobject>
@@ -61,34 +50,28 @@
                         <imagedata fileref="resources/images/use_cases/psi_cambodia_workshop.jpg"
                             format="JPG" width="15cm" align="left"/>
                     </imageobject>
-                    <caption>PSI Cambodia participates in an evidence-based decision making
-                        workshop.</caption>
+                    <caption>Image: PSI Cambodia participates in an evidence-based decision making
+                        workshop. © PSI</caption>
                 </mediaobject>
             </screenshot>
         </para>
     </section>
     <section>
-        <para><emphasis role="bold">How did you roll out DHIS2? Was it a gradual process, district by district
-                for example?</emphasis> No, we did it in true PSI fashion; we dived right in! We
-            started with pilot projects that were rolled out nationwide in Kenya, El Salvador,
-            Uganda and Senegal. It was a huge benefit to have a low-complexity country like El
-            Salvador and a high-complexity country like Kenya and Uganda using DHIS2.</para>
+       <title>How did you roll out DHIS2?</title>
+        <para>We did it in true PSI fashion; we dived right in! We started with pilot projects that
+            were rolled out nationwide in Kenya, El Salvador, Uganda and Senegal. It was a huge
+            benefit to have a low-complexity country like El Salvador and a high-complexity country
+            like Kenya and Uganda using DHIS2.</para>
     </section>
     <section>
-        <para><emphasis role="bold">Kenya pilot project.</emphasis> Kenya was PSI’s largest pilot
-            project for DHIS2. All the projects are now reporting on DHIS2. It was a very exciting
-            process, as it was PSI’s first time implementing DHIS2 at scale. In Kenya, there’s a
-            wide range of programs on DHIS2, including malaria, HIV, family planning, social
-            franchising, hypertension, sales, cervical cancer, and others.</para>
+        <para>Kenya was PSI’s largest pilot project for DHIS2. In Kenya, there’s a wide range of
+            programs on DHIS2, including malaria, HIV, family planning, social franchising,
+            hypertension, sales, cervical cancer, and others.</para>
     </section>
     <section>
-        <para><emphasis role="bold">El Salvador pilot project.</emphasis> In El Salvador, PSI’s
-            reproductive health program was the first to join DHIS2. This helped monitor the
-            effectiveness of interpersonal communication, quality assurance visits, provider
-            performance, and helped the team identify trends and where to direct resources. I was a
-            part of the El Salvador team at the time, and it was incredible to see how program
-            managers and supervisors began using DHIS2 during meetings to illustrate trends, gaps,
-            and program needs.</para>
+        <para>In El Salvador, PSI’s reproductive health program was the first to join DHIS2. This
+            helped monitor the effectiveness of interpersonal communication, quality assurance
+visits, and provider performances.</para>
         <screenshot>
             <mediaobject>
                 <imageobject>
@@ -99,167 +82,73 @@
         </screenshot>
     </section>
     <section>
-        <para><emphasis role="bold">How many PSI countries are using DHIS2?</emphasis> After setting up our two
-            pilot projects, DHIS2 grew very quickly at PSI…we created demand for this system and
-            needed to meet other countries’ requests to introduce DHIS2. From 2013 until now, PSI
-            has over 20 countries reporting their data using DHIS2 on the production server and
-            several more are in development. Over 60 PSI countries use DHIS2 to report their monthly
-            aggregated health services data. With such a powerful tool, program managers can make
-            better, data-driven decisions, which ultimately translates into improved
-            programming.</para>
+        <title>How many PSI countries are using DHIS2?</title>
+        <para> After setting up our two pilot projects, DHIS2 grew very quickly. PSI has over 20
+            countries reporting their data using DHIS2 on the production server and several more are
+            in development. Over 60 PSI countries use DHIS2 to report their monthly aggregated
+            health services data.</para>
     </section>
     <section>
-        <para><emphasis role="bold">What are the differences between how PSI uses DHIS2 and how the Ministries
-                of Health do?</emphasis> PSI and MoHs are using the same MIS, that is to say DHIS2,
-            but they are not using the same server. This means that the information on PSI’s DHIS2
-            server and the information on the MoH’s DHIS2 server are managed separately. Since PSI
-            and the MoH capture different information, PSI’s is not creating a parallel system to
-            the MoH. However, it enables the potential to share the information gathered by the
-            other. In a few countries, MoHs have access to the information collected by PSI in their
-            DHIS2 server.</para>
-    </section>
-    <section>
-        <para><emphasis role="bold">How is DHIS2 making changes to its programs and businesses?</emphasis> DHIS2
-            could be used as just another MIS for data collection, but fortunately it’s used for so
-            much more. What we’re really interested in is seeing the programs using the information
-            on DHIS2 to influence their program decision making.</para>
-        <para>This is also part of a larger behavior change process to make better use of data and
-            we’re asking ourselves:<itemizedlist>
-                <listitem>
-                    <para>How do we make sure that program managers are using this information to
-                        direct where resources should be better used?</para>
-                </listitem>
-                <listitem>
-                    <para>Who should we target to use information to drive changes within programs
-                        and ensure that evidence-based decision-making is being applied?</para>
-                </listitem>
-            </itemizedlist></para>
-        <para>DHIS2 has enabled us to see how we’re performing in various areas of Behavior Change
-            Communication (BCC). For example, we’ve better visibility on what our Interpersonal
-            Communication (IPC) agents are doing. We can see the number of people that IPC agents
-            have reached, the BCC activities that are taking place, and so forth.</para>
-    </section>
-    <section>
-        <para><emphasis role="bold">How do you implement DHIS2? Do you use consultants or local PSI
-                teams?</emphasis></para>
-        <para><emphasis role="bold">Local PSI DHIS2 stars.</emphasis> We’re working closely with
-            PSI’s country teams so they feel empowered to use, manage, and analyze their data using
-            DHIS2. During DHIS2 implementations, in-country DHIS2 stars are identified and PSI
-            provides coaching and assistance to empower them to integrate data for decision
-            making—and DHIS2!—into their every day program management.</para>
+        <title>How are you implementing DHIS2?</title>
+        <para>We work closely with PSI’s <emphasis role="bold">country teams</emphasis> so they feel
+            empowered to use, manage, and analyze their data using DHIS2. During our
+            implementations, in-country DHIS2 stars are identified and PSI provides coaching and
+            assistance to empower them to integrate data for decision making into their every day
+            program management.</para>
         <section>
-            <para>We also identify local technical leads who can support DHIS2 maintenance and adapt
-                the system to meet their teams’ needs. For example, we’re implementing DHIS2 in
-                Zimbabwe and have an amazing MIS star there. Our team is working closely with him,
-                and he’s learning how to build and do the configuration himself—and this includes
-                some pretty complex integrations. It’s exciting to see how DHIS2 is really owned by
-                PSI Zimbabwe—the data in DHIS2 is theirs and they’re using it. This is the kind of
-                goal we aspire to.</para>
-            <para>
-                <screenshot>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata
-                                fileref="resources/images/use_cases/psi_data_flow"
-                                format="JPG" width="10cm" align="left"/>
-                        </imageobject>
-                        <caption>PSI Myanmar maps out their data flow.</caption>
-                    </mediaobject>
-                </screenshot>
-            </para>
+            <para>We also identify <emphasis role="bold">local technical leads</emphasis> who can
+                support DHIS2 maintenance and adapt the system to meet their teams’ needs. For
+                example, we’re implementing DHIS2 in Zimbabwe. Our team is working closely with our
+                "local star" there, and he’s learning how to build and do the configuration himself.
+                It’s exciting to see how DHIS2 is really owned by PSI Zimbabwe—the data in DHIS2 is
+                theirs and they’re using it. This is the kind of goal we aspire to.</para>
         </section>
     </section>
     <section>
-        <para><emphasis role="bold">DHIS2 Builders and Architects.</emphasis> Configuring DHIS2 to meet a
-            country’s data needs takes team work. To do this, PSI collaborates with “DHIS2
-            builders,” who do the technical configuration work…that is, building the DHIS2 system to
-            match the DHIS2 blueprint, which is based on the PSI country team’s data use
-            needs.</para>
-        <para>These DHIS2 builders are often HISP agencies in India, Vietnam, Uganda, West Africa,
-            and Colombia. We also work with BAO Systems, the largest US-based DHIS2 consulting and
+        <para>PSI collaborates with <emphasis role="bold">DHIS2 builders</emphasis>, who do the
+            technical configuration work, that is, building the DHIS2 system to match the DHIS2
+            blueprint, which is based on the PSI country team’s data use needs.</para>
+        <para>We collaborate with HISP agencies in India, Vietnam, Uganda, West Africa, and
+            Colombia. We also work with BAO Systems, the largest US-based DHIS2 consulting and
             hosting firm in North America, for configuration support.<link
-                xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://baosystems.com/"/> As
-            I mentioned before, we are also training PSI’s local DHIS2 stars to lead
-            configurations.</para>
-        <para>To make sure DHIS2 configuration work meets PSI’s standards, DHIS2 builders are
-            supervised by PSI’s DHIS2 Architects. The DHIS2 Architects are an important part of our
-            team and are specialized PSI DHIS2 experts—they not only make sure PSI’s DHIS2
-            configurations are high quality, but they also train local DHIS2 stars and help DHIS2
-            builders to learn PSI’s standards so our configurations become more efficient.</para>
+                xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://baosystems.com/"/>
+            .</para>
+        <para>DHIS2 builders are supervised by PSI’s <emphasis role="bold">DHIS2
+                architects</emphasis>. They ensure our configurations are of high quality, and they
+            train local technical leads and help DHIS2 builders to learn our standards.</para>
     </section>
     <section>
-        <para><emphasis role="bold">Do you provide DHIS2 training to PSI staff?</emphasis>  As part of our
-            long-term sustainability goals, we’re offering more training opportunities for local PSI
-            staff on DHIS2 administration and data use using DHIS2, as well as for DHIS2 builders so
-            they familiarize themselves with PSI standards. Before, we would create these trainings
-            a little on the fly because there were fewer countries, but now we’re starting to create
-            more standard, ready-to-go training resources. This helps us to save time and improve
-            our curriculum based off of experience—this is also part of our strategy to reach scale.
-            We also send PSI staff to the introductory and advanced trainings that HISPs
-            offer.</para>
+        <title>Do you provide DHIS2 training?</title>
+        <para>As part of our long-term sustainability goals, we’re offering more training
+            opportunities for local PSI staff on DHIS2 administration and data usage. Before, we
+            would create these trainings a little on-the-fly because there were fewer countries, but
+            now we’re starting to create more standard, ready-to-go training resources.</para>
     </section>
     <section>
-        <para><emphasis role="bold">Which parts of DHIS2 are you using the most?</emphasis>  Probably the
-            aggregate data forms. But I’d like to see PSI using Tracker even more….it’s an
-            incredibly flexible tool! More and more countries are using the DHIS2 tracking feature.
-            You can look at individual data, register individual cases, track individual cases and
-            then conduct surveys. This means that you can capture detailed information and then
-            analyze this information, to get the bigger picture about what’s going on. </para>
-        <para>Within PSI, we have a large network of franchised clinics and there are ongoing
-            discussions about the direction we want to take with electronic medical records and
-            Clinic Management Information Systems. So…whatever solution we’re proposing needs to be
-            DHIS-2 compatible. Now we’re at the point where we’re asking ourselves: What’s DHIS2’s
-            limit? </para>
+        <title>Which parts of DHIS2 are you using the most?</title>
+        <para>We're using the aggregate data forms most. PSI is looking into using Tracker to look
+            at individual data, register individual cases, track individual cases and then conduct
+            surveys. </para>
     </section>
     <section>
-        <para><emphasis role="bold">How do you go about customizing DHIS2? </emphasis>  Right now we’re focusing
-            on strengthening how we implement DHIS2 and the process we use. We’re identifying what
-            needs to happen and when, and the information we need to understand how the PSI country
-            team will use DHIS2. Each country has its unique configuration, but there are core
-            business processes that remain the same. So we’re identifying how this connects to the
-            information that we need to see and the decisions that we need to make. </para>
+        <title>How do you help DHIS2 users?</title>
+        <para>We’ve recently transitioned to BAO Systems to help PSI to field its help desk tickets.
+            We try to have a local DHIS2 administrator in each PSI country we work in. This person
+            can usually field basic questions, like how to reset a password, or intermediate ones,
+            like how to create a new form.</para>
     </section>
     <section>
-        <para><emphasis role="bold">What’s the general feedback you get on DHIS2?</emphasis>  It’s an incredibly
-            powerful tool, but it’s not necessarily intuitive to create your own form or how you
-            create your own dashboard. Sometimes that can be a barrier for PSI country teams to make
-            full use of DHIS2. We’re looking to make that easier, and we’re identifying who really
-            needs to be able to do what with DHIS2. For example, does a senior manager really need
-            to create her own dashboard, or is it OK that someone else does it for her, if she can
-            access and see her dashboards? Based off of this, we can understand who needs to be
-            trained on what. </para>
+        <title>Do you embed DHIS2 into other apps?</title>
+        <para>PSI develops custom reports and apps to make real time data collection and analysis
+            even easier. Our apps address key strategic and technical areas, including franchise
+            management and provider performance, improving network quality, and case surveillance
+            (such as malaria). </para>
     </section>
     <section>
-        <para><emphasis role="bold">How do you help DHIS2 users with the system?</emphasis>  We’ve recently
-            transitioned to BAO Systems to help PSI to field its Help Desk tickets. For example, if
-            a user gets stuck with a dashboard query, they submit a ticket through the Help Desk,
-            which is mainly answered by BAO, with support from PSI’s DHIS2 Architects. We try to
-            have a local DHIS2 administrator in each PSI country we work in; this person can usually
-            field basic questions, like how to reset a password, or intermediate ones, like how to
-            create a new form. Questions in the Help Desk range from basic to advanced, like
-            reporting a bug, which may need to be sent to Oslo.</para>
-    </section>
-    <section>
-        <para><emphasis role="bold">Do you embed DHIS2 into other apps?</emphasis>  Absolutely! In addition to
-            using DHIS2 as our MIS, PSI develops custom reports and apps to make real time data
-            collection and analysis even easier. Different apps address key strategic and technical
-            areas, including franchise management and provider performance, improving network
-            quality, and case surveillance (such as malaria). All the information collected via apps
-            is directly pushed into DHIS2. Analytics are automatically updated, giving users
-            real-time information and visual analytics that makes data-driven decision making
-            easier. </para>
-    </section>
-    <section>
-        <para><emphasis role="bold">Health Network Quality Improvement System (HNQIS)
-                app.</emphasis> The HNQIS app was developed by PSI with the aim to improve network
-            quality and provider performance. It’s an impressive app that responds to a very real
-            program need: How do we improve the quality of care that providers deliver more
-            effectively? It helps Quality Assurance (QA) officers plan their supervision routes and
-            target low-performing providers with high client volume. QA officers use PSI- and
-            MoH-approved checklists in the app to conduct assessments with PSI’s providers. QA
-            officers can easily monitor trends in network quality and identify how best to allocate
-            their time and resources to improve their providers’ performance. This app can be used
-            both on and offline.</para>
+        <title>The Health Network Quality Improvement System (HNQIS) app</title>
+        <para>We developed the HNQIS app to improve network quality and provider performance. It
+            helps Quality Assurance (QA) officers plan their supervision routes and target
+            low-performing providers with high client volume. </para>
         <para>
             <screenshot>
                 <mediaobject>
@@ -268,20 +157,19 @@
                             fileref="resources/images/use_cases/hnqis_gloryclinic_nairobikenya.jpg"
                             format="JPG" width="15cm" align="left"/>
                     </imageobject>
-                    <caption>HNQIS app being used in Glory Clinic in Nairobi, Kenya</caption>
+                    <caption>Image: HNQIS app being used in Glory Clinic in Nairobi, Kenya.©
+                        PSI</caption>
                 </mediaobject>
             </screenshot>
         </para>
     </section>
     <section>
-        <para><emphasis role="bold">Malaria case surveillance mobile app. </emphasis> This is a
-            really simple and elegant app and has a lot of potential—it’s being used in Cambodia to
-            quickly report positive malaria cases in almost real time. It’s super intuitive, so
-            anyone who can use a smartphone can use it. Pharmacists and other health providers use
-            this app to collect basic data points - like geographic location, type of malaria
-            detected and age/gender of the client. This information helps PSI and our partners to
-            track malaria cases, identify outbreaks and re-direct resources to where they are most
-            needed. Check it out—it’s on <link xmlns:xlink="http://www.w3.org/1999/xlink"
+        <title>The Malaria Case Surveillance app</title>
+        <para>PSI uses this mobile app in Cambodia to report positive malaria cases in almost
+            real-time. Pharmacists collect basic data points such as geographic location, type of
+            malaria detected and age and gender of the client. It helps us to identify outbreaks and
+            re-direct resources to where they are the most needed. You can check out the app here:
+                <link xmlns:xlink="http://www.w3.org/1999/xlink"
                 xlink:href="https://play.google.com/store/apps/details?id=org.eyeseetea.surveillance_kh&amp;hl=en"
                 >Google Play</link>.</para>
         <para>
@@ -292,8 +180,8 @@
                             fileref="resources/images/use_cases/cambodia_malaria_case_surveillance.png"
                             align="left" format="PNG" width="15cm"/>
                     </imageobject>
-                    <caption>A pharmacist in Cambodia uses the Malaria Case Surveillance
-                        app</caption>
+                    <caption>Image: A pharmacist in Cambodia uses the Malaria Case Surveillance
+                        app.© PSI</caption>
                 </mediaobject>
             </screenshot>
         </para>
