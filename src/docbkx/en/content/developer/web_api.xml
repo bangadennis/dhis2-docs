@@ -6120,7 +6120,7 @@ qPEdI1xn7k0,COMPLETED,&lt;pid>,&lt;psid>,&lt;enrollment-id>,&lt;ou>,2016-01-01,2
       <title>Embedding pivot tables with the Pivot Table plug-in</title>
       <para>In this example we will see how we can embed good-looking, light-weight html pivot
         tables with data served from a DHIS2 back-end into a Web page. To accomplish this we will use
-        the Pivot table plug-in. The plug-in is written in Javascript and depends on the Ext JS
+        the Pivot table plug-in. The plug-in is written in Javascript and depends on the jQuery
         library only. A complete working example can be found at <link
           xl:href="http://play.dhis2.org/portal/table.html"/>. Open the page in a web browser and
         view the source to see how it is set up.</para>
@@ -6130,100 +6130,77 @@ qPEdI1xn7k0,COMPLETED,&lt;pid>,&lt;psid>,&lt;enrollment-id>,&lt;ou>,2016-01-01,2
         <screen>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://dhis2-cdn.org/v215/ext/resources/css/ext-plugin-gray.css&quot; /&gt;
-  &lt;script src=&quot;https://dhis2-cdn.org/v215/ext/ext-all.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;https://dhis2-cdn.org/v215/plugin/table.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://dhis2-cdn.org/v225-1/plugin/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://dhis2-cdn.org/v225-1/plugin/reporttable.js&quot;&gt;&lt;/script&gt;
 
   &lt;script&gt;
-    var base = &quot;https://play.dhis2.org/demo&quot;;
+    reportTablePlugin.url = &quot;https://play.dhis2.org/demo&quot;;
+    reportTablePlugin.username = &quot;admin&quot;;
+    reportTablePlugin.password = &quot;district&quot;;
+    reportTablePlugin.loadingIndicator = true;
 
-    // Login - if OK, call the setLinks function
+    // Referring to an existing table through the id parameter, render to &quot;report1&quot; div
+    
+    var r1 = { el: &quot;report1&quot;, id: &quot;R0DVGvXDUNP&quot; });
 
-    Ext.onReady( function() {
-      Ext.Ajax.request({
-        url: base + &quot;dhis-web-commons-security/login.action&quot;,
-        method: &quot;POST&quot;,
-        params: { j_username: &quot;portal&quot;, j_password: &quot;Portal123&quot; },
-        success: setLinks
-      });
-    });
+    // Table configuration, render to &quot;report2&quot; div
+    
+    var r2 = {
+      el: &quot;report2&quot;,
+      columns: [
+        {dimension: &quot;dx&quot;, items: [{id: &quot;YtbsuPPo010&quot;}, {id: &quot;l6byfWFUGaP&quot;}]}
+      ],
+      rows: [
+        {dimension: &quot;pe&quot;, items: [{id: &quot;LAST_12_MONTHS&quot;}]}
+      ],
+      filters: [
+        {dimension: &quot;ou&quot;, items: [{id: &quot;USER_ORGUNIT&quot;}]}
+      ],
 
-    function setLinks() {
+      // All following properties are optional
+      title: &quot;My custom title&quot;,
+      showColTotals: false,
+      showRowTotals: false,
+      showColSubTotals: false,
+      showRowSubTotals: false,
+      showDimensionLabels: false,
+      hideEmptyRows: true,
+      skipRounding: true,
+      aggregationType: &quot;AVERAGE&quot;,
+      showHierarchy: true,
+      completedOnly: true,
+      displayDensity: &quot;COMFORTABLE&quot;,
+      fontSize: &quot;SMALL&quot;,
+      digitGroupSeparator: &quot;COMMA&quot;,
+      legendSet: {id: &quot;fqs276KXCXi&quot;}
+    };
 
-      // Referring to an existing table through the id parameter, render to &quot;table1&quot; div
-
-      DHIS.getTable({ url: base, el: &quot;table1&quot;, id: &quot;R0DVGvXDUNP&quot; });
-
-      // Full table configuration, render to &quot;table2&quot; div
-
-      DHIS.getTable({
-        url: base,
-        el: &quot;table2&quot;,
-        columns: [
-          {dimension: &quot;de&quot;, items: [{id: &quot;YtbsuPPo010&quot;}, {id: &quot;l6byfWFUGaP&quot;}]}
-        ],
-        rows: [
-          {dimension: &quot;pe&quot;, items: [{id: &quot;LAST_12_MONTHS&quot;}]}
-        ],
-        filters: [
-          {dimension: &quot;ou&quot;, items: [{id: &quot;USER_ORGUNIT&quot;}]}
-        ],
-        // All following options are optional
-        showTotals: false,
-        showSubTotals: false,
-        hideEmptyRows: true,
-        showHierarchy: true,
-        displayDensity: &quot;comfortable&quot;,
-        fontSize: &quot;large&quot;,
-        digitGroupSeparator: &quot;comma&quot;,
-        legendSet: {id: &quot;BtxOoQuLyg1&quot;}
-      });
-    }
+    reportTablePlugin.load([r1, r2]);
   &lt;/script&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-  &lt;div id=&quot;table1&quot;&gt;&lt;/div&gt;
-  &lt;div id=&quot;table2&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;report1&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;report2&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</screen>
       </para>
-      <para>Three files are included in the header section of the HTML document. The first two files
-        are the Ext JS javascript library (we use the DHIS2 content delivery network in this case)
-        and its css stylesheet. The third file is the Pivot table plug-in. Make sure the path is
-        pointing to your DHIS2 server installation.</para>
-      <screen>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://dhis2-cdn.org/v215/ext/resources/css/ext-plugin-gray.css&quot; /&gt;
-&lt;script src=&quot;http://dhis2-cdn.org/v215/ext/ext-all.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;http://dhis2-cdn.org/v215/plugin/table.js&quot;&gt;&lt;/script&gt;</screen>
-      <para>To authenticate with the DHIS2 server we use the same approach as in the previous
-        section. In the header of the HTML document we include the following Javascript inside a
-        script element. The <emphasis role="italic">setLinks</emphasis> method will be implemented
-        later. Make sure the <emphasis role="italic">base</emphasis> variable is pointing to your
-        DHIS2 installation.</para>
-      <screen>var base = &quot;https://play.dhis2.org/demo/&quot;;
-
-Ext.onReady( function() {
-  Ext.Ajax.request({
-    url: base + &quot;dhis-web-commons-security/login.action&quot;,
-    method: &quot;POST&quot;,
-    params: { j_username: &quot;portal&quot;, j_password: &quot;Portal123&quot; },
-      success: setLinks
-  });
-});</screen>
-      <para>Now let us have a look at the various options for the Pivot table plug-in. Two properies
-        are required: <emphasis role="italic">el</emphasis> and <emphasis role="italic"
-          >url</emphasis> (please refer to the table below). Now, if you want to refer to
-        pre-defined tables already made inside DHIS2 it is sufficient to provide the additional
-          <emphasis role="italic">id</emphasis> parameter. If you instead want to configure a pivot
-        table dynamically you shoud omit the id parameter and provide data dimensions inside a
-          <emphasis role="italic">columns</emphasis> array, a <emphasis role="italic"
+      <para>Two files are included in the header section of the HTML document. The first file is
+        the jQuery javascript library (we use the DHIS2 content delivery network in this case).
+        The second file is the Pivot table plug-in. Make sure the path is pointing to your DHIS2
+        server installation.</para>
+      <para>Now let us have a look at the various options for the Pivot tables. One property is
+        required: <emphasis role="italic">el</emphasis> (please refer to the table below). Now, if
+        you want to refer to pre-defined tables already made inside DHIS2 it is sufficient to
+        provide the additional <emphasis role="italic">id</emphasis> parameter. If you instead want
+        to configure a pivot table dynamically you should omit the id parameter and provide data
+        dimensions inside a <emphasis role="italic">columns</emphasis> array, a <emphasis role="italic"
           >rows</emphasis> array and optionally a <emphasis role="italic">filters</emphasis> array
         instead.</para>
       <para>A data dimension is defined as an object with a text property called <emphasis
           role="italic">dimension</emphasis>. This property accepts the following values: <emphasis
-          role="italic">in</emphasis> (indicator), <emphasis role="italic">de</emphasis> (data
-        element), <emphasis role="italic">ds</emphasis> (data set), <emphasis role="italic"
-          >dc</emphasis> (data element operand), <emphasis role="italic">pe</emphasis> (period),
+          role="italic">dx</emphasis> (indicator, data element, data element operand, data set,
+          event data item and program indicator), <emphasis role="italic">pe</emphasis> (period),
           <emphasis role="italic">ou</emphasis> (organisation unit) or the id of any organisation
         unit group set or data element group set (can be found in the web api). The data dimension
         also has an array property called <emphasis role="italic">items</emphasis> which accepts
@@ -6232,7 +6209,7 @@ Ext.onReady( function() {
         Coverage&quot; and &quot;ANC 3 Coverage&quot; on the columns in your table you can make the
         following <emphasis role="italic">columns</emphasis> config:</para>
       <screen>columns: [{
-  dimension: &quot;in&quot;, // &quot;in&quot;, &quot;de&quot;, &quot;ds&quot;, &quot;dc&quot;, &quot;pe&quot;, &quot;ou&quot; or any dimension id
+  dimension: &quot;dx&quot;,
   items: [
     {id: &quot;Uvn6LCg7dVU&quot;}, // the id of ANC 1 Coverage
     {id: &quot;OdiHJayrsKo&quot;}, // the id of ANC 2 Coverage
@@ -6253,13 +6230,6 @@ Ext.onReady( function() {
           </thead>
           <tbody>
             <row>
-              <entry>el</entry>
-              <entry>string</entry>
-              <entry>Yes</entry>
-              <entry/>
-              <entry>Identifier of the HTML element to render the table in your web page</entry>
-            </row>
-            <row>
               <entry>url</entry>
               <entry>string</entry>
               <entry>Yes</entry>
@@ -6267,11 +6237,56 @@ Ext.onReady( function() {
               <entry>Base URL of the DHIS2 server</entry>
             </row>
             <row>
+              <entry>username</entry>
+              <entry>string</entry>
+              <entry>Yes (if cross-domain)</entry>
+              <entry/>
+              <entry>Used for authentication if the server is running on a different domain</entry>
+            </row>
+            <row>
+              <entry>password</entry>
+              <entry>string</entry>
+              <entry>Yes (if cross-domain)</entry>
+              <entry/>
+              <entry>Used for authentication if the server is running on a different domain</entry>
+            </row>
+            <row>
+              <entry>loadingIndicator</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Whether to show a loading indicator before the table appears</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <table>
+        <title>Pivot table configuration</title>
+        <tgroup cols="5">
+          <thead>
+            <row>
+              <entry> Param </entry>
+              <entry> Type </entry>
+              <entry> Required </entry>
+              <entry> Options (default first) </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>el</entry>
+              <entry>string</entry>
+              <entry>Yes</entry>
+              <entry/>
+              <entry>Identifier of the HTML element to render the table in your web page</entry>
+            </row>
+            <row>
               <entry>id</entry>
               <entry>string</entry>
               <entry>No</entry>
               <entry/>
-              <entry>Identifier of a pre-defined table (favorite) in DHIS</entry>
+              <entry>Identifier of a pre-defined table (favorite) in DHIS2</entry>
             </row>
             <row>
               <entry>columns</entry>
@@ -6295,18 +6310,46 @@ Ext.onReady( function() {
               <entry>Data dimensions to include in table as filters</entry>
             </row>
             <row>
-              <entry>showTotals</entry>
-              <entry>boolean</entry>
+              <entry>title</entry>
+              <entry>string</entry>
               <entry>No</entry>
-              <entry>true | false</entry>
-              <entry>Whether to display totals for columns and rows</entry>
+              <entry/>
+              <entry>Show a custom title above the table</entry>
             </row>
             <row>
-              <entry>showSubTotals</entry>
+              <entry>showColTotals</entry>
               <entry>boolean</entry>
               <entry>No</entry>
               <entry>true | false</entry>
-              <entry>Whether to display sub-totals for columns and rows</entry>
+              <entry>Whether to display totals for columns</entry>
+            </row>
+            <row>
+              <entry>showRowTotals</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>true | false</entry>
+              <entry>Whether to display totals for rows</entry>
+            </row>
+            <row>
+              <entry>showColSubTotals</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>true | false</entry>
+              <entry>Whether to display sub-totals for columns</entry>
+            </row>
+            <row>
+              <entry>showRowSubTotals</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>true | false</entry>
+              <entry>Whether to display sub-totals for rows</entry>
+            </row>
+            <row>
+              <entry>showDimensionLabels</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>true | false</entry>
+              <entry>Whether to display the name of the dimension top-left in the table</entry>
             </row>
             <row>
               <entry>hideEmptyRows</entry>
@@ -6316,6 +6359,20 @@ Ext.onReady( function() {
               <entry>Whether to hide rows with no data</entry>
             </row>
             <row>
+              <entry>skipRounding</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>false | true</entry>
+              <entry>Whether to skip rounding of data values</entry>
+            </row>
+            <row>
+              <entry>completedOnly</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>false | true</entry>
+              <entry>Whether to only show completed events</entry>
+            </row>
+            <row>
               <entry>showHierarchy</entry>
               <entry>boolean</entry>
               <entry>No</entry>
@@ -6323,24 +6380,31 @@ Ext.onReady( function() {
               <entry>Whether to extend orgunit names with the name of all anchestors</entry>
             </row>
             <row>
+              <entry>aggregationType</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry>&quot;DEFAULT&quot; | &quot;COUNT&quot; | &quot;AVERAGE&quot; | &quot;SUM&quot; | &quot;STDDEV&quot; | &quot;VARIANCE&quot; | &quot;MIN&quot; | &quot;MAX&quot;</entry>
+              <entry>Override the data element's default aggregation type</entry>
+            </row>
+            <row>
               <entry>displayDensity</entry>
               <entry>string</entry>
               <entry>No</entry>
-              <entry>&quot;normal&quot; | &quot;comfortable&quot; | &quot;compact&quot;</entry>
+              <entry>&quot;NORMAL&quot; | &quot;COMFORTABLE&quot; | &quot;COMPACT&quot;</entry>
               <entry>The amount of space inside table cells</entry>
             </row>
             <row>
               <entry>fontSize</entry>
               <entry>string</entry>
               <entry>No</entry>
-              <entry>&quot;normal&quot; | &quot;large&quot; | &quot;small&quot;</entry>
+              <entry>&quot;NORMAL&quot; | &quot;LARGE&quot; | &quot;SMALL&quot;</entry>
               <entry>Table font size</entry>
             </row>
             <row>
               <entry>digitGroupSeparator</entry>
               <entry>string</entry>
               <entry>No</entry>
-              <entry>&quot;space&quot; | &quot;comma&quot; | &quot;none&quot;</entry>
+              <entry>&quot;SPACE&quot; | &quot;COMMA&quot; | &quot;NONE&quot;</entry>
               <entry>How values are formatted: 1 000 | 1,000 | 1000</entry>
             </row>
             <row>
@@ -6348,8 +6412,7 @@ Ext.onReady( function() {
               <entry>object</entry>
               <entry>No</entry>
               <entry/>
-              <entry>Show a color indicator next to the values (currently reusing legend sets from
-                GIS)</entry>
+              <entry>Color the values in the table according to the legend set</entry>
             </row>
             <row>
               <entry>userOrgUnit</entry>
@@ -6359,52 +6422,23 @@ Ext.onReady( function() {
               <entry>Organisation unit identifiers, overrides organisation units associated with
                 curretn user, single or array</entry>
             </row>
+            <row>
+              <entry>relativePeriodDate</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Date identifier e.g: "2016-01-01". Overrides the start date of the relative period</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <para>We continue by adding one pre-defined and one dynamic pivot table to our HTML document.
-        You can browse the list of available pivot tables using the Web API here: <link
-          xl:href="http://play.dhis2.org/demo/api/24/reportTables"/>.</para>
-      <screen>function setLinks() {
-  DHIS.getTable({ url: base, el: &quot;table1&quot;, id: &quot;R0DVGvXDUNP&quot; });
-
-  DHIS.getTable({
- url: base,
- el: &quot;table2&quot;,
- columns: [
-   {dimension: &quot;de&quot;, items: [{id: &quot;YtbsuPPo010&quot;}, {id: &quot;l6byfWFUGaP&quot;}]}
- ],
- rows: [
-   {dimension: &quot;pe&quot;, items: [{id: &quot;LAST_12_MONTHS&quot;}]}
- ],
- filters: [
-   {dimension: &quot;ou&quot;, items: [{id: &quot;USER_ORGUNIT&quot;}]}
- ],
- // All following options are optional
- showTotals: false,
- showSubTotals: false,
- hideEmptyRows: true,
- showHierarchy: true,
- displayDensity: &quot;comfortable&quot;,
- fontSize: &quot;large&quot;,
- digitGroupSeparator: &quot;comma&quot;,
- legendSet: {id: &quot;BtxOoQuLyg1&quot;}
-  });
-}</screen>
-      <para>Finally we include some <emphasis role="italic">div</emphasis> elements in the body
-        section of the HTML document with the identifiers referred to in the plug-in
-        Javascript.</para>
-      <screen>&lt;div id=&quot;table1&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;table2&quot;&gt;&lt;/div&gt;</screen>
-      <para>To see a complete working example please visit <link
-          xl:href="http://play.dhis2.org/portal/table.html"/>.</para>
     </section>
     <section>
       <title>Embedding charts with the Visualizer chart plug-in</title>
-      <para>In this example we will see how we can embed good-looking Ext JS charts (<link
-          xl:href="http://www.sencha.com/products/extjs"/>) with data served from a DHIS2 back-end
+      <para>In this example we will see how we can embed good-looking Highcharts charts (<link
+          xl:href="http://www.highcharts.com"/>) with data served from a DHIS2 back-end
         into a Web page. To accomplish this we will use the DHIS2 Visualizer plug-in. The plug-in is
-        written in Javascript and depends on the Ext JS library only. A complete working example can
+        written in javascript and depends on the jQuery library. A complete working example can
         be found at <link xl:href="http://play.dhis2.org/portal/chart.html"/>. Open the page in a
         web browser and view the source to see how it is set up.</para>
       <para>We start by having a look at what the complete html file could look like. This setup
@@ -6413,110 +6447,86 @@ Ext.onReady( function() {
         <screen>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://dhis2-cdn.org/v215/ext/resources/css/ext-plugin-gray.css&quot; /&gt;
-  &lt;script src=&quot;http://dhis2-cdn.org/v215/ext/ext-all.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;http://dhis2-cdn.org/v215/plugin/chart.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://dhis2-cdn.org/v225-1/plugin/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://dhis2-cdn.org/v225-1/plugin/chart.js&quot;&gt;&lt;/script&gt;
 
   &lt;script&gt;
-    var base = &quot;https://play.dhis2.org/demo&quot;;
+    chartPlugin.url = &quot;https://play.dhis2.org/demo&quot;;
+    chartPlugin.username = &quot;admin&quot;;
+    chartPlugin.password = &quot;district&quot;;
+    chartPlugin.loadingIndicator = true;
+    
+    // Referring to an existing chart through the id parameter, render to &quot;report1&quot; div
+    
+    var r1 = { el: "report1", id: "R0DVGvXDUNP" });
 
-    // Login - if OK, call the setLinks function
+    // Chart configuration, render to "report2" div
+    
+    var r2 = {
+      el: "report2",
+      columns: [
+        {dimension: "dx", items: [{id: "YtbsuPPo010"}, {id: "l6byfWFUGaP"}]}
+      ],
+      rows: [
+        {dimension: "pe", items: [{id: "LAST_12_MONTHS"}]}
+      ],
+      filters: [
+        {dimension: "ou", items: [{id: "USER_ORGUNIT"}]}
+      ],
 
-    Ext.onReady( function() {
-      Ext.Ajax.request({
-        url: base + &quot;dhis-web-commons-security/login.action&quot;,
-        method: &quot;POST&quot;,
-        params: { j_username: &quot;portal&quot;, j_password: &quot;Portal123&quot; },
-        success: setLinks
-      });
-    });
-
-    function setLinks() {
-
-      // Referring to an existing chart through the id parameter, render to &quot;chart1&quot; div
-
-      DHIS.getChart({ url: base, el: &quot;chart1&quot;, id: &quot;R0DVGvXDUNP&quot; });
-
-      // Full chart configuration, render to &quot;chart2&quot; div
-
-      DHIS.getChart({
-        url: base,
-        el: &quot;chart2&quot;,
-        type: &quot;stackedBar&quot;,
-        columns: [ // Chart series
-          {dimension: &quot;de&quot;, items: [{id: &quot;YtbsuPPo010&quot;}, {id: &quot;l6byfWFUGaP&quot;}]}
-        ],
-        rows: [ // Chart categories
-          {dimension: &quot;pe&quot;, items: [{id: &quot;LAST_12_MONTHS&quot;}]}
-        ],
-        filters: [
-          {dimension: &quot;ou&quot;, items: [{id: &quot;USER_ORGUNIT&quot;}]}
-        ],
-        // All following options are optional
-        showData: false,
-        targetLineValue: 70,
-        baseLineValue: 20,
-        showTrendLine: true,
-        hideLegend: true,
-        title: &quot;My chart title&quot;,
-        domainAxisTitle: &quot;Periods&quot;,
-        rangeAxisTitle: &quot;Percent&quot;
-      });
-    }
+      // All following properties are optional
+      title: &quot;Custom title&quot;,
+      type: &quot;line&quot;,
+      showValues: false,
+      hideEmptyRows: true,
+      regressionType: &quot;LINEAR&quot;,
+      completedOnly: true,
+      targetLineValue: 100,
+      targetLineTitle: &quot;My target line title&quot;,
+      baseLineValue: 20,
+      baseLineTitle: &quot;My base line title&quot;,
+      aggregationType: &quot;AVERAGE&quot;,
+      rangeAxisMaxValue: 100,
+      rangeAxisMinValue: 20,
+      rangeAxisSteps: 5,
+      rangeAxisDecimals: 2,
+      rangeAxisTitle: &quot;My range axis title&quot;,
+      domainAxisTitle: &quot;My domain axis title&quot;,
+      hideLegend: true
   &lt;/script&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-  &lt;div id=&quot;chart1&quot;&gt;&lt;/div&gt;
-  &lt;div id=&quot;chart2&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;report1&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;report2&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</screen>
       </para>
-      <para>Three files are included in the header section of the HTML document. The first two files
-        are the Ext JS javascript library (we use the DHIS2 content delivery network in this case)
-        and its stylesheet. The third file is the Visualizer plug-in. Make sure the path is pointing
-        to your DHIS2 server installation.</para>
-      <screen>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://dhis2-cdn.org/v215/ext/resources/css/ext-plugin-gray.css&quot; /&gt;
-&lt;script src=&quot;http://dhis2-cdn.org/v215/ext/ext-all.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;http://dhis2-cdn.org/v215/plugin/chart.js&quot;&gt;&lt;/script&gt;</screen>
-      <para>To authenticate with the DHIS2 server we use the same approach as in the previous
-        section. In the header of the HTML document we include the following Javascript inside a
-        script element. The <emphasis role="italic">setLinks</emphasis> method will be implemented
-        later. Make sure the <emphasis role="italic">base</emphasis> variable is pointing to your
-        DHIS2 installation.</para>
-      <screen>var base = &quot;https://play.dhis2.org/demo/&quot;;
-
-Ext.onReady( function() {
-  Ext.Ajax.request({
-    url: base + &quot;dhis-web-commons-security/login.action&quot;,
-    method: &quot;POST&quot;,
-    params: { j_username: &quot;portal&quot;, j_password: &quot;Portal123&quot; },
-    success: setLinks
-  });
-});</screen>
-      <para>Now let us have a look at the various options for the Visualizer plug-in. Two properies
-        are required: <emphasis role="italic">el</emphasis> and <emphasis role="italic"
-          >url</emphasis> (please refer to the table below). Now, if you want to refer to
-        pre-defined charts already made inside DHIS2 it is sufficient to provide the additional
-          <emphasis role="italic">id</emphasis> parameter. If you instead want to configure a chart
-        dynamically you shoud omit the id parameter and provide data dimensions inside a <emphasis
-          role="italic">columns</emphasis> array (chart series), a <emphasis role="italic"
-          >rows</emphasis> array (chart categories) and optionally a <emphasis role="italic"
-          >filters</emphasis> array instead.</para>
+      <para>Two files are included in the header section of the HTML document. The first file is
+        the jQuery javascript library (we use the DHIS2 content delivery network in this case).
+        The second file is the Visualizer chart plug-in. Make sure the path is pointing to your DHIS2
+        server installation.</para>
+      <para>Now let us have a look at the various options for the charts. One property is
+        required: <emphasis role="italic">el</emphasis> (please refer to the table below). Now, if
+        you want to refer to pre-defined charts already made inside DHIS2 it is sufficient to
+        provide the additional <emphasis role="italic">id</emphasis> parameter. If you instead want
+        to configure a chart dynamically you should omit the id parameter and provide data
+        dimensions inside a <emphasis role="italic">columns</emphasis> array, a <emphasis role="italic"
+          >rows</emphasis> array and optionally a <emphasis role="italic">filters</emphasis> array
+        instead.</para>
       <para>A data dimension is defined as an object with a text property called <emphasis
           role="italic">dimension</emphasis>. This property accepts the following values: <emphasis
-          role="italic">in</emphasis> (indicator), <emphasis role="italic">de</emphasis> (data
-        element), <emphasis role="italic">ds</emphasis> (data set), <emphasis role="italic"
-          >dc</emphasis> (data element operand), <emphasis role="italic">pe</emphasis> (period),
+          role="italic">dx</emphasis> (indicator, data element, data element operand, data set,
+          event data item and program indicator), <emphasis role="italic">pe</emphasis> (period),
           <emphasis role="italic">ou</emphasis> (organisation unit) or the id of any organisation
         unit group set or data element group set (can be found in the web api). The data dimension
         also has an array property called <emphasis role="italic">items</emphasis> which accepts
         objects with an <emphasis role="italic">id</emphasis> property.</para>
       <para>To sum up, if you want to have e.g. &quot;ANC 1 Coverage&quot;, &quot;ANC 2
-        Coverage&quot; and &quot;ANC 3 Coverage&quot; as series in your chart you can make the
+        Coverage&quot; and &quot;ANC 3 Coverage&quot; on the columns in your chart you can make the
         following <emphasis role="italic">columns</emphasis> config:</para>
       <screen>columns: [{
-  dimension: &quot;in&quot;, // could be &quot;in&quot;, &quot;de&quot;, &quot;ds&quot;, &quot;dc&quot;, &quot;pe&quot;, &quot;ou&quot; or any dimension id
+  dimension: &quot;dx&quot;,
   items: [
     {id: &quot;Uvn6LCg7dVU&quot;}, // the id of ANC 1 Coverage
     {id: &quot;OdiHJayrsKo&quot;}, // the id of ANC 2 Coverage
@@ -6524,7 +6534,52 @@ Ext.onReady( function() {
   ]
 }]</screen>
       <table>
-        <title>Visualizer chart plug-in configuration</title>
+        <title>Chart plug-in configuration</title>
+        <tgroup cols="5">
+          <thead>
+            <row>
+              <entry> Param </entry>
+              <entry> Type </entry>
+              <entry> Required </entry>
+              <entry> Options (default first) </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>url</entry>
+              <entry>string</entry>
+              <entry>Yes</entry>
+              <entry/>
+              <entry>Base URL of the DHIS2 server</entry>
+            </row>
+            <row>
+              <entry>username</entry>
+              <entry>string</entry>
+              <entry>Yes (if cross-domain)</entry>
+              <entry/>
+              <entry>Used for authentication if the server is running on a different domain</entry>
+            </row>
+            <row>
+              <entry>password</entry>
+              <entry>string</entry>
+              <entry>Yes (if cross-domain)</entry>
+              <entry/>
+              <entry>Used for authentication if the server is running on a different domain</entry>
+            </row>
+            <row>
+              <entry>loadingIndicator</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Whether to show a loading indicator before the chart appears</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      
+      <table>
+        <title>Chart configuration</title>
         <tgroup cols="5">
           <thead>
             <row>
@@ -6544,13 +6599,6 @@ Ext.onReady( function() {
               <entry>Identifier of the HTML element to render the chart in your web page</entry>
             </row>
             <row>
-              <entry>url</entry>
-              <entry>string</entry>
-              <entry>Yes</entry>
-              <entry/>
-              <entry>Base URL of the DHIS2 server</entry>
-            </row>
-            <row>
               <entry>id</entry>
               <entry>string</entry>
               <entry>No</entry>
@@ -6561,7 +6609,7 @@ Ext.onReady( function() {
               <entry>type</entry>
               <entry>string</entry>
               <entry>No</entry>
-              <entry>column | stackedcolumn | bar | stackedbar | line | area | pie</entry>
+              <entry>column | stackedcolumn | bar | stackedbar | line | area | pie | radar | gauge</entry>
               <entry>Chart type</entry>
             </row>
             <row>
@@ -6586,25 +6634,123 @@ Ext.onReady( function() {
               <entry>Data dimensions to include in chart as filters</entry>
             </row>
             <row>
-              <entry>showData</entry>
-              <entry>boolean</entry>
+              <entry>title</entry>
+              <entry>string</entry>
               <entry>No</entry>
-              <entry>false | true</entry>
-              <entry>Whether to display data on the chart</entry>
+              <entry/>
+              <entry>Show a custom title above the chart</entry>
             </row>
             <row>
-              <entry>showTrendLine</entry>
+              <entry>showValues</entry>
               <entry>boolean</entry>
               <entry>No</entry>
               <entry>false | true</entry>
-              <entry>Whether to display trend line(s) on the chart</entry>
+              <entry>Whether to display data values on the chart</entry>
+            </row>
+            <row>
+              <entry>hideEmptyRows</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>false | true</entry>
+              <entry>Whether to hide empty categories</entry>
+            </row>
+            <row>
+              <entry>completedOnly</entry>
+              <entry>boolean</entry>
+              <entry>No</entry>
+              <entry>false | true</entry>
+              <entry>Whether to only show completed events</entry>
+            </row>
+            <row>
+              <entry>regressionType</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry>&quot;NONE&quot; | &quot;LINEAR&quot;</entry>
+              <entry>Show trend lines</entry>
+            </row>
+            <row>
+              <entry>targetLineValue</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Display a target line with this value</entry>
+            </row>
+            <row>
+              <entry>targetLineTitle</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Display a title on the target line (does not apply without a target line value)</entry>
+            </row>
+            <row>
+              <entry>baseLineValue</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Display a base line with this value</entry>
+            </row>
+            <row>
+              <entry>baseLineTitle</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Display a title on the base line (does not apply without a base line value)</entry>
+            </row>
+            <row>
+              <entry>rangeAxisTitle</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Title to be displayed along the range axis</entry>
+            </row>
+            <row>
+              <entry>rangeAxisMaxValue</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Max value for the range axis to display</entry>
+            </row>
+            <row>
+              <entry>rangeAxisMinValue</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Min value for the range axis to display</entry>
+            </row>
+            <row>
+              <entry>rangeAxisSteps</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Number of steps for the range axis to display</entry>
+            </row>
+            <row>
+              <entry>rangeAxisDecimals</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Bumber of decimals for the range axis to display</entry>
+            </row>
+            <row>
+              <entry>domainAxisTitle</entry>
+              <entry>number</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Title to be displayed along the domain axis</entry>
+            </row>
+            <row>
+              <entry>aggregationType</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry>&quot;DEFAULT&quot; | &quot;COUNT&quot; | &quot;AVERAGE&quot; | &quot;SUM&quot; | &quot;STDDEV&quot; | &quot;VARIANCE&quot; | &quot;MIN&quot; | &quot;MAX&quot;</entry>
+              <entry>Override the data element's default aggregation type</entry>
             </row>
             <row>
               <entry>hideLegend</entry>
               <entry>boolean</entry>
               <entry>No</entry>
               <entry>false | true</entry>
-              <entry>Whether to hide the chart legend</entry>
+              <entry>Whether to hide the series legend</entry>
             </row>
             <row>
               <entry>hideTitle</entry>
@@ -6614,62 +6760,6 @@ Ext.onReady( function() {
               <entry>Whether to hide the chart title</entry>
             </row>
             <row>
-              <entry>targetLineValue</entry>
-              <entry>double</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Value of target line to display on the chart</entry>
-            </row>
-            <row>
-              <entry>targetLineLabel</entry>
-              <entry>string</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Label for target line</entry>
-            </row>
-            <row>
-              <entry>baseLineValue</entry>
-              <entry>double</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Value of baseline to display on the chart</entry>
-            </row>
-            <row>
-              <entry>baseLineLabel</entry>
-              <entry>string</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Label for baseline</entry>
-            </row>
-            <row>
-              <entry>domainAxisTitle</entry>
-              <entry>string</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Title for the domain axis</entry>
-            </row>
-            <row>
-              <entry>rangeAxisTitle</entry>
-              <entry>string</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Title for the range axis</entry>
-            </row>
-            <row>
-              <entry>width</entry>
-              <entry>integer</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Width of chart</entry>
-            </row>
-            <row>
-              <entry>height</entry>
-              <entry>integer</entry>
-              <entry>No</entry>
-              <entry/>
-              <entry>Height of chart</entry>
-            </row>
-            <row>
               <entry>userOrgUnit</entry>
               <entry>string / array</entry>
               <entry>No</entry>
@@ -6677,47 +6767,16 @@ Ext.onReady( function() {
               <entry>Organisation unit identifiers, overrides organisation units associated with
                 curretn user, single or array</entry>
             </row>
+            <row>
+              <entry>relativePeriodDate</entry>
+              <entry>string</entry>
+              <entry>No</entry>
+              <entry/>
+              <entry>Date identifier e.g: "2016-01-01". Overrides the start date of the relative period</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
-      <para>We continue by including two pre-defined charts and to dynamic charts to our HTML
-        document. You can browse the list of available charts using the Web API here: <link
-          xl:href="http://play.dhis2.org/demo/api/24/charts"/>.</para>
-      <screen>function setLinks() {
-  DHIS.getChart({ url: base, el: &quot;chart1&quot;, id: &quot;R0DVGvXDUNP&quot; });
-
-  DHIS.getChart({
- url: base,
- el: &quot;chart2&quot;,
- type: &quot;stackedBar&quot;,
- columns: [ // Chart series
-   {dimension: &quot;de&quot;, items: [{id: &quot;YtbsuPPo010&quot;}, {id: &quot;l6byfWFUGaP&quot;}]}
- ],
- rows: [ // Chart categories
-   {dimension: &quot;pe&quot;, items: [{id: &quot;LAST_12_MONTHS&quot;}]}
- ],
- filters: [
-   {dimension: &quot;ou&quot;, items: [{id: &quot;USER_ORGUNIT&quot;}]}
- ],
- // All following options are optional
- showData: false,
- targetLineValue: 70,
- baseLineValue: 20,
- showTrendLine: true,
- hideLegend: true,
- title: &quot;My chart title&quot;,
- domainAxisTitle: &quot;Periods&quot;,
- rangeAxisTitle: &quot;Percent&quot;
-  });
-}</screen>
-      <para>Finally we include some <emphasis role="italic">div</emphasis> elements in the body
-        section of the HTML document with the identifiers referred to in the plug-in
-        Javascript.</para>
-      <screen>&lt;div id=&quot;chart1&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;chart2&quot;&gt;&lt;/div&gt;
-</screen>
-      <para>To see a complete working example please visit <link
-          xl:href="http://play.dhis2.org/portal/chart.html"/>.</para>
     </section>
     <section>
       <title>Embedding maps with the GIS map plug-in</title>
