@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg" xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <!-- xml:id="about_user_userrole">-->
+    <title>About user
+        <?oxy_comment_start author="cecilia" timestamp="20161110T105014+0100" comment="Permissions or authorities?"?>management<?oxy_comment_end?></title>
+    <para>Multiple users can access DHIS2 simultaneously and each user can have different
+        authorities. You can fine-tune these authorities so that certain users only can enter data,
+        while others only can generate reports.</para>
+    <itemizedlist>
+        <listitem>
+            <para>You
+                <?oxy_comment_start author="cecilia" timestamp="20161111T134124+0100" comment="review wording &quot;you can&quot;
+"?>can<?oxy_comment_end?>
+                create as many users, user roles and user groups as you need.</para>
+        </listitem>
+        <listitem>
+            <para>You can assign specific authorities to each
+                <?oxy_comment_start author="cecilia" timestamp="20161107T150628+0100" comment="Directly on the user or via a user role?"?>user<?oxy_comment_end?>.</para>
+        </listitem>
+        <listitem>
+            <para>You can create multiple user roles each with their own authorities.</para>
+        </listitem>
+        <listitem>
+            <para>You can assign user roles to users to grant the users the corresponding
+                authorities.</para>
+        </listitem>
+        <listitem>
+            <para>You can assign each user to
+                <?oxy_comment_start author="cecilia" timestamp="20161107T145705+0100" comment="The only thing that happens when you assign a user to an org unit? 
+You don&apos;t have to do it?"?>organisation<?oxy_comment_end?>
+                units. Then the user can enter data for the assigned organisation units.</para>
+        </listitem>
+    </itemizedlist>
+    <table frame="all">
+        <title>User management terms and definitions</title>
+        <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+            <thead>
+                <row>
+                    <entry>
+                        <para>Term</para>
+                    </entry>
+                    <entry>
+                        <para>Definition</para>
+                    </entry>
+                    <entry>
+                        <para>Example</para>
+                    </entry>
+                </row>
+            </thead>
+            <tbody>
+                <row>
+                    <entry>
+                        <para>Authority</para>
+                    </entry>
+                    <entry>
+                        <para>A permission to perform one or several specific tasks</para>
+                    </entry>
+                    <entry>
+                        <para>Create a new data element</para>
+                        <para>Update an organisation unit</para>
+                        <para>View a report</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>User</para>
+                    </entry>
+                    <entry>
+                        <para>A person's DHIS2 user account</para>
+                    </entry>
+                    <entry>
+                        <para>admin</para>
+                        <para>traore</para>
+                        <para>guest</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>User role</para>
+                    </entry>
+                    <entry>
+                        <para>A group of authorities</para>
+                    </entry>
+                    <entry>
+                        <para>Data entry clerk</para>
+                        <para>System administrator</para>
+                        <para>Antenatal care program access</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>User group</para>
+                    </entry>
+                    <entry>
+                        <para>A group of
+                            <?oxy_comment_start author="cecilia" timestamp="20161115T152054+0100" comment="A group of user accounts?"?>users<?oxy_comment_end?></para>
+                    </entry>
+                    <entry><para>Kenya staff</para><para>Feedback message recipients</para>HIV
+                        program coordinators</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para>You manager users, user roles and user groups in the <emphasis role="bold"
+            >Users</emphasis>
+        <?oxy_comment_start author="cecilia" timestamp="20161110T134939+0100" comment="Correct that you can&apos;t translate the user objects?"?>app<?oxy_comment_end?>.</para>
+    <table frame="all">
+        <title>Objects in the Users app</title>
+        <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <thead>
+                <row>
+                    <entry>
+                        <para>Object type</para>
+                    </entry>
+                    <entry>
+                        <para>Available functions</para>
+                    </entry>
+                </row>
+            </thead>
+            <tbody>
+                <row>
+                    <entry>
+                        <para>User</para>
+                    </entry>
+                    <entry>
+                        <para>Create, edit, clone, disable, assign search organisation units,
+                            display by organisation unit, share, delete and show details</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>User role</para>
+                    </entry>
+                    <entry>
+                        <para>Create, edit, share, delete and show details</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>User group</para>
+                    </entry>
+                    <entry>
+                        <para>Create, edit, join, leave, share, delete and show details</para>
+                    </entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+    <section>
+        <title>About users</title>
+        <para>Each user in DHIS2 must have a user account which is identified by a user name. You
+            should register the following information for each user:</para>
+        <itemizedlist>
+            <listitem>
+                <para>first name</para>
+            </listitem>
+            <listitem>
+                <para>last name</para>
+            </listitem>
+            <listitem>
+                <para>email address</para>
+            </listitem>
+            <listitem>
+                <para>phone number</para>
+            </listitem>
+        </itemizedlist>
+        <para>It is important that you register the correct contact information. DHIS2 uses this
+            information to contact users directly, for example sending emails to notify users about
+            important events.
+            <?oxy_comment_start author="cecilia" timestamp="20161114T095459+0100" comment="Verify"?>You
+            can also use the contact information to share for example dashboards and pivot
+            tables<?oxy_comment_end?>.</para>
+        <para>A user in DHIS2 is
+            <?oxy_comment_start author="cecilia" timestamp="20161114T095540+0100" comment="Is it mandatory to register an org unit to a user?
+
+Review the term&quot;associated&quot;, might be better with &quot;assigned&quot;"?>associated<?oxy_comment_end?>
+            with an organisation unit. You should assign the organisation unit where the user
+            works.</para>
+        <example>
+            <para>When you create a user account for a district record officer, you should assign
+                the district where he/she works as the organisation unit.</para>
+        </example>
+        <para>The assigned organisation unit affect how the user can use DHIS2:</para>
+        <itemizedlist>
+            <listitem>
+                <para>In the
+                    <?oxy_comment_start author="cecilia" timestamp="20161109T134826+0100" comment="Tracker Capture, Event Capture and Data Entry apps?"?>data
+                    entry module<?oxy_comment_end?>, a user can only be entering data for the
+                    organisation unit she is associated with and the organisation units below that
+                    in the hierarchy. For instance, a district records officer will be able to
+                    register data for her district and the facilities below that district
+                    only.</para>
+            </listitem>
+            <listitem>
+                <para>In the <emphasis role="bold">Users</emphasis> app, a user can only create new
+                    users for the organisation unit she is associated with in addition to the
+                    organisation units below that in the hierarchy.</para>
+            </listitem>
+            <listitem>
+                <para>In
+                    th<?oxy_comment_start author="cecilia" timestamp="20161109T134919+0100" comment="Which apps?
+Event Reports and Reports?"?>e
+                    reports module,<?oxy_comment_end?> a user can only view reports her organisation
+                    units and those below.
+                    <?oxy_comment_start author="cecilia" timestamp="20161109T134941+0100" comment="Verify with SME: still valid?"?>(This
+                    is something we consider to open up to allow for comparison
+                    reports.)<?oxy_comment_end?></para>
+            </listitem>
+        </itemizedlist>
+        <para>An important part of user management is to control which users are allowed to create
+            new users with which authorities. In DHIS2, you can control which users are allowed to
+            perform this task. The key principle is that a user can only grant authorities and
+            access to data sets that the user itself has access to. The number of users at national,
+            province and district level are often relatively few and can be created and managed by
+            the system administrators. If a large part of the facilities are entering data directly
+            into the system, the number of users might become unwieldy. It is recommended to
+            delegate and decentralize this task to the district officers, it  will make the process
+            more efficient and support the facility users better.</para>
+    </section>
+    <section>
+        <title>About user roles</title>
+        <para>A user role in DHIS2 is a group of authorities. An authority means the permission to
+            perform one or more specific tasks.</para>
+        <example>
+            <para>A user role can contain authorities to create a new data element, update an
+                organisation unit or view a report.</para>
+        </example>
+        <para>A user can have multiple user roles. If so, the user's authorities will be the sum of
+            all authorities and data sets in the user roles. This means that you can mix and match
+            user roles for special purposes instead of only creating new ones.</para>
+        <para>An user role is
+            <?oxy_comment_start author="cecilia" timestamp="20161114T102710+0100" comment="Review term."?>associated<?oxy_comment_end?>
+            with a collection of data sets. This affects the
+            <?oxy_comment_start author="cecilia" timestamp="20161114T102052+0100" comment="Which apps?"?>data
+            entry module<?oxy_comment_end?>: an user can only enter data for the data sets
+            registered for his/her user role. This can be useful when for example you want to allow
+            officers from health programs to enter data only for their relevant data entry
+            forms.</para>
+        <para>Recommendations:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Create one user role for each position within the organisation.</para>
+            </listitem>
+            <listitem>
+                <para>Create the user roles in parallel with defining which user is doing which
+                    tasks in the system.</para>
+            </listitem>
+            <listitem>
+                <para>Only give the user roles the exact authorities they need to perform their job,
+                    not more. Only those who are supposed to perform a task should have the
+                    authorities to perform it.</para>
+            </listitem>
+        </itemizedlist>
+    </section>
+    <section>
+        <title>About user
+            <?oxy_comment_start author="cecilia" timestamp="20161110T105030+0100" comment="Add information"?>groups<?oxy_comment_end?></title>
+        <para/>
+    </section>
+</section>

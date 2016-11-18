@@ -17,7 +17,7 @@
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude"  href="content/intro/introduction.xml" encoding="UTF-8"/>
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/intro/getting_started.xml" encoding="UTF-8"/>
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/intro/data_dimensions.xml"/>
-  <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/user_management/user_management.xml" encoding="UTF-8"/>
+  <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/user_management/toc_user_mgt.xml" encoding="UTF-8"/>
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/sharing/sharing.xml" encoding="UTF-8"/>
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/dashboard/dashboard.xml" encoding="UTF-8"/>
   <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/data_entry/data_entry.xml" encoding="UTF-8"/>

@@ -11,10 +11,11 @@
       xmlns:ns2="http://www.w3.org/1998/Math/MathML"
       xmlns:ns="http://docbook.org/ns/docbook"
       xmlns:date="http://exslt.org/dates-and-times">
-  <title>DHIS2 Android User Manual</title>
+  <title>DHIS2 Android user guide</title>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/bookinfo/bookinfo.xml" encoding="UTF-8"/>
-    <xi:include  xmlns:xi="http://www.w3.org/2001/XInclude" href="content/preface/preface.xml" encoding="UTF-8"/>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"  href="content/android/event_capture.xml" encoding="UTF-8"/>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"  href="content/android/aggregate.xml" encoding="UTF-8"/>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"  href="content/android/tracker_capture.xml" encoding="UTF-8"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/preface/preface.xml" encoding="UTF-8"/>  
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/android/config_program.xml" encoding="UTF-8"/>  
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/android/event_capture.xml" encoding="UTF-8"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/android/aggregate.xml" encoding="UTF-8"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/android/tracker_capture.xml" encoding="UTF-8"/>
 </book>

@@ -34,10 +34,8 @@
     <title>Creating Apps</title>
     <para>DHIS2 apps are constructed with HTML, JavaScript and CSS files, similar to any other web
       application. Apps also need a special file called <emphasis role="italic"
-        >manifest.webapp</emphasis> which describes the contents of the app. This file should be in
-      the format specified by the <link xl:href="http://www.w3.org/2008/webapps/manifest/">W3C
-        Manifest for Web Applications</link>. A basic example of the <emphasis role="italic"
-        >manifest.webapp</emphasis> is shown below:</para>
+        >manifest.webapp</emphasis> which describes the contents of the app. A basic example of the
+        <emphasis role="italic">manifest.webapp</emphasis> is shown below:</para>
     <para>
       <screen>{
     &quot;version&quot;: &quot;0.1&quot;,

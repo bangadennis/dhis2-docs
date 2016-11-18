@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <!-- xml:id="user_mgt_workflow"-->
+    <title><?oxy_comment_start author="cecilia" timestamp="20161114T105833+0100" comment="Confirm workflow with SME."?>Workflow<?oxy_comment_end?></title>
+    <orderedlist>
+        <listitem>
+            <para>Define the positions you need for your project and identify which tasks the
+                different positions will perform.</para>
+        </listitem>
+        <listitem>
+            <para>Create roughly one user role for each position.</para>
+        </listitem>
+        <listitem>
+            <para>Create users.</para>
+        </listitem>
+        <listitem>
+            <para>Assign user roles to the users.</para>
+        </listitem>
+        <listitem>
+            <para>Assign the users to organisation units.(?)</para>
+        </listitem>
+        <listitem>
+            <para>Assign data sets to the user role(??)</para>
+        </listitem>
+        <listitem>
+            <para>(Optional) Group users in user groups.</para>
+        </listitem>
+    </orderedlist>
+    <tip>
+        <para>For users to be able to enter data, you must
+            <?oxy_comment_start author="cecilia" timestamp="20161114T111602+0100" comment="Or assign to?"?>add<?oxy_comment_end?>
+            them to both a data set and an organisational unit
+            <?oxy_comment_start author="cecilia" timestamp="20161110T141614+0100" comment="Organisation unit or organisation unit level?"?>level<?oxy_comment_end?>.</para>
+    </tip>
+</section>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook"    >
+    <title>View users by organisation unit</title>
+    <para>You can view all users that have been assigned to a particular organisation unit.</para>
+    <orderedlist>
+        <listitem>
+            <para>Open the <emphasis role="bold">Users</emphasis> app and click <emphasis
+                    role="bold">User by organisation unit</emphasis>.</para>
+        </listitem>
+        <listitem>
+            <para>In the left-hand organisation unit tree, click an organisation unit.</para>
+            <?oxy_comment_start author="cecilia" timestamp="20161111T145341+0100" comment="Reword para."?>
+            <para>A list of users which have been assigned to this organisation unit is
+                displayed.</para>
+            <?oxy_comment_end?>
+        </listitem>
+    </orderedlist>
+</section>

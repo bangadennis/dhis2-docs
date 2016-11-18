@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <!-- xml:id="user_mgt_example"-->
+    <title>Example: user
+        <?oxy_comment_start author="cecilia" timestamp="20161110T105041+0100" comment="Complete example and examples of user groups."?>management<?oxy_comment_end?>
+        in a health system</title>
+    <para>In a health system, users are logically grouped with respect to the task they perform and
+        the position they occupy.</para>
+    <orderedlist>
+        <listitem>
+            <para>Define which users that should have the role as system administrators. They are
+                often part of the members of the national HIS division and should have full
+                authority in the system.</para>
+        </listitem>
+        <listitem>
+            <para>Create roughly one user role for each position. </para>
+        </listitem>
+    </orderedlist>
+    <para>Examples of common positions are:</para>
+    <informaltable frame="all">
+        <tgroup cols="4">
+            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+            <colspec colname="c2" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c3" colnum="4" colwidth="1.0*"/>
+            <thead>
+                <row>
+                    <entry>
+                        <para>Position</para>
+                    </entry>
+                    <entry>
+                        <para>Typical tasks</para>
+                    </entry>
+                    <entry>
+                        <para>Recommended authorities</para>
+                    </entry>
+                    <entry>
+                        <para>Comment</para>
+                    </entry>
+                </row>
+            </thead>
+            <tbody>
+                <row>
+                    <entry>
+                        <para>System administrators</para>
+                    </entry>
+                    <entry>
+                        <para>Set up the basic structure (metadata) of the system.</para>
+                    </entry>
+                    <entry>
+                        <para>Add, update and delete the core elements of the system, for example
+                            data elements, indicators and data sets.</para>
+                    </entry>
+                    <entry>Only system administrators should modify metadata. <para>If you allow
+                            users outside the system administrators team to modify the metadata,
+                            <?oxy_comment_start author="cecilia" timestamp="20161109T141705+0100" comment="Still correct?"?>it
+                            might lead to problems with
+                            coordination.<?oxy_comment_end?></para><para> is to the system and
+                            should only be performed by the administrators of system.</para></entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>National health managers</para>
+                        <para>Province health managers</para>
+                    </entry>
+                    <entry>
+                        <para>Monitor and analyse data</para>
+                    </entry>
+                    <entry>
+                        <para>Access to the
+                            <?oxy_comment_start author="cecilia" timestamp="20161109T140537+0100" comment="Which apps?"?>reports<?oxy_comment_end?>
+                            module, the <emphasis role="bold">GIS</emphasis>, <emphasis role="bold"
+                                >Data Quality</emphasis> apps and the dashboard.</para>
+                    </entry>
+                    <entry>
+                        <para>Don't need access to enter data, modify data elements or data
+                            sets.</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>National health information system division officers (HISO)</para>
+                        <para>District health records and information officers (DHRIO)</para>
+                        <para>Facility health records and information officers (HRIO)</para>
+                    </entry>
+                    <entry>
+                        <para>Enter data that comes from facilities which are not able to do so
+                            directly</para>
+                        <para>Monitor, evaluate and analyse data</para>
+                    </entry>
+                    <entry>
+                        <para>Access to all the analysis and validation apps</para>
+                        <para>Access to <?oxy_comment_start author="cecilia" timestamp="20161109T141112+0100" comment="And teh tracker Capture and Event Capture?"?>the<?oxy_comment_end?>
+                            <emphasis role="bold">Data Entry</emphasis> app.</para>
+                    </entry>
+                    <entry>
+                        <para>-</para>
+                    </entry>
+                </row>
+                <row>
+                    <entry>
+                        <para>Data entry clerks</para>
+                    </entry>
+                    <entry>
+                        <para>-</para>
+                    </entry>
+                    <entry>
+                        <para>-</para>
+                    </entry>
+                    <entry>
+                        <para>-</para>
+                    </entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </informaltable>
+</section>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg" xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook" xml:id="android_config">
+    <title>[Review ongoing]Configure DHIS2 programs to work on Android apps</title>
+    <para>To use event programs and tracker programs on the Android <emphasis role="bold">Event
+            Capture</emphasis> and <emphasis role="bold">Tracker Capture</emphasis> apps, you must
+        configure the programs in your
+        <?oxy_comment_start author="cecilia" timestamp="20161107T095657+0100" comment="DHIS2 web?
+you DHIS2 web instance?"?>DHIS2<?oxy_comment_end?>
+        web instance.</para>
+    <orderedlist>
+        <listitem>
+            <para>Create a user with the correct settings in DHIS2 web instance:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Create a user.</para>
+                </listitem>
+                <listitem>
+                    <para>Assign a user role that allow the user to access programs.</para>
+                </listitem>
+                <listitem>
+                    <para>Assign programs to the user role.</para>
+                </listitem>
+            </orderedlist>
+        </listitem>
+        <listitem>
+            <?oxy_comment_start author="cecilia" timestamp="20161114T113306+0100" comment="Reword."?>
+            <para>Open the <emphasis role="bold">Program</emphasis> app and assign programs to
+                organisation units. To work on an Android device you must have the same data capture
+                and maintenance organisation unit as the organisation unit the program is assigned
+                to.</para>
+            <?oxy_comment_end?>
+            <note>
+                <para>It is important to only select the actual data capture organisation unit, if
+                    you select the top organisation unit, the Android <emphasis role="bold">Event
+                        Capture</emphasis> and the <emphasis role="bold">Tracker Capture</emphasis>
+                    apps, download ALL data for the organisation unit.</para>
+            </note>
+        </listitem>
+        <listitem>
+            <para>Open the relevant Android app and log in with the user you created.</para>
+        </listitem>
+        <listitem>
+            <para>Pull down to synch with the DHIS2 web instance.</para>
+            <para>The app downloads all programs and organisation units the user has access
+                to.</para>
+        </listitem>
+    </orderedlist>
+    <note>
+        <title>Error
+            <?oxy_comment_start author="cecilia" timestamp="20161114T114138+0100" comment="Nov2016: SME confirms that only one error message is available." flag="done"?>message<?oxy_comment_end?></title>
+        <screenshot>
+            <mediaobject>
+                <imageobject>
+                    <imagedata width="80%" align="center"
+                        fileref="resources/images/android/common/config_error_program.png"
+                        format="PNG"/>
+                </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para>Error message: "You don't have any programs assigned to the organisation unit"</para>
+        <para>Solution: In the <emphasis role="bold">Program</emphasis> app, assign programs to the
+            relevant organisation units.</para>
+    </note>
+    <para>See
+        <?oxy_comment_start author="cecilia" timestamp="20161102T135023+0100" comment="Add URL to correct sections when build works."?>also<?oxy_comment_end?>:</para>
+    <para><citetitle pubwork="section">Manage programs</citetitle></para>
+    <para><citetitle pubwork="section">Manage users, user roles and user groups</citetitle></para>
+</chapter>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xml:id="open_id">
+    <title>Enable support for OpenID</title>
+    <para>DHIS2 supports the OpenID standard, which allows third party login using a OpenID
+        provider, for ore information see <link xl:href="http://openid.net"
+        >http://openid.net</link>. To create a custom OpenID URL for a user name you can visit this
+        URL and log in with your OpenID provider: <link xl:href="http://openid-provider.appspot.com"
+            >http://openid-provider.appspot.com</link>.</para>
+    <para>To enable support for OpenID in DHIS2, you must:</para>
+    <orderedlist>
+        <listitem>
+            <para><emphasis role="bold">Set your OpenID provider</emphasis>: This can be done inside
+                system settings, under
+                &quot;<?oxy_comment_start author="cecilia" timestamp="20161107T142726+0100" comment="Turn para into step-by-step instructions"?>Access<?oxy_comment_end?>&quot;.
+                Here you can set both the OpenID provider, and also the label to display on the
+                login page to login with this provider (defaults to Login with OpenID).</para>
+        </listitem>
+        <listitem>
+            <para><emphasis role="bold">Set the OpenID identifier on the user</emphasis>: For every
+                user that should be able to login with his OpenID identifier, you will need to
+                <?oxy_comment_start author="cecilia" timestamp="20161107T142737+0100" comment="Turn para into step-by-step instructions"?>set
+                this on the user itself<?oxy_comment_end?>. This can be done in user management,
+                under the email field, there is not a field called <emphasis role="italic"
+                    >OpenID</emphasis> which can be used to fill in the OpenID identifier. </para>
+        </listitem>
+    </orderedlist>
+</section>

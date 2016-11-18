@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section version="5.0"
+    xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:mth="http://www.w3.org/1998/Math/MathML"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xml:id="create_userrole">
+    <title>Create a user
+        <?oxy_comment_start author="cecilia" timestamp="20161110T140711+0100" comment="Which fields are mandatory?"?>role<?oxy_comment_end?></title>
+    <screenshot>
+        <title>Role maintenance page</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="80%" align="center"
+                    fileref="resources/images/dhis2UserManual/role_maintenance_page.png"
+                    format="PNG" wordsize=""/>
+            </imageobject>
+        </mediaobject>
+    </screenshot>
+    <orderedlist>
+        <listitem>
+            <para>Open the <emphasis role="bold">Users</emphasis> app and click <emphasis
+                    role="bold">User role</emphasis>.</para>
+        </listitem>
+        <listitem>
+            <para>Click <emphasis role="bold">Add new</emphasis>.</para>
+        </listitem>
+        <listitem>
+            <para>Enter a
+                    <?oxy_comment_start author="cecilia" timestamp="20160624T160524+0200" comment="At next releaase:
+For SME: Must the name be unique?"?><emphasis
+                    role="bold">Name</emphasis><?oxy_comment_end?>, for example "Super user" or
+                "Admin user".</para>
+        </listitem>
+        <listitem>
+            <para>Enter a <emphasis role="bold">Description</emphasis>.</para>
+        </listitem>
+        <listitem>
+            <para>In the <emphasis role="bold">Data sets</emphasis> section, double-click the data
+                sets you want the user role to have access to.</para>
+        </listitem>
+        <listitem>
+            <para>In the <emphasis role="bold">Programs</emphasis> section, double-click the
+                <?oxy_comment_start author="cecilia" timestamp="20161110T163046+0100" comment="Which type of access? read and write?"?>programs<?oxy_comment_end?>
+                you want the user role to have access to.</para>
+        </listitem>
+        <listitem>
+            <para><emphasis role="bold">Authorities</emphasis> section, double-click the authorities
+                you want to give to the user role.</para>
+        </listitem>
+        <listitem>
+            <para>Click <emphasis role="bold">Add</emphasis>.</para>
+        </listitem>
+    </orderedlist>
+    <tip>
+        <para>You can select multiple data sets, programs or
+            <?oxy_comment_start author="cecilia" timestamp="20161110T172105+0100" comment="Review tip, verify that it is inline with the Mtn app."?>authorities<?oxy_comment_end?>:</para>
+        <itemizedlist>
+            <listitem>
+                <para>One by one: press the Ctrl key and click the items one by one, then click the
+                    right arrow.</para>
+            </listitem>
+            <listitem>
+                <para>In a series: press the Shift key and select the first and last item in the
+                    series, then click the right arrow.</para>
+            </listitem>
+        </itemizedlist>
+    </tip>
+</section>

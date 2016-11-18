@@ -353,19 +353,42 @@ LAST_FINANCIAL_YEAR, LAST_5_FINANCIAL_YEARS</screen>
   </section>
   <section xml:id="webapi_identifier_schemes">
     <title>Identifier schemes</title>
-    <para>Throughout the Web API we refer to different kinds of id schemes, this section will give a
-      explanation to how they can be used. Please note that not all schemes works for all web-api
+    <para>This section provides an explanation of the identifier scheme concept. Identifier schemes
+      are used to map metadata objects to other metadata during import, and to render metadata
+      as part of exports. Please note that not all schemes works for all web-api
       calls, and not not all schemes can be used for both input and output (this is outlined in the
-      sections explaining the web-apis themself). Setting the <emphasis role="italic"
-        >idScheme</emphasis> allows you to override the default for <emphasis role="italic"
-        >all</emphasis> schemes, but if other schemes are declared like <emphasis role="italic"
-        >dataElementIdScheme</emphasis> this this will be used instead.</para>
-    <para>The full range of scheme parameters available
-      are:<screen>idScheme, dataElementIdScheme, categoryOptionComboIdScheme, orgUnitIdScheme,
-programIdScheme, programStageIdScheme, trackedEntityIdScheme, trackedEntityAttributeIdScheme</screen></para>
-    <para>The default scheme for all parameters are what we call the <emphasis role="italic">stable
-        identifiers</emphasis> i.e. UIDs, but we also have different schemes depending on how you
-      want object matching to behave.<table frame="all">
+      sections explaining the various Web APIs).</para>
+    <para>The full set of identifier scheme object types available are listed below, using the name
+      of the property to use in queries: <itemizedlist>
+        <listitem>
+          <para>idScheme</para>
+        </listitem>
+        <listitem>
+          <para>dataElementIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>categoryOptionComboIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>orgUnitIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>programIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>programStageIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>trackedEntityIdScheme</para>
+        </listitem>
+        <listitem>
+          <para>trackedEntityAttributeIdScheme</para>
+        </listitem>
+      </itemizedlist></para>
+    <para>The general idScheme applies to all types of objects. It can be overriden by specific
+      object types.</para>
+    <para>The default scheme for all parameters is UID (stable DHIS 2 identifiers). The supported
+      identifier schemes are described in the table below.<table frame="all">
         <title>Scheme Values</title>
         <tgroup cols="2">
           <colspec colnum="1" colname="c1" colwidth="1*"/>
@@ -404,6 +427,15 @@ programIdScheme, programStageIdScheme, trackedEntityIdScheme, trackedEntityAttri
           </tbody>
         </tgroup>
       </table></para>
+    <para>Note that identifier schemes is not an independent feature but needs to be used in
+      combination with resources such as data value import and meta data import.</para>
+    <para>As an example, to specify CODE as the general id scheme and override with UID for
+      organisation unit id scheme you can use these query
+      parameters:<screen>?idScheme=CODE&amp;orgUnitIdScheme=UID</screen></para>
+    <para>As another example, to specify an attribute for the organisation unit id scheme, code for
+      the data element id scheme and use the default UID id scheme for all other objects you can use
+      these
+      parameters:<screen>?orgUnitIdScheme=ATTRIBUTE:j38fk2dKFsG&amp;dataElementIdScheme=CODE</screen></para>
   </section>
   <section xml:id="webapi_browsing_the_web_api">
     <title>Browsing the Web API</title>
@@ -3124,8 +3156,8 @@ http://server/api/26/constants/ID</screen></para>
           <colspec colnum="2" colname="c2" colwidth="2.69*"/>
           <thead>
             <row>
-              <entry> Parameter </entry>
-              <entry> Description </entry>
+              <entry>Parameter</entry>
+              <entry>Description</entry>
             </row>
           </thead>
           <tbody>
@@ -3558,7 +3590,7 @@ FTRrcoaog83,201401,DiszpKrYNg8,bRowv6yZOF2,bRowv6yZOF2,12,system,2014-03-02T21:4
           <emphasis>/api/dataValueSets</emphasis> using <emphasis role="italic"
           >application/xml+adx</emphasis> as the accepted content type. So, for example, the
         following curl command can be used to retrieve the adx data:
-        <screen>curl -u admin:district -X POST -H &quot;Accept: application/xml+adx&quot;
+        <screen>curl -u admin:district -H &quot;Accept: application/xml+adx&quot;
  &quot;https://play.dhis2.org/demo/api/26/dataValueSets?dataValueSets?orgUnit=M_CLINIC&amp;dataSet=MALARIA&amp;period=201501&quot;</screen>
         Note the query parameters are the same as are used with DXF data. An important difference is
         that the identifiers for dataSet and orgUnit are assumed to be codes rather than
@@ -7562,15 +7594,13 @@ ORDER BY oul.level, par.name, ou.name</screen>
               <row>
                 <entry>outputIdScheme</entry>
                 <entry>No</entry>
-                <entry>Property to use for metadata items the query response, can be identifier,
-                  code or name.</entry>
+                <entry>Identifier scheme to use for metadata items the query response, can be identifier, code or attributes.</entry>
                 <entry>UID | CODE | NAME</entry>
               </row>
               <row>
                 <entry>inputIdScheme</entry>
                 <entry>No</entry>
-                <entry>Property to use for metadata items in the request, can be identifier or
-                  code.</entry>
+                <entry>Identifier scheme to use for metadata items in the query request, can be identifier, code or attributes.</entry>
                 <entry>UID | CODE</entry>
               </row>
               <row>
@@ -8303,6 +8333,12 @@ ORDER BY oul.level, par.name, ou.name</screen>
               <entry>No</entry>
               <entry>Specify status of events to include.</entry>
               <entry>ACTIVE | COMPLETED | SCHEDULE | OVERDUE | SKIPPED</entry>
+            </row>
+            <row>
+              <entry>programStatus</entry>
+              <entry>No</entry>
+              <entry>Specify enrollment status of events to include.</entry>
+              <entry>ACTIVE | COMPLETED | CANCELLED</entry>
             </row>
           </tbody>
         </tgroup>
